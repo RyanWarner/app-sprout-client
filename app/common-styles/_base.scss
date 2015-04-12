@@ -2,7 +2,7 @@
 
 ::selection
 {
-	background-color: #f9ec67;
+	background-color: #cdfb9a;
 }
 
 ::placeholder
@@ -13,18 +13,30 @@
 body,
 html
 {
-	background-color: #f5f0ed;
+	background-color: $background;
 
 	color: $dark;
 	font-family: $muli;
 }
 
+hr
+{
+	border: 0;
+}
+
 h1
 {
-	margin-bottom: 32px;
+	margin-bottom: 38px;
 
-	font-size: 28px;
-	line-height: 32px;
+	font-size: 38px;
+	line-height: 48px;
+}
+
+h3
+{
+	color: $blue;
+	font-size: 22px;
+	line-height: 33px;
 }
 
 p

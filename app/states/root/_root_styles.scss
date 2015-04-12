@@ -1,260 +1,314 @@
-h2
+// _root_style.scss
+
+
+
+//--------+
+// Main   |
+//--------+
+
+section
 {
-	margin-bottom: 8px;
+	margin-bottom: 78px;
 
-	font-size: 18px;
-}
-
-h1
-{
-	padding-bottom: 18px;
-	border-bottom: 1px solid #dedad7;
-}
-
-.code
-{
-	padding-right: 8px;
-	padding-left: 8px;
-	background-color: #f5f0ed;
-
-	font-size: 14px;
-	font-family: Consolas, Anonymous Pro, Courier;
-}
-
-.stack-row
-{
-	flex-flow: row;
-
-	margin-bottom: 60px;
-
-	&:last-child
+	&.features
 	{
 		margin-bottom: 0;
 	}
 }
 
-.stack-item
+.app-sprout-logo
 {
-	flex-flow: row;
-	align-items: center;
-	flex: 1;
-}
+	align-self: center;
 
-.stack-item-logo
-{
 	width: 92px;
-	height: 92px;
-	margin-right: 10px;
+	height: 200px;
+	margin-top: 42px;
+	margin-bottom: 30px;
+	background-image: url( 'images/sprout-logo.png' );
 	background-position: center;
+	background-size: cover;
 	background-repeat: no-repeat;
-}
-
-.stack-item-text
-{
-	max-width: 250px;
-}
-
-.angular-logo
-{
-	background-image: url( 'images/angular.png' );
-	background-size: 67px 67px;
-}
-
-.gulp-logo
-{
-	background-image: url( 'images/gulp.png' );
-	background-size: 38px 85px;
-}
-
-.jade-logo
-{
-	background-image: url( 'images/jade.svg' );
-	background-size: 61px 42px;
-}
-
-.sass-logo
-{
-	background-image: url( 'images/sass.png' );
-	background-size: 68px 51px;
-}
-
-.left-column
-{
-	position: fixed;
-	width: 236px;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: $dark;
-
-	color: $light;
-}
-
-.content
-{
-	width: calc( 100% - 236px );
-	margin-left: 236px;
-}
-
-section
-{
-	flex: 1;
-
-	margin: 26px 26px 8px 26px;
-	padding: 18px 15px 18px 15px;
-	border: 1px solid #dedad7;
-	border-left: 4px solid #dedad7;
-	background-color: #fcf8f5;
-}
-
-.highted-code
-{
-	color: #de4d29;
-}
-
-.child-nav
-{
-	flex-flow: row;
-	align-items: center;
-	justify-content: center;
-
-	height: 92px;
-	margin-bottom: 20px;
-}
-
-.child-nav-item
-{
-	align-items: center;
-	justify-content: center;
-
-	cursor: pointer;
-	height: 48px;
-	padding-right: 20px;
-	padding-left: 20px;
-	border-top: 1px solid #d6d2d0;
-	border-right: 1px solid #d6d2d0;
-	border-bottom: 1px solid #d6d2d0;
-	background-color: #ede9e6;
-	box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.04 );
-
-	&:first-child
-	{
-		border-left: 1px solid #d6d2d0;
-	}
-
-	&:hover
-	{
-		background-color: #fcf8f5;
-	}
-
-	&.selected
-	{
-		border: 1px solid $mint;
-		background-color: #fcf8f5;
-	}
-}
-
-.logo
-{
-	flex-flow: row;
-	align-items: center;
-	justify-content: center;
-
-	width: inherit;
-	height: 62px;
-	background-color: $brick;
 }
 
 .logo-text
 {
-	font-size: 18px;
+	align-self: center;
+
+	margin-bottom: 16px;
+
+	font-size: 31px;
 }
 
-.logo-icon
+.main-description
 {
-	width: 26px;
-	height: 26px;
-	margin-left: 12px;
-	background-image: url( 'images/flower.svg' );
+	align-self: center;
+
+	margin-bottom: 44px;
+
+	font-size: 20px;
 }
 
-.nav-item
+.source-links
 {
-	flex-flow: row;
+	flex-direction: row;
+	align-self: center;
+	justify-content: space-between;
+
+	width: 210px;
+}
+
+.main-source-links
+{
+	margin-bottom: 70px;
+}
+
+.source-link-text
+{
+	font-size: 10px;
+	line-height: 15px;
+	text-align: center;
+}
+
+.github-logo
+{
+	@extend %icon-github-outline;
+
+	margin-bottom: 10px;
+
+	font-size: 34px;
+}
+
+.sketch-logo
+{
+	@extend %icon-sketch-outline;
+
+	margin-bottom: 10px;
+
+	font-size: 34px;
+}
+
+.github,
+.sketch
+{
 	align-items: center;
 
 	cursor: pointer;
-	height: 64px;
+	width: 44px;
 
-	font-size: 14px;
-
-	&:before
-	{
-		content: '';
-		display: inline-block;
-		width: 8px;
-		height: 8px;
-		margin-right: 14px;
-		margin-left: 14px;
-		border: 1px solid #979797;
-		border-radius: 5px;
-
-		transition: all 0.2s ease-in;
-	}
-
-	&.selected
-	{
-		color: $mint;
-		font-weight: bold;
-
-		&:before
-		{
-			border: 1px solid #4a4a4a;
-			background-color: $mint;
-		}
-	}
+	transition: all 0.2s ease-out;
 
 	&:hover
 	{
-		background-color: lighten( $dark, 5% );
+		transform: scale( 1.1, 1.1 );
 	}
 }
 
-.github-button
+.login-form
 {
-	flex-flow: row;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+
+	width: 278px;
+	height: 152px;
+	margin-bottom: 15px;
+	border-radius: 6px;
+	background-color: #fcfcfa;
+	box-shadow: 0 2px 0 0 #ebebe4, 0 6px 5px 0 rgba( 0, 0, 0, 0.03 );
+}
+
+.login-form input
+{
+	width: 100%;
+	height: 40px;
+	padding: 0 10px 0 10px;
+	outline: 0;
+	border: 0;
+	background-color: transparent;
+
+	font-size: 16px;
+	font-family: 'Muli';
+	line-height: 40px;
+	text-align: center;
+}
+
+.login-rule
+{
+	width: 90%;
+	height: 1px;
+	background-color: #edede6;
+}
+
+.login-description
+{
+	align-self: center;
+
+	width: 278px;
+	margin-bottom: 32px;
+
+	color: #a8a8a8;
+	font-size: 11px;
+	line-height: 15px;
+	text-align: center;
+}
+
+.login-button
+{
 	align-items: center;
 	align-self: center;
 	justify-content: center;
 
 	cursor: pointer;
-	width: 137px;
-	height: 48px;
-	margin-top: 100px;
-	background-color: $light;
-	box-shadow: 1px 1px 5px 0 rgba( 0, 0, 0, 0.2 );
+	width: 108px;
+	height: 40px;
+	border-radius: 6px;
+	background-color: $blue;
+	box-shadow: 0 2px 0 0 #32c2d9, 0 4px 5px 0 rgba( 0, 0, 0, 0.14 );
 
-	color: $dark;
-	text-decoration: none;
+	color: #ffffff;
+	font-size: 12px;
+	text-transform: uppercase;
+}
 
-	transition: all 0.1s ease-in;
 
-	&:active,
-	&:visited
+
+//---------+
+// Tools   |
+//---------+
+
+.tools
+{
+	position: relative;
+}
+
+.hexagon
+{
+	align-self: center;
+
+	width: 1024px;
+}
+
+.tools-wrapper
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 178px;
+}
+
+.section-header
+{
+	align-self: center;
+
+	h1
 	{
-		color: $dark;
+		text-align: center;
 	}
 
-	&:hover
+	p
 	{
-		background-color: lighten( $light, 5% );
+		width: 452px;
+
+		text-align: center;
 	}
 }
 
-.button-icon
+.list-of-tools
 {
-	width: 25px;
-	height: 25px;
-	margin-right: 10px;
-	background-image: url( 'images/github.svg' );
+	margin-top: 70px;
+}
+
+.tool
+{
+	align-items: center;
+
+	width: 200px;
+
+	p
+	{
+		text-align: center;
+	}
+}
+
+.tool-category
+{
+	margin-bottom: 8px;
+
+	color: #474747;
+	font-size: 18px;
+	line-height: 24px;
+	text-align: center;
+}
+
+.tool-logo
+{
+	width: 130px;
+	height: 130px;
+	margin-bottom: 25px;
+	border-radius: 36px;
+	background-color: #fcfcfa;
+	box-shadow: 0 2px 0 0 #ebebe4, 0 2px 4px 0 rgba( 0, 0, 0, 0.03 );
+}
+
+.tools-row
+{
+	flex-direction: row;
+	align-self: center;
+	justify-content: space-between;
+
+	width: 900px;
+	margin-bottom: 82px;
+}
+
+
+
+//------------+
+// Features   |
+//------------+
+
+.client-and-server-side-features
+{
+	flex-direction: row;
+
+	width: 100%;
+	margin-top: 86px;
+}
+
+.client-side-features,
+.server-side-features
+{
+	width: 50%;
+	height: 468px;
+	padding: 4% 5% 4% 5%;
+	background-image: linear-gradient( to bottom right, #333331, #292928 );
+}
+
+.feature-list
+{
+	margin-top: 36px;
+
+	li
+	{
+		display: list-item;
+		margin-bottom: 20px;
+		margin-left: 24px;
+
+		color: $background;
+		list-style-type: disc;
+	}
+}
+
+
+
+//------------+
+// Footer     |
+//------------+
+
+footer
+{
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 250px;
 }

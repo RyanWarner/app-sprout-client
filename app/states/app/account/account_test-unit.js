@@ -1,23 +1,23 @@
 'use strict';
 
-describe( 'State 1', function(  )
+describe( 'Account', function(  )
 {
 	var scope;
 	var controller;
 
 	beforeEach( function(  )
 	{
-		module( 'angularSprout' );
+		module( 'appSproutClient' );
 	} );
 
 	beforeEach( inject( function( $rootScope, $controller )
 	{
 		scope = $rootScope.$new(  );
-		controller = $controller( 'State1Controller', { $scope: scope } );
+		controller = $controller( 'AccountController', { $scope: scope } );
 	} ) );
 
 	it( 'should have a scope variable', function(  )
 	{
-		expect( scope.stateName ).to.equal( 'state-1' );
+		expect( scope.stateName ).to.equal( 'app.account' );
 	} );
 } );

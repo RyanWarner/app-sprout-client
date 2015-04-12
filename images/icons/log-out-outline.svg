@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="29px" height="33px" viewBox="0 0 29 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>log-out-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="app-list" sketch:type="MSArtboardGroup" transform="translate(-152.000000, -523.000000)" filter="url(#filter-1)" fill="#828281">
+            <g id="nav" sketch:type="MSLayerGroup" transform="translate(129.000000, 200.000000)">
+                <g id="nav-items" transform="translate(23.000000, 210.000000)" sketch:type="MSShapeGroup">
+                    <g id="log-out-icon-+-Log-out" transform="translate(2.000000, 115.000000)">
+                        <path d="M11.857,0 L12.857,0 L12.857,10 L11.857,10 L11.857,0 Z M14.857,4.28 L14.857,5.11 C19.554,6.24 23.058,10.46 23.058,15.5 C23.058,21.4 18.258,26.2 12.357,26.2 C6.457,26.2 1.657,21.4 1.657,15.5 C1.657,10.46 5.161,6.24 9.857,5.11 L9.857,4.28 C4.709,5.42 0.857,10.01 0.857,15.5 C0.857,21.85 6.006,27 12.357,27 C18.709,27 23.857,21.85 23.857,15.5 C23.857,10.01 20.006,5.42 14.857,4.28 Z" id="log-out-icon"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

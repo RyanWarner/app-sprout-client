@@ -1,23 +1,23 @@
 'use strict';
 
-describe( 'Child State 1', function(  )
+describe( 'List', function(  )
 {
 	var scope;
 	var controller;
 
 	beforeEach( function(  )
 	{
-		module( 'angularSprout' );
+		module( 'appSproutClient' );
 	} );
 
 	beforeEach( inject( function( $rootScope, $controller )
 	{
 		scope = $rootScope.$new(  );
-		controller = $controller( 'ChildState1Controller', { $scope: scope } );
+		controller = $controller( 'ListController', { $scope: scope } );
 	} ) );
 
 	it( 'should have a scope variable', function(  )
 	{
-		expect( scope.stateName ).to.equal( 'parentState2.child-state-1' );
+		expect( scope.stateName ).to.equal( 'list' );
 	} );
 } );

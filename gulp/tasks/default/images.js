@@ -7,6 +7,12 @@ var path    = require( '../../paths.js' );
 
 
 
+gulp.task( 'fonts', function(  )
+{
+	return gulp.src( path.to.fonts.source )
+		.pipe( gulp.dest( path.to.fonts.destination ) );
+} );
+
 gulp.task( 'images', [ 'favicon' ], function(  )
 {
 	return gulp.src( path.to.images.source )

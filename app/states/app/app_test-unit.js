@@ -1,23 +1,23 @@
 'use strict';
 
-describe( 'Parent State 2', function(  )
+describe( 'App', function(  )
 {
 	var scope;
 	var controller;
 
 	beforeEach( function(  )
 	{
-		module( 'angularSprout' );
+		module( 'appSproutClient' );
 	} );
 
 	beforeEach( inject( function( $rootScope, $controller )
 	{
 		scope = $rootScope.$new(  );
-		controller = $controller( 'ParentState2Controller', { $scope: scope } );
+		controller = $controller( 'AppController', { $scope: scope } );
 	} ) );
 
 	it( 'should have a scope variable', function(  )
 	{
-		expect( scope.stateName ).to.equal( 'parent-state-2' );
+		expect( scope.stateName ).to.equal( 'app' );
 	} );
 } );
