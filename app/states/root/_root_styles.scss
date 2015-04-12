@@ -1,0 +1,235 @@
+// _root_style.scss
+
+
+
+//--------+
+// Main   |
+//--------+
+
+.app-sprout-logo
+{
+	align-self: center;
+
+	width: 92px;
+	height: 200px;
+	margin-top: 42px;
+	margin-bottom: 30px;
+	margin-bottom: 28px;
+	background-image: url( 'images/sprout-logo.png' );
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.logo-text
+{
+	align-self: center;
+
+	margin-bottom: 16px;
+
+	font-size: 31px;
+}
+
+.main-description
+{
+	align-self: center;
+
+	margin-bottom: 44px;
+
+	font-size: 20px;
+}
+
+.source-links
+{
+	flex-direction: row;
+	align-self: center;
+
+	margin-bottom: 44px;
+}
+
+.source-link-text
+{
+	font-size: 10px;
+	line-height: 15px;
+}
+
+.github,
+.sketch
+{
+	align-items: center;
+
+	width: 44px;
+}
+
+.login-form
+{
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+
+	width: 278px;
+	height: 152px;
+	margin-bottom: 15px;
+	border-radius: 6px;
+	background-color: #fcfcfa;
+	box-shadow: 0 2px 0 0 #ebebe4, 0 6px 5px 0 rgba( 0, 0, 0, 0.03 );
+}
+
+.login-form input
+{
+	width: 100%;
+	height: 40px;
+	padding: 0 10px 0 10px;
+	outline: 0;
+	border: 0;
+	background-color: transparent;
+
+	font-size: 16px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.login-rule
+{
+	width: 90%;
+	height: 1px;
+	background-color: #edede6;
+}
+
+.login-description
+{
+	align-self: center;
+
+	width: 278px;
+	margin-bottom: 32px;
+
+	color: #a8a8a8;
+	font-size: 11px;
+	line-height: 15px;
+	text-align: center;
+}
+
+.login-button
+{
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+
+	cursor: pointer;
+	width: 108px;
+	height: 40px;
+	margin-bottom: 32px;
+	border-radius: 6px;
+	background-color: $blue;
+	box-shadow: 0 2px 0 0 #32c2d9, 0 4px 5px 0 rgba( 0, 0, 0, 0.14 );
+
+	color: #ffffff;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+
+
+//---------+
+// Tools   |
+//---------+
+
+.section-header
+{
+	align-self: center;
+
+	h1
+	{
+		text-align: center;
+	}
+
+	p
+	{
+		width: 332px;
+
+		text-align: center;
+	}
+}
+
+.tools
+{
+	background-color: #f0f0ed;
+}
+
+.tool
+{
+	align-items: center;
+
+	width: 200px;
+
+	p
+	{
+		text-align: center;
+	}
+}
+
+.tool-category
+{
+	margin-bottom: 8px;
+
+	color: #474747;
+	font-size: 18px;
+	line-height: 24px;
+	text-align: center;
+}
+
+.tool-logo
+{
+	width: 130px;
+	height: 130px;
+	margin-bottom: 25px;
+	border-radius: 36px;
+	background-color: #fcfcfa;
+	box-shadow: 0 2px 0 0 #ebebe4, 0 2px 4px 0 rgba( 0, 0, 0, 0.03 );
+}
+
+.tools-row
+{
+	flex-direction: row;
+	align-self: center;
+	justify-content: space-between;
+
+	width: 900px;
+	margin-bottom: 82px;
+}
+
+
+
+//------------+
+// Features   |
+//------------+
+
+.client-and-server-side-features
+{
+	flex-direction: row;
+
+	width: 100%;
+}
+
+.client-side-features,
+.server-side-features
+{
+	width: 50%;
+	height: 468px;
+	background: linear-gradient( top left #333331, #292928 );
+}
+
+
+
+//------------+
+// Footer     |
+//------------+
+
+footer
+{
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 250px;
+}
