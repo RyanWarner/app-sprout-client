@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="39px" height="40px" viewBox="0 0 39 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>github-outline</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.77038159   0 0 0 0 0.77038159   0 0 0 0 0.77038159  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="main" sketch:type="MSArtboardGroup" transform="translate(-541.000000, -503.000000)" filter="url(#filter-1)" fill="#7B7B7B">
+            <g sketch:type="MSLayerGroup" transform="translate(297.500000, 158.000000)" id="view-on-github-+-download-sketch">
+                <g transform="translate(238.500000, 347.000000)" sketch:type="MSShapeGroup">
+                    <g id="view-on-github" transform="translate(0.000000, 0.203125)">
+                        <path d="M24.5,0 C15.38804,0 8,7.392 8,16.5 C8,25.608 15.38804,33 24.5,33 C33.61328,33 41,25.608 41,16.5 C41,7.392 33.61328,0 24.5,0 L24.5,0 Z M29.12,31.2383036 C35.3868687,29.269567 39.94532,23.4058486 39.94532,16.5 C39.94532,7.986 33.01664,1.056 24.5,1.056 C15.98468,1.056 9.056,7.986 9.056,16.5 C9.056,23.4056225 13.6141528,29.269183 19.88,31.2381102 L19.88,28.512 C19.88,26.7696 20.76572,25.8456 21.49964,25.34532 C17.53172,24.9216 13.28,23.496 13.28,16.6584 C13.28,14.73252 13.95848,13.1604 15.08312,11.9592 C14.90492,11.4972 14.3162,9.7152 15.26264,7.2996 C15.26264,7.2996 16.745,6.8244 20.1044,9.0948 C21.49964,8.712 23.01764,8.58 24.5,8.58 C26.00084,8.58 27.50168,8.712 28.91276,9.0948 C31.76,7.26 33.73736,7.26 33.73736,7.26 C34.70228,9.67692 34.09376,11.4972 33.91556,11.9592 C35.0402,13.1604 35.72,14.73252 35.72,16.6584 C35.72,23.496 31.46828,24.9216 27.50168,25.34532 C28.23428,25.8456 29.12,26.7696 29.12,28.512 L29.12,31.2383036 Z" id="github-outline"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

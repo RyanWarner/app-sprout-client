@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>sketch-outline</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.77038159   0 0 0 0 0.77038159   0 0 0 0 0.77038159  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="main" sketch:type="MSArtboardGroup" transform="translate(-692.000000, -503.000000)" filter="url(#filter-1)" fill="#7B7B7B">
+            <g sketch:type="MSLayerGroup" transform="translate(297.500000, 158.000000)" id="view-on-github-+-download-sketch">
+                <g transform="translate(238.500000, 347.000000)" sketch:type="MSShapeGroup">
+                    <g id="download-sketch" transform="translate(143.000000, 0.203125)">
+                        <path d="M32.9983383,0 C23.8863783,0 16.4983383,7.392 16.4983383,16.5 C16.4983383,25.608 23.8863783,33 32.9983383,33 C42.1116183,33 49.4983383,25.608 49.4983383,16.5 C49.4983383,7.392 42.1116183,0 32.9983383,0 Z M32.9983383,1.056 C41.5149783,1.056 48.4436583,7.986 48.4436583,16.5 C48.4436583,25.014 41.5149783,31.944 32.9983383,31.944 C24.4830183,31.944 17.5543383,25.014 17.5543383,16.5 C17.5543383,7.986 24.4830183,1.056 32.9983383,1.056 Z M39.8049785,9.40597445 L36.4862178,8 L29.5104587,8 L26.191698,9.40597445 L23.5,12.4428321 L32.9988399,24.9864434 L42.4966766,12.4428321 L39.8049785,9.40597445 Z" id="sketch-outline"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
