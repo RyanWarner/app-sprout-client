@@ -1,6 +1,6 @@
-# app-sprout-client
+# angular-sprout
 
-An opinionated starting point for AngularJS web applications. This repository runs along side app-sprout-server.
+An opinionated starting point for AngularJS web applications. 
 
 Why? What's wrong with existing seeds like [nghellostyle](https://github.com/zemirco/nghellostyle), the official [angular-seed](https://github.com/angular/angular-seed), or [ngbp](https://github.com/ngbp/ngbp)? Nothing, really. In fact, I learned an incredible amount from all of the above, and copied the important stuff like:
 - [Grouping everything in 'states' and 'components'](https://github.com/zemirco/nghellostyle#everything-is-grouped-in-states-and-components).

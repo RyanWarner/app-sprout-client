@@ -1,6 +1,6 @@
 {
-  "name": "angular-seed",
-  "version": "0.0.0",
+  "name": "app-seed-client",
+  "version": "0.0.1",
   "description": "Starting point for AngularJS projects.",
   "main": "gulpfile.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RyanWarner/angular-seed.git"
+    "url": "https://github.com/RyanWarner/app-seed-client.git"
   },
   "keywords": [
     "angular"
@@ -16,9 +16,9 @@
   "author": "Ryan Warner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RyanWarner/angular-seed/issues"
+    "url": "https://github.com/RyanWarner/app-seed-client/issues"
   },
-  "homepage": "https://github.com/RyanWarner/angular-seed",
+  "homepage": "https://github.com/RyanWarner/app-seed-client",
   "devDependencies": {
     "chai": "^2.1.2",
     "connect-history-api-fallback": "0.0.5",
