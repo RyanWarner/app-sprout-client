@@ -20,7 +20,6 @@ root.config( function( $stateProvider )
 				templateUrl: 'states/root/root_template.html',
 				controller: 'RootController as root'
 			}
-		},
-		abstract: true
+		}
 	} );
 } );

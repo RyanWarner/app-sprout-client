@@ -1,16 +1,127 @@
-.left-column
-	.logo
-		.logo-text
-			| angular-sprout
-		.logo-icon
-	nav
-		li.nav-item( ui-sref='root.state-1', ng-class='{ selected: activeTopNav === "state-1" }' )
-			| state-1
-		li.nav-item( ui-sref='root.parent-state-2.child-state-1', ng-class='{ selected: activeTopNav === "parent-state-2" }' )
-			| parent-state-2
-	a.github-button( href='https://github.com/RyanWarner/angular-sprout' )
-		.button-icon
-		.button-text
-			| GitHub
-
-.content( ui-view='content' )
+section.main
+	.app-sprout-logo
+	.logo-text
+		| app-sprout
+	.main-description
+		| One human's interpretation of the Mongo, Express, Angular, Node stack.
+	.source-links
+		.github
+			.github-logo
+			.source-link-text
+				| View on Github
+		.sketch
+			.sketch-logo
+			.source-link-text
+				| Download .sketch
+	.login
+		.login-form
+			input( type='text', placeholder='Username' )
+			hr.login-rule
+			input( type='text', placeholder='Password' )
+		.login-description
+			| Registration and login is for demo purposes
+			| only. Both fields are required, but it
+			| doesn’t matter what they are.
+		.login-button
+			| Login
+section.tools
+	h1
+		| Tools
+	p
+		| These open-source libraries allow for this
+		| project's processes and methods.
+	.list-of-tools
+		.tool
+			.angular
+			.tool-category
+				| Client-side Framework
+			p
+				| blah blah
+		.tool
+			.sass-and-jade
+			.tool-category
+				| Preprocessing
+			p
+				| blah blah
+		.tool
+			.eslint
+			.tool-category
+				| Quality Control
+			p
+				| blah blah
+		.tool
+			.karma
+			.tool-category
+				| Client-side Tests
+			p
+				| blah blah
+		.tool
+			.node
+			.tool-category
+				| Client-side Framework
+			p
+				| blah blah
+		.tool
+			.angular
+			.tool-category
+				| Document-oriented Database
+			p
+				| blah blah
+		.tool
+			.angular
+			.tool-category
+				| Client-side Framework
+			p
+				| blah blah
+		.tool
+			.angular
+			.tool-category
+				| Server-side tests
+			p
+				| blah blah
+section.features
+	p
+		| Using the tools listed above, app-sprout
+		| comes with a number of reusable patterns
+		| commonly found in web applications.
+	.client-and-server-side-features
+		.client-side-features
+			h3
+				| Client-side
+			ul
+				li
+					| Modular application architecture
+				li
+					| Example parent and child nested states
+				li
+					| Example custom directive
+				li
+					| COmmunication with an API
+				li
+					| Example unit ests and end to end tests
+				li
+					| Custom, modern, and forward thinking CSS reset
+		.server-side-features
+			h3
+				| Server-side
+			ul
+				li
+					| Bluebird style promises
+				li
+					| Example routes with middleware glued together by promises
+				li
+					| User registration and login
+				li
+					| Example tests with testing utility functions
+				li
+					| SSL (coming soon)
+footer
+	.source-links
+		.github
+			.github-logo
+			.source-link-text
+				| View on Github
+		.sketch
+			.sketch-logo
+			.source-link-text
+				| Download .sketch
