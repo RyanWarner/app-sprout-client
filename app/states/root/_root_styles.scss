@@ -14,7 +14,6 @@
 	height: 200px;
 	margin-top: 42px;
 	margin-bottom: 30px;
-	margin-bottom: 28px;
 	background-image: url( 'images/sprout-logo.png' );
 	background-position: center;
 	background-size: cover;
@@ -43,7 +42,9 @@
 {
 	flex-direction: row;
 	align-self: center;
+	justify-content: space-between;
 
+	width: 210px;
 	margin-bottom: 44px;
 }
 
@@ -51,6 +52,7 @@
 {
 	font-size: 10px;
 	line-height: 15px;
+	text-align: center;
 }
 
 .github,
@@ -85,6 +87,8 @@
 	background-color: transparent;
 
 	font-size: 16px;
+	font-size: 16px;
+	font-family: 'Muli';
 	line-height: 40px;
 	text-align: center;
 }
@@ -145,7 +149,7 @@
 
 	p
 	{
-		width: 332px;
+		width: 452px;
 
 		text-align: center;
 	}
@@ -209,6 +213,7 @@
 	flex-direction: row;
 
 	width: 100%;
+	margin-top: 86px;
 }
 
 .client-side-features,
@@ -216,7 +221,23 @@
 {
 	width: 50%;
 	height: 468px;
-	background: linear-gradient( top left #333331, #292928 );
+	padding: 4% 5% 4% 5%;
+	background-image: linear-gradient( to bottom right, #333331, #292928 );
+}
+
+.feature-list
+{
+	margin-top: 36px;
+
+	li
+	{
+		display: list-item;
+		margin-bottom: 20px;
+		margin-left: 24px;
+
+		color: $background;
+		list-style-type: disc;
+	}
 }
 
 

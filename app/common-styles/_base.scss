@@ -2,7 +2,7 @@
 
 ::selection
 {
-	background-color: #f9ec67;
+	background-color: #cdfb9a;
 }
 
 ::placeholder
@@ -30,6 +30,13 @@ h1
 
 	font-size: 28px;
 	line-height: 32px;
+}
+
+h3
+{
+	color: $blue;
+	font-size: 22px;
+	line-height: 33px;
 }
 
 p

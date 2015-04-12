@@ -1,0 +1,80 @@
+@font-face
+{
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'symbols';
+
+	src: url( '../icon-font/symbols.eot?v4kp9' );
+	src: url( '../icon-font/symbols.eot?#iefixv4kp9' ) format( 'embedded-opentype' ),
+	url( '../icon-font/symbols.woff?v4kp9' ) format( 'woff' ),
+	url( '../icon-font/symbols.ttf?v4kp9' ) format( 'truetype' ),
+	url( '../icon-font/symbols.svg?v4kp9#symbols' ) format( 'svg' );
+}
+
+%icon-font
+{
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: 'symbols';
+	line-height: 1;
+	text-transform: none;
+
+	speak: none;
+
+	// Better Font Rendering
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+%icon-account-outline
+{
+	@extend %icon-font;
+
+	&:before
+	{
+		content: "\e001"
+	}
+}
+
+%icon-github-outline
+{
+	@extend %icon-font;
+
+	&:before
+	{
+		content: "\e002"
+	}
+}
+
+%icon-list-outline
+{
+	@extend %icon-font;
+
+	&:before
+	{
+		content: "\e003"
+	}
+}
+
+%icon-log-out-outline
+{
+	@extend %icon-font;
+
+	&:before
+	{
+		content: "\e004"
+	}
+}
+
+%icon-sketch-outline
+{
+	@extend %icon-font;
+
+	&:before
+	{
+		content: "\e005"
+	}
+}
