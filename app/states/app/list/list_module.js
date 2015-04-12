@@ -1,25 +1,24 @@
 'use strict';
 
-var childState2 = angular.module( 'childState2',
+var list = angular.module( 'list',
 [
 	'ui.router'
 ] );
 
 
-childState2.config( function( $stateProvider )
+list.config( function( $stateProvider )
 {
-	$stateProvider.state( 'root.parent-state-2.child-state-2',
+	$stateProvider.state( 'app.list',
 	{
-		url: 'child-state-2/',
+		url: 'list/',
 		views:
 		{
 			'child-content':
 			{
-				templateUrl: 'states/root/parent-state-2/child-state-2/child-state-2_template.html',
-				controller: 'ChildState2Controller as childState2'
+				templateUrl: 'states/app/list/list_template.html',
+				controller: 'ListController as list'
 			}
 		},
-		activeTopNav: 'parent-state-2',
-		activeChildNav: 'child-state-2'
+		activeNav: 'list'
 	} );
 } );

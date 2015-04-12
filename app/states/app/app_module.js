@@ -1,6 +1,6 @@
 'use strict';
 
-var parentState2 = angular.module( 'parentState2',
+var app = angular.module( 'app',
 [
 	'ui.router',
 
@@ -9,7 +9,7 @@ var parentState2 = angular.module( 'parentState2',
 ] );
 
 
-parentState2.config( function( $stateProvider )
+app.config( function( $stateProvider )
 {
 	$stateProvider.state( 'app',
 	{

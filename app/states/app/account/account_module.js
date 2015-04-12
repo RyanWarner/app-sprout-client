@@ -1,25 +1,24 @@
 'use strict';
 
-var childState1 = angular.module( 'childState1',
+var account = angular.module( 'account',
 [
 	'ui.router'
 ] );
 
 
-childState1.config( function( $stateProvider )
+account.config( function( $stateProvider )
 {
-	$stateProvider.state( 'root.parent-state-2.child-state-1',
+	$stateProvider.state( 'app.account',
 	{
-		url: 'child-state-1/',
+		url: 'account/',
 		views:
 		{
 			'child-content':
 			{
-				templateUrl: 'states/root/parent-state-2/child-state-1/child-state-1_template.html',
-				controller: 'ChildState1Controller as childState1'
+				templateUrl: 'states/app/account/account_template.html',
+				controller: 'AccountController as account'
 			}
 		},
-		activeTopNav: 'parent-state-2',
-		activeChildNav: 'child-state-1'
+		activeTopNav: 'account'
 	} );
 } );

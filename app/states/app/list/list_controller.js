@@ -1,14 +1,14 @@
 'use strict';
 
-var childState2 = angular.module( 'childState2' );
+var list = angular.module( 'list' );
 
-childState2.controller( 'ChildState2Controller', function( $rootScope, $scope )
+list.controller( 'ListController', function( $rootScope, $scope )
 {
 
 	// This is a controller.
 
-	$scope.stateName = 'parentState2.child-state-2';
+	$scope.stateName = 'list';
 
-	console.log( 'ChildState2Controller active!' );
+	console.log( 'ListController active!' );
 
 } );

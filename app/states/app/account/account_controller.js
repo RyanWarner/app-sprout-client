@@ -1,14 +1,14 @@
 'use strict';
 
-var childState1 = angular.module( 'childState1' );
+var account = angular.module( 'account' );
 
-childState1.controller( 'ChildState1Controller', function( $rootScope, $scope )
+account.controller( 'AccountController', function( $rootScope, $scope )
 {
 
 	// This is a controller.
 
-	$scope.stateName = 'parentState2.child-state-1';
+	$scope.stateName = 'app.account';
 
-	console.log( 'ChildState1Controller active!' );
+	console.log( 'AccountController active!' );
 
 } );
