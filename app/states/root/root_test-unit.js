@@ -7,7 +7,7 @@ describe( 'Root', function(  )
 
 	beforeEach( function(  )
 	{
-		module( 'angularSprout' );
+		module( 'appSproutClient' );
 	} );
 
 	beforeEach( inject( function( $rootScope, $controller )

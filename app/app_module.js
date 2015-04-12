@@ -1,6 +1,6 @@
 'use strict';
 
-var angularSprout = angular.module( 'angularSprout',
+var appSproutClient = angular.module( 'appSproutClient',
 [
 	'exampleDirective',
 
@@ -9,7 +9,7 @@ var angularSprout = angular.module( 'angularSprout',
 	'root'
 ] );
 
-angularSprout.config( function( $urlRouterProvider, $locationProvider )
+appSproutClient.config( function( $urlRouterProvider, $locationProvider )
 {
 	$urlRouterProvider.otherwise( '/' );
 	$locationProvider.html5Mode( true );
@@ -18,7 +18,7 @@ angularSprout.config( function( $urlRouterProvider, $locationProvider )
 
 
 
-angularSprout.run( [ '$rootScope', function( $rootScope )
+appSproutClient.run( [ '$rootScope', function( $rootScope )
 {
 	$rootScope.$on( '$stateChangeSuccess', function( event, toState, toParams, fromState, fromParams )
 	{
