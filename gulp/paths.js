@@ -57,6 +57,11 @@ module.exports =
 			source: root + '/favicon.png',
 			destination: destination
 		},
+		fonts:
+		{
+			source: root + '/fonts/**/*.*',
+			destination: destination + '/fonts'
+		},
 		bower:
 		{
 			source: root + '/bower_components',

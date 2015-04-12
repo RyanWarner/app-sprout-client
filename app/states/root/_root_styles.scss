@@ -6,6 +6,16 @@
 // Main   |
 //--------+
 
+section
+{
+	margin-bottom: 78px;
+
+	&.features
+	{
+		margin-bottom: 0;
+	}
+}
+
 .app-sprout-logo
 {
 	align-self: center;
@@ -45,7 +55,11 @@
 	justify-content: space-between;
 
 	width: 210px;
-	margin-bottom: 44px;
+}
+
+.main-source-links
+{
+	margin-bottom: 70px;
 }
 
 .source-link-text
@@ -55,12 +69,38 @@
 	text-align: center;
 }
 
+.github-logo
+{
+	@extend %icon-github-outline;
+
+	margin-bottom: 10px;
+
+	font-size: 34px;
+}
+
+.sketch-logo
+{
+	@extend %icon-sketch-outline;
+
+	margin-bottom: 10px;
+
+	font-size: 34px;
+}
+
 .github,
 .sketch
 {
 	align-items: center;
 
+	cursor: pointer;
 	width: 44px;
+
+	transition: all 0.2s ease-out;
+
+	&:hover
+	{
+		transform: scale( 1.1, 1.1 );
+	}
 }
 
 .login-form
@@ -122,7 +162,6 @@
 	cursor: pointer;
 	width: 108px;
 	height: 40px;
-	margin-bottom: 32px;
 	border-radius: 6px;
 	background-color: $blue;
 	box-shadow: 0 2px 0 0 #32c2d9, 0 4px 5px 0 rgba( 0, 0, 0, 0.14 );
@@ -137,6 +176,26 @@
 //---------+
 // Tools   |
 //---------+
+
+.tools
+{
+	position: relative;
+}
+
+.hexagon
+{
+	align-self: center;
+
+	width: 1024px;
+}
+
+.tools-wrapper
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 178px;
+}
 
 .section-header
 {
@@ -155,9 +214,9 @@
 	}
 }
 
-.tools
+.list-of-tools
 {
-	background-color: #f0f0ed;
+	margin-top: 70px;
 }
 
 .tool

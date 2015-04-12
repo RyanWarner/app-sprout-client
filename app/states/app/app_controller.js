@@ -1,11 +1,11 @@
 'use strict';
 
-var parentState2 = angular.module( 'parentState2' );
+var app = angular.module( 'app' );
 
-parentState2.controller( 'ParentState2Controller', function( $rootScope, $scope, $state )
+app.controller( 'AppController', function( $rootScope, $scope, $state )
 {
-	console.log( 'ParentState2Controller active!' );
-	$scope.stateName = 'parent-state-2';
+	console.log( 'AppController active!' );
+	$scope.stateName = 'app';
 
 	$scope.activeChildNav = $state.current.activeChildNav;
 

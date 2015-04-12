@@ -15,7 +15,8 @@ gulp.task( 'default', function(  )
 			'sass',
 			'scripts',
 			'jade',
-			'images'
+			'images',
+			'fonts'
 		],
 		'bower-files',
 		'inject',
