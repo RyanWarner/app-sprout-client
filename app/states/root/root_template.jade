@@ -15,14 +15,14 @@ section.main
 				| Download .sketch
 	.login
 		.login-form
-			input( type='text', placeholder='Username' )
+			input( type='text', placeholder='Email', ng-model='email' )
 			hr.login-rule
-			input( type='text', placeholder='Password' )
+			input( type='text', placeholder='Password', ng-model='password' )
 		.login-description
 			| Registration and login is for demo purposes
 			| only. Both fields are required, but it
 			| doesn’t matter what they are.
-		.login-button
+		.login-button( ng-click='registerAndLogin(  )' )
 			| Login
 section.tools
 	img.hexagon( src='./images/hexagon.svg' )

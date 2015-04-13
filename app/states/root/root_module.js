@@ -3,6 +3,7 @@
 var root = angular.module( 'root',
 [
 	'ui.router',
+	'sessionFactory'
 ] );
 
 root.config( function( $stateProvider )
