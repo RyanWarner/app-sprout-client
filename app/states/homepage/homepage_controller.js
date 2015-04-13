@@ -1,12 +1,12 @@
 'use strict';
 
-var root = angular.module( 'root' );
+var homepage = angular.module( 'homepage' );
 
-root.controller( 'RootController', function( $rootScope, $scope, $state, sessionFactory )
+homepage.controller( 'HomepageController', function( $rootScope, $scope, $state, sessionFactory )
 {
 	// This is a controller.
 
-	$scope.stateName = 'root';
+	$scope.stateName = 'homepage';
 
 	$scope.email = '';
 	$scope.password = '';
@@ -23,10 +23,10 @@ root.controller( 'RootController', function( $rootScope, $scope, $state, session
 		sessionFactory.registerAndLogin( user )
 		.then( function(  )
 		{
-			$state.go( 'app' );
+			$state.go( 'app-root.list' );
 		} );
 	};
 
-	console.log( 'RootController active!' );
+	console.log( 'HomepageController active!' );
 
 } );

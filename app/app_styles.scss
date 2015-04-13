@@ -5,8 +5,8 @@
 @import 'common-styles/mixins';
 @import 'common-styles/base';
 
-@import 'states/root/root_styles';
+@import 'states/homepage/homepage_styles';
 
-@import 'states/app/app_styles';
-@import 'states/app/list/list_styles';
-@import 'states/app/account/account_styles';
+@import 'states/app-root/app-root_styles';
+@import 'states/app-root/list/list_styles';
+@import 'states/app-root/account/account_styles';

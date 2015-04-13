@@ -1,11 +1,11 @@
 'use strict';
 
-var app = angular.module( 'app' );
+var appRoot = angular.module( 'appRoot' );
 
-app.controller( 'AppController', function( $rootScope, $scope, $state )
+appRoot.controller( 'AppRootController', function( $rootScope, $scope, $state )
 {
-	console.log( 'AppController active!' );
-	$scope.stateName = 'app';
+	console.log( 'AppRootController active!' );
+	$scope.stateName = 'app-root';
 
 	$scope.activeChildNav = $state.current.activeChildNav;
 
