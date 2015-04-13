@@ -10,20 +10,8 @@
 			| Delete an item by clicking the x.
 	.list-wrapper
 		.list
-			.list-item
+			.list-item( ng-repeat='item in list' )
 				.list-item-text
-					| GameCube
-				.delete-list-item
-			.list-item
-				.list-item-text
-					| GameCube
-				.delete-list-item
-			.list-item
-				.list-item-text
-					| GameCube
-				.delete-list-item
-			.list-item
-				.list-item-text
-					| GameCube
+					| {{ item.name }}
 				.delete-list-item
 		.add-new-list-item
