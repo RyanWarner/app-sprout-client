@@ -14,7 +14,7 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 
         var deferred = $q.defer(  );
         var promise = deferred.promise;
-        
+
         $http( {
 
             method: 'post',
