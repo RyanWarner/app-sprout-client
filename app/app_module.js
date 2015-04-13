@@ -5,8 +5,10 @@ var appSproutClient = angular.module( 'appSproutClient',
 	'exampleDirective',
 
 	'reverseFilter',
+	'appConstants',
 
-	'root'
+	'root',
+	'app'
 ] );
 
 appSproutClient.config( function( $urlRouterProvider, $locationProvider )
@@ -18,7 +20,7 @@ appSproutClient.config( function( $urlRouterProvider, $locationProvider )
 
 
 
-appSproutClient.run( [ '$rootScope', function( $rootScope )
+appSproutClient.run( function( $rootScope )
 {
 	$rootScope.$on( '$stateChangeSuccess', function( event, toState, toParams, fromState, fromParams )
 	{
@@ -29,4 +31,4 @@ appSproutClient.run( [ '$rootScope', function( $rootScope )
 		$rootScope.toParams = toParams;
 	} );
 
-} ] );
+} );
