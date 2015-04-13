@@ -19,7 +19,7 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 
             method: 'post',
             url: appConstants.BACKEND_URL + '/api/user/register',
-            //withCredentials: true,
+            withCredentials: true,
             data: user
 
         } )
