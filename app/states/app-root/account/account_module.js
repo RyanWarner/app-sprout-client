@@ -8,14 +8,14 @@ var account = angular.module( 'account',
 
 account.config( function( $stateProvider )
 {
-	$stateProvider.state( 'app.account',
+	$stateProvider.state( 'app-root.account',
 	{
-		url: 'account/',
+		url: '/account',
 		views:
 		{
-			'child-content':
+			'app-content':
 			{
-				templateUrl: 'states/app/account/account_template.html',
+				templateUrl: 'states/app-root/account/account_template.html',
 				controller: 'AccountController as account'
 			}
 		},

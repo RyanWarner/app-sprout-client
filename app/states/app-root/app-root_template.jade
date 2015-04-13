@@ -1,0 +1,19 @@
+.app-root
+	nav
+		.nav-logo
+			.nav-app-sprout-logo
+			.nav-rule
+		.nav-items
+			.account( ui-sref='app-root.account' )
+				.account-icon
+				.account-text
+					| Account
+			.list( ui-sref='app-root.list' )
+				.list-icon
+				.list-text
+					| List
+			.logout
+				.logout-icon
+				.logout-text
+					| Logout
+	.app-content( ui-view='app-content' )

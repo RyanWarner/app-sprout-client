@@ -7,8 +7,8 @@ var appSproutClient = angular.module( 'appSproutClient',
 	'reverseFilter',
 	'appConstants',
 
-	'root',
-	'app'
+	'homepage',
+	'appRoot'
 ] );
 
 appSproutClient.config( function( $urlRouterProvider, $locationProvider )

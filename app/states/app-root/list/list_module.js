@@ -2,20 +2,21 @@
 
 var list = angular.module( 'list',
 [
-	'ui.router'
+	'ui.router',
+	'listFactory'
 ] );
 
 
 list.config( function( $stateProvider )
 {
-	$stateProvider.state( 'app.list',
+	$stateProvider.state( 'app-root.list',
 	{
-		url: 'list/',
+		url: '/list',
 		views:
 		{
-			'child-content':
+			'app-content':
 			{
-				templateUrl: 'states/app/list/list_template.html',
+				templateUrl: 'states/app-root/list/list_template.html',
 				controller: 'ListController as list'
 			}
 		},
