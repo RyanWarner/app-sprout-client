@@ -2,18 +2,20 @@
 	nav
 		.nav-logo
 			.nav-app-sprout-logo
+			.nav-logo-text
+				| app-sprout
 			.nav-rule
 		.nav-items
-			.account( ui-sref='app-root.account' )
-				.account-icon
-				.account-text
+			.nav-item.account( ui-sref='app-root.account' )
+				.nav-item-icon.account-icon
+				.nav-item-text
 					| Account
-			.list( ui-sref='app-root.list' )
-				.list-icon
-				.list-text
+			.nav-item.list( ui-sref='app-root.list' )
+				.nav-item-icon.list-icon
+				.nav-item-text
 					| List
-			.logout
-				.logout-icon
-				.logout-text
+			.nav-item.logout
+				.nav-item-icon.logout-icon
+				.nav-item-text
 					| Logout
 	.app-content( ui-view='app-content' )

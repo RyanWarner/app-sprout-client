@@ -4,3 +4,88 @@ nav
 	height: 100vh;
 	background-image: linear-gradient( to bottom right, #333331, #292928 );
 }
+
+.nav-app-sprout-logo
+{
+	align-self: center;
+
+	width: 52px;
+	height: 109px;
+	margin-top: 70px;
+	margin-bottom: 30px;
+	background-image: url( 'images/sprout-logo.png' );
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.nav-logo-text
+{
+	align-self: center;
+
+	color: $background;
+	font-size: 20px;
+}
+
+.nav-rule
+{
+	align-self: center;
+
+	width: 60px;
+	height: 1px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-color: rgba( $background, 0.5 );
+}
+
+.nav-item
+{
+	flex-direction: row;
+	align-items: center;
+
+	cursor: pointer;
+	width: 100%;
+	height: 60px;
+
+	color: $background;
+
+	transition: background-color 0.2s ease-out;
+
+	&:hover
+	{
+		background-color: rgba( $background, 0.03 );
+
+		.nav-item-icon
+		{
+			color: $blue;
+		}
+	}
+}
+
+.nav-item-icon
+{
+	align-items: center;
+	justify-content: center;
+
+	width: 60px;
+
+	color: #828281;
+	font-size: 22px;
+
+	transition: color 0.2s ease-out;
+}
+
+.account-icon
+{
+	@extend %icon-account-outline;
+}
+
+.list-icon
+{
+	@extend %icon-list-outline;
+}
+
+.logout-icon
+{
+	@extend %icon-log-out-outline;
+}
