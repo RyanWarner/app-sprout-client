@@ -77,3 +77,13 @@
 		content: '\e005';
 	}
 }
+
+%icon-x-solid
+{
+	@extend %icon-font;
+
+	&:before
+	{
+		content: '\e006';
+	}
+}

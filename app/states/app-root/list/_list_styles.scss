@@ -57,7 +57,7 @@
 	height: 40px;
 	border-radius: 20px;
 	background-color: $blue;
-	box-shadow: 0 2px 0 0 #32c2d9, 0 4px 5px 0 rgba( 0, 0, 0, 0.14 );
+	box-shadow: 0 2px 0 0 #58784e, 0 4px 5px 0 rgba( 0, 0, 0, 0.14 );
 
 	color: #ffffff;
 	font-size: 12px;
@@ -119,9 +119,34 @@
 	}
 }
 
+.list-item-text
+{
+	flex-grow: 1;
+
+	height: 100%;
+}
+
 .list-item-text input
 {
+	width: 100%;
+	height: 100%;
 	outline: 0;
 	border: 0;
 	background-color: transparent;
+
+	font-size: 14px;
+	font-family: 'Muli';
+}
+
+.delete-list-item
+{
+	@extend %icon-x-solid;
+
+	align-items: center;
+	justify-content: center;
+
+	width: 30px;
+	height: 100%;
+
+	font-size: 15px;
 }
