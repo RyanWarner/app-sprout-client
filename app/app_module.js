@@ -2,13 +2,12 @@
 
 var appSproutClient = angular.module( 'appSproutClient',
 [
-	'exampleDirective',
-
 	'reverseFilter',
 	'appConstants',
 
 	'homepage',
-	'appRoot'
+	'appRoot',
+	'ngAnimate'
 ] );
 
 appSproutClient.config( function( $urlRouterProvider, $locationProvider )

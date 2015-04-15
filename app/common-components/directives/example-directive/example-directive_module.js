@@ -1,14 +1,22 @@
 'use strict';
 
-var exampleDirective = angular.module( 'exampleDirective', [] );
+var ngEnter = angular.module( 'ngEnter', [ ] );
 
-exampleDirective.directive( 'exampleDirective', function(  )
+ngEnter.directive( 'ngEnter', function(  )
 {
-	return {
+	return function( scope, element, attrs )
+	{
+		element.bind( 'keydown keypress', function( event )
+		{
+			if( event.which === 13 )
+			{
+				scope.$apply( function(  )
+				{
+					scope.$eval( attrs.ngEnter );
+				} );
 
-		restrict: 'E',
-		controller: 'ExampleDirectiveController',
-		templateUrl: 'common-components/directives/example-directive/example-directive_template.html'
-
+				event.preventDefault(  );
+			}
+		} );
 	};
 } );

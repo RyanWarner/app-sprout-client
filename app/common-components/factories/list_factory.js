@@ -34,6 +34,37 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 		return promise;
 	};
 
+	listFactoryApi.upsertListItem = function( item )
+	{
+		var deferred = $q.defer(  );
+		var promise = deferred.promise;
+
+		$http( {
+
+			method: 'post',
+			withCredentials: true,
+			url: appConstants.BACKEND_URL + '/api/user/list',
+			data:
+			{
+				listItem: item
+			}
+
+		} )
+		.success( function( data )
+		{
+			console.log( 'addListItem success: ', data );
+
+			deferred.resolve( data );
+		} )
+		.error( function( error )
+		{
+			console.log( 'addListItem error: ', error );
+			deferred.reject( error );
+		} );
+
+		return promise;
+	};
+
 
 	// Return public API.
 

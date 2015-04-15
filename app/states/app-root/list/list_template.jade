@@ -9,9 +9,9 @@
 			br
 			| Delete an item by clicking the x.
 	.list-wrapper
-		.list
-			.list-item( ng-repeat='item in list' )
+		ul.list
+			li.list-item( ng-repeat='item in list | reverse', ng-keypress='saveList( item, $index, $event )' )
 				.list-item-text
-					| {{ item.name }}
+					input( type='text', ng-model='item.name' )
 				.delete-list-item
-		.add-new-list-item
+		.add-new-list-item( ng-click='addNewListItem(  )' )
