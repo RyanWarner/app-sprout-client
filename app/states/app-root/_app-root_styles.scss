@@ -6,6 +6,9 @@
 .app-content
 {
 	flex-grow: 1;
+
+	overflow: scroll;
+	height: 100vh;
 }
 
 nav

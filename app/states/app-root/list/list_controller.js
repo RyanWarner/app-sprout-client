@@ -2,11 +2,13 @@
 
 var list = angular.module( 'list' );
 
-list.controller( 'ListController', function( $rootScope, $scope, listFactory, $timout )
+list.controller( 'ListController', function( $rootScope, $scope, listFactory, $timeout )
 {
 	// This is a controller.
 
 	$scope.stateName = 'list';
+
+	console.log( window.Velocity );
 
 	console.log( 'ListController active!' );
 
@@ -32,7 +34,7 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 	{
 		if( event.keyCode === 13 )
 		{
-			saveList( item, index, event );
+			$scope.saveList( item, index, event );
 		}
 	};
 
@@ -55,15 +57,17 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 			var listItems = document.getElementsByClassName( 'list-item' );
 			var savedListItem = listItems[ index ];
 			savedListItem.style.backgroundColor = '#77E056';
+			savedListItem.style.WebkitTransition = 'none';
 			$timeout( function(  )
 			{
-				savedListItem.style.WebkitTransition = 'background-color .2s ease-out';
+				savedListItem.style.WebkitTransition = 'background-color 1s ease-in';
 				savedListItem.style.backgroundColor = '#fcfcfa';
-			} );
+			}, 100 );
 			
-			savedListItem.addEventListener( 'transitionend webkitTransitionEnd', function(  )
+			savedListItem.addEventListener( 'webkitTransitionEnd', function(  )
 			{
-				alert( 'end' );
+				savedListItem.style.WebkitTransition = '';
+				savedListItem.style.backgroundColor = '';
 			} );
 		} );
 	};
