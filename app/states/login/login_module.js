@@ -10,7 +10,7 @@ login.config( function( $stateProvider )
 {
 	$stateProvider.state( 'login',
 	{
-		url: '/',
+		url: '/login',
 		views:
 		{
 			'homepage':

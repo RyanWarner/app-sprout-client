@@ -6,6 +6,8 @@ var appSproutClient = angular.module( 'appSproutClient',
 	'appConstants',
 
 	'homepage',
+	'register',
+	'login',
 	'appRoot',
 	'ngAnimate'
 ] );

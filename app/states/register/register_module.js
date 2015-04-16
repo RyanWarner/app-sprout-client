@@ -10,7 +10,7 @@ register.config( function( $stateProvider )
 {
 	$stateProvider.state( 'register',
 	{
-		url: '/',
+		url: '/register',
 		views:
 		{
 			'homepage':
