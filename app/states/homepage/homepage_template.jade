@@ -4,6 +4,14 @@ section.main
 		| app-sprout
 	.main-description
 		| One human's interpretation of the Mongo, Express, Angular, Node stack.
+	.main-register-button.big-green-button( ui-sref='register' )
+		| Register
+	.main-login-button.small-outline-button( ui-sref='register' )
+		| Login
+	.login-description
+		| Registration and login is for demo purposes
+		| only. Both fields are required, but it
+		| doesn’t matter what they are.
 	.source-links.main-source-links
 		.github
 			.github-logo
@@ -13,17 +21,6 @@ section.main
 			.sketch-logo
 			.source-link-text
 				| Download .sketch
-	.login
-		.login-form
-			input( type='text', placeholder='Email', ng-model='email' )
-			hr.login-rule
-			input( type='text', placeholder='Password', ng-model='password' )
-		.login-description
-			| Registration and login is for demo purposes
-			| only. Both fields are required, but it
-			| doesn’t matter what they are.
-		.login-button( ng-click='registerAndLogin(  )' )
-			| Login
 section.tools
 	img.hexagon( src='./images/hexagon.svg' )
 	.tools-wrapper
@@ -124,7 +121,7 @@ section.features
 				li
 					| SSL (coming soon)
 footer
-	.source-links
+	.footer-source-links
 		.github
 			.github-logo
 			.source-link-text
