@@ -36,22 +36,7 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 
 	$scope.addNewListItem = function(  )
 	{
-		// $timeout( function(  )
-		// {
-			$scope.list.push( { } );
-		// } );
-		
-		$timeout( function(  )
-		{
-			var newListInputElement = document.getElementsByClassName( 'list-item-input' )[ 0 ];
-			// console.log( angular.element( newListInputElement ) );
-
-			newListInputElement.focus(  );
-			$scope.list[ $scope.list.length - 1 ].name = ' ';
-			// newListInputElement.select(  );
-		} );
-		
-		// 
+		$scope.list.push( { } );
 	};
 
 	$scope.keyPress = function( item, index, event )
