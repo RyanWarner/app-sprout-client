@@ -1,1 +1,15 @@
-| register
+.login-app-sprout-logo
+.login
+	.login-form
+		input( type='text', placeholder='Email', ng-model='email' )
+		hr.login-rule
+		input( type='text', placeholder='Password', ng-model='password' )
+	.register-button( ng-click='registerAndLogin(  )' )
+		| Register
+	.login-button( ui-sref='login' )
+		| Login
+	.login-description
+		| Registration and login is for demo purposes
+		| only. Both fields are required, but it
+		| doesn’t matter what they are.
+	

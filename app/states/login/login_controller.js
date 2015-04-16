@@ -11,22 +11,20 @@ login.controller( 'LoginController', function( $rootScope, $scope, $state, sessi
 	$scope.email = '';
 	$scope.password = '';
 
-	$scope.registerAndLogin = function(  )
+	$scope.login = function(  )
 	{
 		var user = {  };
 
 		user.email = $scope.email;
 		user.password = $scope.password;
 
-		console.log( user );
-
-		sessionFactory.registerAndLogin( user )
+		sessionFactory.login( user )
 		.then( function(  )
 		{
 			$state.go( 'app-root.list' );
 		} );
 	};
 
-	console.log( 'HomepageController active!' );
+	console.log( 'LoginController active!' );
 
 } );

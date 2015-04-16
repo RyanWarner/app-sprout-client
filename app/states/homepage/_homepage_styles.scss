@@ -43,7 +43,7 @@ section
 {
 	align-self: center;
 
-	margin-bottom: 44px;
+	margin-bottom: 70px;
 
 	font-size: 20px;
 }
@@ -54,12 +54,17 @@ section
 	align-self: center;
 	justify-content: space-between;
 
-	width: 210px;
+	// width: 210px;
 }
 
 .main-source-links
 {
-	margin-bottom: 70px;
+	flex-direction: column;
+
+	.github
+	{
+		margin-bottom: 50px;
+	}
 }
 
 .source-link-text
@@ -67,6 +72,7 @@ section
 	font-size: 10px;
 	line-height: 15px;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 .github-logo
@@ -93,7 +99,7 @@ section
 	align-items: center;
 
 	cursor: pointer;
-	width: 44px;
+	width: 48px;
 
 	transition: all 0.2s ease-out;
 
@@ -143,31 +149,57 @@ section
 {
 	align-self: center;
 
-	width: 278px;
-	margin-bottom: 32px;
+	width: 208px;
+	margin-bottom: 56px;
 
 	color: #a8a8a8;
 	font-size: 11px;
-	line-height: 15px;
+	line-height: 17px;
 	text-align: center;
 }
 
-.login-button
+.big-green-button
 {
 	align-items: center;
 	align-self: center;
 	justify-content: center;
 
 	cursor: pointer;
-	width: 108px;
-	height: 40px;
+	width: 257px;
+	height: 44px;
 	border-radius: 6px;
-	background-color: $blue;
-	box-shadow: 0 2px 0 0 #32c2d9, 0 4px 5px 0 rgba( 0, 0, 0, 0.14 );
+	background-color: $green;
+	box-shadow: 0 2px 0 0 #58784e, 0 4px 5px 0 rgba( 0, 0, 0, 0.14 );
 
 	color: #ffffff;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.small-outline-button
+{
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+
+	width: 115px;
+	height: 37px;
+	border: 1px solid #7b7b7b;
+	border-radius: 6px;
+
+	color: #7b7b7b;
 	font-size: 12px;
 	text-transform: uppercase;
+}
+
+.register-button
+{
+	margin-bottom: 25px;
+}
+
+.login-button
+{
+	margin-bottom: 40px;
 }
 
 
