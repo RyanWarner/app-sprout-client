@@ -1,12 +1,12 @@
-.login-app-sprout-logo
+.login-app-sprout-logo( ui-sref='homepage' )
 .login
 	.login-form
 		input( type='text', placeholder='Email', ng-model='email' )
 		hr.login-rule
 		input( type='text', placeholder='Password', ng-model='password' )
-	.login-button( ng-click='login(  )' )
+	.login-login-button.big-green-button( ng-click='login(  )' )
 		| Login
-	.register-button( ui-sref='register' )
+	.login-register-button.small-outline-button( ui-sref='register' )
 		| Register
 	.login-description
 		| Registration and login is for demo purposes
