@@ -48,7 +48,6 @@
 .add-new-list-item
 {
 	align-items: center;
-	align-self: center;
 	align-self: flex-start;
 	justify-content: center;
 
@@ -88,7 +87,7 @@
 
 	&.ng-enter
 	{
-		height: 0px;
+		height: 0;
 		padding: 0 20px 0 20px;
 
 		transition: all 0.5s ease-out;
@@ -112,7 +111,7 @@
 
 	&.ng-leave.ng-leave-active
 	{
-		height: 0px;
+		height: 0;
 		padding: 0 20px 0 20px;
 
 		transition: all 0.5s ease-out;
