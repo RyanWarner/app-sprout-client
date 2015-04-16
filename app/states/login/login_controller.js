@@ -11,7 +11,7 @@ login.controller( 'LoginController', function( $rootScope, $scope, $state, sessi
 	$scope.email = '';
 	$scope.password = '';
 
-	$scope.login = function(  )
+	$scope.loginUser = function(  )
 	{
 		var user = {  };
 

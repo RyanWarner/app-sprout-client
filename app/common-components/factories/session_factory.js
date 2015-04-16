@@ -40,8 +40,8 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 
 	sessionFactoryApi.login = function( user )
 	{
-		console.log( 'userFactoryApi registerAndLogin' );
-		console.log( 'Registering user with backend at: ', appConstants.BACKEND_URL );
+		console.log( 'sessionFactoryApi login' );
+		console.log( 'Login user with backend: ', appConstants.BACKEND_URL );
 
 		var deferred = $q.defer(  );
 		var promise = deferred.promise;
@@ -69,7 +69,7 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		return promise;
 	};
 
-	sessionFactoryApi.logout = function( user )
+	sessionFactoryApi.logout = function(  )
 	{
 		console.log( 'userFactoryApi registerAndLogin' );
 		console.log( 'Registering user with backend at: ', appConstants.BACKEND_URL );
@@ -81,19 +81,18 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 
 			method: 'delete',
 			url: appConstants.BACKEND_URL + '/api/user/session',
-			withCredentials: true,
-			data: user
+			withCredentials: true
 
 		} )
 		.success( function( data )
 		{
-			console.log( 'Login success: ', data );
+			console.log( 'Logout success: ', data );
 
 			deferred.resolve( data );
 		} )
 		.error( function( error )
 		{
-			console.log( 'Login error: ', error );
+			console.log( 'Logout error: ', error );
 			deferred.reject( error );
 		} );
 
@@ -104,5 +103,4 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 	// Return public API.
 
 	return sessionFactoryApi;
-}
-);
+} );

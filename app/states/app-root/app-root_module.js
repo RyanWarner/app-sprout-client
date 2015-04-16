@@ -21,6 +21,7 @@ appRoot.config( function( $stateProvider )
 				templateUrl: 'states/app-root/app-root_template.html',
 				controller: 'AppRootController as appRoot'
 			}
-		}
+		},
+		abstract: true
 	} );
 } );
