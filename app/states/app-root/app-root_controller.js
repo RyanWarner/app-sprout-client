@@ -2,7 +2,7 @@
 
 var appRoot = angular.module( 'appRoot' );
 
-appRoot.controller( 'AppRootController', function( $rootScope, $scope, $state )
+appRoot.controller( 'AppRootController', function( $rootScope, $scope, $state, sessionFactory )
 {
 	console.log( 'AppRootController active!' );
 	$scope.stateName = 'app-root';
@@ -13,4 +13,13 @@ appRoot.controller( 'AppRootController', function( $rootScope, $scope, $state )
 	{
 		$scope.activeChildNav = $state.current.activeChildNav;
 	} );
+
+	$scope.logout = function(  )
+	{
+		sessionFactory.logout(  )
+		.then( function(  )
+		{
+			$state.go( 'homepage' );
+		} );
+	};
 } );

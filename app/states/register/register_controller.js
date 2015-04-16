@@ -8,6 +8,7 @@ register.controller( 'RegisterController', function( $rootScope, $scope, $state,
 
 	$scope.stateName = 'register';
 
+	$scope.name = '';
 	$scope.email = '';
 	$scope.password = '';
 
@@ -15,6 +16,7 @@ register.controller( 'RegisterController', function( $rootScope, $scope, $state,
 	{
 		var user = {  };
 
+		user.name = $scope.name;
 		user.email = $scope.email;
 		user.password = $scope.password;
 

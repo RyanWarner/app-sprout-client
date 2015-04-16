@@ -65,6 +65,38 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 		return promise;
 	};
 
+	listFactoryApi.deleteListItem = function( item )
+	{
+		console.log( item );
+		var deferred = $q.defer(  );
+		var promise = deferred.promise;
+
+		$http( {
+
+			method: 'put',
+			withCredentials: true,
+			url: appConstants.BACKEND_URL + '/api/user/list',
+			data:
+			{
+				listItem: item
+			}
+
+		} )
+		.success( function( data )
+		{
+			console.log( 'deleteListItem success: ', data );
+
+			deferred.resolve( data );
+		} )
+		.error( function( error )
+		{
+			console.log( 'deleteListItem error: ', error );
+			deferred.reject( error );
+		} );
+
+		return promise;
+	};
+
 
 	// Return public API.
 

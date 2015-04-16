@@ -8,7 +8,7 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 
 	$scope.stateName = 'list';
 
-	console.log( window.Velocity );
+	// console.log( window.Velocity ); this is working!
 
 	console.log( 'ListController active!' );
 
@@ -19,7 +19,16 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 		listFactory.getList(  )
 		.then( function( list )
 		{
-			$scope.list = list;
+			if( list.length === 0 )
+			{
+				console.log( list.length );
+				$scope.list = list;
+				$scope.addNewListItem(  );
+			}
+			else
+			{
+				$scope.list = list;
+			}
 		} );
 	};
 
@@ -40,7 +49,20 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 
 	$scope.saveList = function( item, index, event )
 	{
-		console.log( event );
+		// If trying to save a newly created list item with no value,
+		// don't do anything.
+		if( ( item.name === undefined ) && ( item._id === undefined ) )
+		{
+			return;
+		}
+
+		// If trying to save an existing list item with no value,
+		// delete it.
+		if( ( item.name === '' ) && ( item._id !== undefined ) )
+		{
+			$scope.deleteListItem( item, index );
+		}
+
 		listFactory.upsertListItem( item )
 		.then( function( response )
 		{
@@ -69,6 +91,18 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 				savedListItem.style.WebkitTransition = '';
 				savedListItem.style.backgroundColor = '';
 			} );
+		} );
+	};
+
+	$scope.deleteListItem = function( item, index )
+	{
+		console.log( item );
+		var inverseIndex = $scope.list.length - index - 1;
+
+		listFactory.deleteListItem( item )
+		.then( function(  )
+		{
+			$scope.list.splice( inverseIndex, 1 );
 		} );
 	};
 

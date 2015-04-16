@@ -12,6 +12,6 @@
 		ul.list
 			li.list-item( ng-repeat='item in list | reverse', ng-keypress='keyPress( item, $index, $event )' )
 				.list-item-text
-					input( type='text', ng-model='item.name' )
-				.delete-list-item
+					input.list-item-input( type='text', ng-model='item.name', placeholder='Empty list item', ng-blur='saveList( item, $index, $event )' )
+				.delete-list-item( ng-click='deleteListItem( item, $index )' )
 		.add-new-list-item( ng-click='addNewListItem(  )' )
