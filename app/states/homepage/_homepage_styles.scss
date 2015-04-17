@@ -171,12 +171,34 @@ section
 	width: 257px;
 	height: 44px;
 	border-radius: 6px;
-	background-color: $green;
+	background: linear-gradient( #87bb75, $green 50% );
+	// background-color: $green;
+	background-position: 0 -44px;
+	background-size: 257px 88px;
 	box-shadow: 0 2px 0 0 #58784e, 0 4px 5px 0 rgba( 0, 0, 0, 0.14 );
 
 	color: #ffffff;
 	font-size: 14px;
 	text-transform: uppercase;
+
+	transition: all 0.2s ease;
+
+	&:hover
+	{
+		background-position: 0 -11px;
+		box-shadow: 0 2px 0 0 #58784e, 0 6px 8px 0 rgba( 0, 0, 0, 0.24 ), 0 -3px 7px 0 rgba( 255, 255, 255, 0.8 );
+
+		// transform: scale( 1.06, 1.06 );
+	}
+
+	&:active
+	{
+		background-position: 0 -22px;
+		box-shadow: 0 2px 0 0 #58784e, 0 5px 6px 0 rgba( 0, 0, 0, 0.18 );
+
+		transition: all 0.1s ease;
+		// transform: scale( 1.04, 1.04 );
+	}
 }
 
 .small-outline-button

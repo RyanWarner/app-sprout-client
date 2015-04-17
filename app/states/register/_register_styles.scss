@@ -9,3 +9,18 @@
 {
 	margin-bottom: 30px;
 }
+
+.form-error
+{
+	flex-direction: row;
+	align-items: center;
+
+	position: absolute;
+	width: 240px;
+	height: 70px;
+	top: 0;
+	left: 257px;
+
+	color: $red;
+	font-size: 14px;
+}
