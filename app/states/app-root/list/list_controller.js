@@ -16,6 +16,8 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 
 	var listCopy;
 
+	$scope.loading = true;
+
 	var getList = function(  )
 	{
 		listFactory.getList(  )
@@ -33,6 +35,11 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 				$scope.list = list;
 				listCopy = angular.copy( $scope.list );
 			}
+
+			$timeout( function(  )
+			{
+				$scope.loading = false;
+			}, 200 );
 		} );
 	};
 
@@ -70,6 +77,11 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 		} );
 	};
 
+	var updateListCopy = function(  )
+	{
+		listCopy = angular.copy( $scope.list );
+	};
+
 	$scope.saveList = function( item, index, event )
 	{
 
@@ -85,12 +97,10 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 		// we need to get the actual index.
 		var realIndex = $scope.list.length - index - 1;
 
-		console.log( item.name );
-		console.log( listFactory.list[ realIndex ].name );
 
 		// If the new value is the same as the factory value,
 		// dont do anything.
-		if( item.name === listCopy[ realIndex ].name )
+		if( ( listCopy[ realIndex ] ) && ( item.name === listCopy[ realIndex ].name ) )
 		{
 			return;
 		};
@@ -100,7 +110,6 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 		if( ( item.name === '' ) && ( item._id !== undefined ) )
 		{
 			$scope.deleteListItem( item, index );
-			listCopy = angular.copy( $scope.list );
 			return;
 		}
 
@@ -115,7 +124,7 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 				$scope.list[ realIndex ]._id = response.newListItem._id;
 			}
 
-			listCopy = angular.copy( $scope.list );
+			updateListCopy(  );
 
 			saveListItemAnimation( index );
 		} );
@@ -126,10 +135,23 @@ list.controller( 'ListController', function( $rootScope, $scope, listFactory, $t
 		console.log( item );
 		var inverseIndex = $scope.list.length - index - 1;
 
+
 		listFactory.deleteListItem( item )
 		.then( function(  )
 		{
-			$scope.list.splice( inverseIndex, 1 );
+			if( $scope.list.length <= 1 )
+			{
+				$timeout( function(  )
+				{
+					$scope.list[ 0 ] = [ {  } ];
+				} );
+			}
+			else
+			{
+				$scope.list.splice( inverseIndex, 1 );
+			}
+			
+			updateListCopy(  );
 		} );
 	};
 
