@@ -7,6 +7,8 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 {
 	var listFactoryApi = {  };
 
+	listFactoryApi.list = [  ];
+
 	listFactoryApi.getList = function(  )
 	{
 		var deferred = $q.defer(  );
@@ -23,6 +25,8 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 		{
 			console.log( 'Get list success: ', data );
 
+			listFactoryApi.list = data.listItems;
+
 			deferred.resolve( data.listItems );
 		} )
 		.error( function( error )
@@ -34,10 +38,28 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 		return promise;
 	};
 
+	var upsertLocalList = function( item, data )
+	{
+		console.log( 'upsert local list ' );
+		// If we are adding a brand new item, push it to the factory array.
+		if( data.newListItem )
+		{
+			listFactoryApi.list.push( data.newListItem );
+		}
+		// If we are editing a list item, update it's name.
+		else
+		{
+			var itemIndex = listFactoryApi.list.indexOf( item );
+			listFactoryApi.list[ itemIndex ].name = item.name;
+		}
+	};
+
 	listFactoryApi.upsertListItem = function( item )
 	{
 		var deferred = $q.defer(  );
 		var promise = deferred.promise;
+
+		console.log( listFactoryApi.list );
 
 		$http( {
 
@@ -53,6 +75,8 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 		.success( function( data )
 		{
 			console.log( 'addListItem success: ', data );
+
+			upsertLocalList( item, data );
 
 			deferred.resolve( data );
 		} )
