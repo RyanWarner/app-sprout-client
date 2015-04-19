@@ -77,7 +77,7 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 		};
 
 		$scope.list.push( newItem );
-		$scope.saveList( newItem, 0, event )
+		$scope.saveList( newItem, 0, event );
 	};
 
 	var saveListItemAnimation = function( index )
@@ -100,7 +100,7 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 			enterIcon.style.WebkitTransition = 'background-color 1s ease-in';
 			enterIcon.style.backgroundColor = '#688e5c';
 		}, 50 );
-		
+
 		savedListItem.addEventListener( 'webkitTransitionEnd', function(  )
 		{
 			savedListItem.style.WebkitTransition = '';
@@ -185,7 +185,7 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 			{
 				$scope.list.splice( inverseIndex, 1 );
 			}
-			
+
 			updateListCopy(  );
 		} );
 	};
