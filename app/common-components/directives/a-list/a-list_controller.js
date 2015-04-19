@@ -10,6 +10,7 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 	console.log( 'ListController active!' );
 
 	$scope.list = [  ];
+	$scope.newItem = '';
 
 	var listCopy;
 
@@ -55,18 +56,51 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 		}
 	};
 
+	$scope.addNewKeyPress = function( item, event )
+	{
+		if( event.keyCode === 13 )
+		{
+			$scope.addNewListItem( item );
+		}
+	};
+
+	$scope.addNewListItem = function( itemValue )
+	{
+		if( ( itemValue === '' ) || ( itemValue === undefined ) )
+		{
+			return;
+		}
+
+		var newItem =
+		{
+			'name': itemValue
+		};
+
+		$scope.list.push( newItem );
+		$scope.saveList( newItem, 0, event );
+	};
+
 	var saveListItemAnimation = function( index )
 	{
 		var listItems = document.getElementsByClassName( 'list-item' );
 		var savedListItem = listItems[ index ];
-		savedListItem.style.backgroundColor = '#77E056';
+		var enterIcon = document.getElementsByClassName( 'enter-icon' )[ 0 ];
+
+		savedListItem.style.backgroundColor = '#B7E4A9';
 		savedListItem.style.WebkitTransition = 'none';
+
+		enterIcon.style.backgroundColor = '#78b066';
+		enterIcon.style.WebkitTransition = 'none';
+
 		$timeout( function(  )
 		{
 			savedListItem.style.WebkitTransition = 'background-color 1s ease-in';
 			savedListItem.style.backgroundColor = '#fcfcfa';
-		}, 100 );
-		
+
+			enterIcon.style.WebkitTransition = 'background-color 1s ease-in';
+			enterIcon.style.backgroundColor = '#688e5c';
+		}, 50 );
+
 		savedListItem.addEventListener( 'webkitTransitionEnd', function(  )
 		{
 			savedListItem.style.WebkitTransition = '';
@@ -117,8 +151,12 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 			// If the user is creating a new item,
 			// we need to give it an ID that we get back from the server.
 			if( response.newListItem )
-			{	
-				$scope.list[ realIndex ]._id = response.newListItem._id;
+			{
+				$timeout( function(  )
+				{
+					$scope.list[ realIndex ]._id = response.newListItem._id;
+					$scope.newItem = '';
+				} );
 			}
 
 			updateListCopy(  );
@@ -147,7 +185,7 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 			{
 				$scope.list.splice( inverseIndex, 1 );
 			}
-			
+
 			updateListCopy(  );
 		} );
 	};
