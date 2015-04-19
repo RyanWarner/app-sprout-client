@@ -34,15 +34,3 @@
 
 	animation: spinner 1500ms infinite linear;
 }
-
-spinner
-{
-	opacity: 1;
-
-	transition: all 0.4s ease-in;
-
-	&.ng-hide
-	{
-		opacity: 0;
-	}
-}

@@ -6,7 +6,8 @@ var list = angular.module( 'list',
 	'listFactory',
 	'ngEnter',
 	'ngAnimate',
-	'spinner'
+	'spinner',
+	'aList'
 ] );
 
 
