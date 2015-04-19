@@ -14,6 +14,11 @@ register.controller( 'RegisterController', function( $rootScope, $scope, $state,
 
 	$scope.registerAndLogin = function(  )
 	{
+		if( !$scope.form.$valid )
+		{
+			return;
+		}
+
 		var user = {  };
 
 		user.name = $scope.name;

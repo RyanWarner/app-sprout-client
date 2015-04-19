@@ -1,9 +1,9 @@
 'use strict';
 
 
-var sessionFactory = angular.module( 'sessionFactory', [ ] );
+var sessionFactory = angular.module( 'sessionFactory', [  ] );
 
-sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConstants )
+sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConstants, storageFactory )
 {
 	var sessionFactoryApi = {  };
 
@@ -26,6 +26,8 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		.success( function( data )
 		{
 			console.log( 'Registration success: ', data );
+
+			storageFactory.local.setObject( 'user', data );
 
 			deferred.resolve( data );
 		} )
@@ -58,6 +60,8 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		{
 			console.log( 'Login success: ', data );
 
+			storageFactory.local.setObject( 'user', data );
+
 			deferred.resolve( data );
 		} )
 		.error( function( error )
@@ -87,6 +91,8 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		.success( function( data )
 		{
 			console.log( 'Logout success: ', data );
+
+			sessionFactoryApi.user = {  };
 
 			deferred.resolve( data );
 		} )

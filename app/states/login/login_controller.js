@@ -13,6 +13,11 @@ login.controller( 'LoginController', function( $rootScope, $scope, $state, sessi
 
 	$scope.loginUser = function(  )
 	{
+		if( !$scope.form.$valid )
+		{
+			return;
+		}
+
 		var user = {  };
 
 		user.email = $scope.email;
