@@ -1,13 +1,11 @@
 'use strict';
 
 
-var sessionFactory = angular.module( 'sessionFactory', [ 'locker' ] );
+var sessionFactory = angular.module( 'sessionFactory', [  ] );
 
-sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConstants, locker )
+sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConstants, storageFactory )
 {
 	var sessionFactoryApi = {  };
-
-	sessionFactoryApi.user = {  };
 
 	sessionFactoryApi.registerAndLogin = function( user )
 	{
@@ -29,7 +27,7 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		{
 			console.log( 'Registration success: ', data );
 
-			sessionFactoryApi.user = data;
+			storageFactory.local.setObject( 'user', data );
 
 			deferred.resolve( data );
 		} )
@@ -62,7 +60,7 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		{
 			console.log( 'Login success: ', data );
 
-			sessionFactoryApi.user = data;
+			storageFactory.local.setObject( 'user', data );
 
 			deferred.resolve( data );
 		} )

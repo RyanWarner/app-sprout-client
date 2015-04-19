@@ -60,3 +60,96 @@
 	font-size: 14px;
 	font-family: 'Muli';
 }
+
+.account-field-error
+{
+	margin-bottom: 10px;
+	margin-left: 3px;
+
+	color: $red;
+	font-size: 12px;
+}
+
+.account-save-button
+{
+	position: relative;
+	cursor: pointer;
+
+	.spinner
+	{
+		@include spinner-dots( rgba( #ffffff, 1 ) );
+	}
+}
+
+.button-loading
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+
+	transition: opacity 0.2s ease-in;
+
+	&.ng-hide
+	{
+		opacity: 0;
+	}
+}
+
+.button-text
+{
+	transition: all 0.2s ease-in;
+
+	&.ng-hide
+	{
+		opacity: 0;
+
+		transform: rotate( 25deg );
+	}
+}
+
+.account-save-submit
+{
+	opacity: 0;
+	position: absolute;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.save-notification-wrapper
+{
+	align-items: center;
+
+	opacity: 1;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+
+	transition: all 0.4s ease-in;
+	transform: translate3d( 0, 0, 0 );
+
+	&.ng-hide
+	{
+		opacity: 0;
+
+		transform: translate3d( 0, -80px, 0 );
+	}
+}
+
+.save-notification
+{
+	padding: 20px 30px 20px 30px;
+	border-right: 1px solid rgba( 0, 0, 0, 0.1 );
+	border-bottom: 1px solid rgba( 0, 0, 0, 0.1 );
+	border-left: 1px solid rgba( 0, 0, 0, 0.1 );
+	border-radius: 0 0 6px 6px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 9px rgba( 0, 0, 0, 0.06 );
+
+	color: $green;
+}
