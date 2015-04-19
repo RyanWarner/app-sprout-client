@@ -9,7 +9,8 @@ var appSproutClient = angular.module( 'appSproutClient',
 	'register',
 	'login',
 	'appRoot',
-	'ngAnimate'
+	'ngAnimate',
+	'angular-locker'
 ] );
 
 appSproutClient.config( function( $urlRouterProvider, $locationProvider )

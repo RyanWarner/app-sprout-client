@@ -1,9 +1,9 @@
 'use strict';
 
 
-var sessionFactory = angular.module( 'sessionFactory', [ ] );
+var sessionFactory = angular.module( 'sessionFactory', [ 'locker' ] );
 
-sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConstants )
+sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConstants, locker )
 {
 	var sessionFactoryApi = {  };
 
