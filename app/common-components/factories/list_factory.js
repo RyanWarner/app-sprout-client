@@ -7,6 +7,8 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 {
 	var listFactoryApi = {  };
 
+	listFactoryApi.list = [  ];
+
 	listFactoryApi.getList = function(  )
 	{
 		var deferred = $q.defer(  );
@@ -23,6 +25,8 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 		{
 			console.log( 'Get list success: ', data );
 
+			listFactoryApi.list = data.listItems;
+
 			deferred.resolve( data.listItems );
 		} )
 		.error( function( error )
@@ -38,6 +42,8 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 	{
 		var deferred = $q.defer(  );
 		var promise = deferred.promise;
+
+		console.log( listFactoryApi.list );
 
 		$http( {
 

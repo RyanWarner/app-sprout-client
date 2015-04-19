@@ -3,15 +3,6 @@
 		h2
 			| List
 		.state-description
-			| Add an item by clicking the plus.
-			br
-			| Edit an item by click on its text.
-			br
-			| Delete an item by clicking the x.
-	.list-wrapper
-		ul.list
-			li.list-item( ng-repeat='item in list | reverse', ng-keypress='keyPress( item, $index, $event )' )
-				.list-item-text
-					input.list-item-input( type='text', ng-model='item.name', placeholder='Empty list item', ng-blur='saveList( item, $index, $event )' )
-				.delete-list-item( ng-click='deleteListItem( item, $index )' )
-		.add-new-list-item( ng-click='addNewListItem(  )' )
+			| This list demonstrates create, read, update, and delete behavior.
+
+	a-list.list-wrapper( list='aList' )
