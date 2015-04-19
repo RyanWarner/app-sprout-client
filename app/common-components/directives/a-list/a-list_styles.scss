@@ -41,7 +41,7 @@
 	overflow: hidden;
 	cursor: pointer;
 	height: 60px;
-	padding: 10px 20px 10px 20px;
+	padding: 10px 0 10px 20px;
 	border-bottom: 1px solid #edede8;
 	// background-color: #fcfcfa;
 
@@ -54,7 +54,7 @@
 	&.ng-enter
 	{
 		height: 0;
-		padding: 0 20px 0 20px;
+		padding: 0 0 0 20px;
 
 		transition: all 0.35s ease-out;
 	}
@@ -62,7 +62,7 @@
 	&.ng-leave
 	{
 		height: 60px;
-		padding: 10px 20px 10px 20px;
+		padding: 10px 0 10px 20px;
 
 		transition: all 0.35s ease-out;
 	}
@@ -70,7 +70,7 @@
 	&.ng-enter.ng-enter-active
 	{
 		height: 60px;
-		padding: 10px 20px 10px 20px;
+		padding: 10px 0 10px 20px;
 
 		transition: all 0.35s ease-out;
 	}
@@ -78,7 +78,7 @@
 	&.ng-leave.ng-leave-active
 	{
 		height: 0;
-		padding: 0 20px 0 20px;
+		padding: 0 0 0 20px;
 
 		transition: all 0.35s ease-out;
 	}
@@ -110,7 +110,7 @@
 	align-items: center;
 	justify-content: center;
 
-	width: 30px;
+	width: 60px;
 	height: 100%;
 
 	color: #e4e4e4;
@@ -144,4 +144,23 @@
 	{
 		opacity: 0;
 	}
+}
+
+.enter-icon
+{
+	align-items: center;
+	justify-content: center;
+
+	width: 80px;
+	height: 60px;
+	background-color: $green;
+
+	color: $background;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.add-new-list-item-field
+{
+	margin-bottom: 20px;
 }

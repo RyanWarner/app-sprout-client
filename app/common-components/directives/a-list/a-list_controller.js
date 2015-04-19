@@ -10,6 +10,7 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 	console.log( 'ListController active!' );
 
 	$scope.list = [  ];
+	$scope.newItem = '';
 
 	var listCopy;
 
@@ -55,11 +56,35 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 		}
 	};
 
+	$scope.addNewKeyPress = function( item, event )
+	{
+		if( event.keyCode === 13 )
+		{
+			$scope.addNewListItem( item );
+		}
+	};
+
+	$scope.addNewListItem = function( itemValue )
+	{
+		if( ( itemValue === '' ) || ( itemValue === undefined ) )
+		{
+			return;
+		}
+
+		var newItem =
+		{
+			'name': itemValue
+		};
+
+		$scope.list.push( newItem );
+		$scope.saveList( newItem, 0, event )
+	};
+
 	var saveListItemAnimation = function( index )
 	{
 		var listItems = document.getElementsByClassName( 'list-item' );
 		var savedListItem = listItems[ index ];
-		savedListItem.style.backgroundColor = '#77E056';
+		savedListItem.style.backgroundColor = '#B7E4A9';
 		savedListItem.style.WebkitTransition = 'none';
 		$timeout( function(  )
 		{
@@ -117,8 +142,12 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 			// If the user is creating a new item,
 			// we need to give it an ID that we get back from the server.
 			if( response.newListItem )
-			{	
-				$scope.list[ realIndex ]._id = response.newListItem._id;
+			{
+				$timeout( function(  )
+				{
+					$scope.list[ realIndex ]._id = response.newListItem._id;
+					$scope.newItem = '';
+				} );
 			}
 
 			updateListCopy(  );

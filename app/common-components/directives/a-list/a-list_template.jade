@@ -1,3 +1,9 @@
+.list.add-new-list-item-field
+	.list-item
+		.list-item-text
+			input.list-item-input( type='text', ng-keypress='addNewKeyPress( newItem, $event )', ng-model='newItem', placeholder='New list item' )
+		.enter-icon( ng-click='addNewListItem( newItem )' )
+			| Enter
 ul.list
 	.spinner-wrapper( ng-show='loading' )
 		spinner
@@ -5,5 +11,3 @@ ul.list
 		.list-item-text
 			input.list-item-input( type='text', ng-model='item.name', placeholder='Empty list item', ng-blur='saveList( item, $index, $event )' )
 		.delete-list-item( ng-click='deleteListItem( item, $index )' )
-.add-new-list-item( ng-click='addNewListItem(  )' )
-	| +
