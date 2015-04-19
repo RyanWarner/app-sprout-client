@@ -84,13 +84,22 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 	{
 		var listItems = document.getElementsByClassName( 'list-item' );
 		var savedListItem = listItems[ index ];
+		var enterIcon = document.getElementsByClassName( 'enter-icon' )[ 0 ];
+
 		savedListItem.style.backgroundColor = '#B7E4A9';
 		savedListItem.style.WebkitTransition = 'none';
+
+		enterIcon.style.backgroundColor = '#78b066';
+		enterIcon.style.WebkitTransition = 'none';
+
 		$timeout( function(  )
 		{
 			savedListItem.style.WebkitTransition = 'background-color 1s ease-in';
 			savedListItem.style.backgroundColor = '#fcfcfa';
-		}, 100 );
+
+			enterIcon.style.WebkitTransition = 'background-color 1s ease-in';
+			enterIcon.style.backgroundColor = '#688e5c';
+		}, 50 );
 		
 		savedListItem.addEventListener( 'webkitTransitionEnd', function(  )
 		{
