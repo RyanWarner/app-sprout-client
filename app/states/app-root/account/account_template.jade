@@ -1,2 +1,23 @@
 .account-header
-	| Account
+	h2
+		| Account
+	.state-description
+		| Edit your account information.
+form.account-information( novalidate )
+	.account-field
+		.account-field-label
+			| Name
+		.account-field-input-wrapper
+			input.account-field-input( type='text', name='username', required='', placeholder='Your name', ng-model='user.name' )
+	.account-field
+		.account-field-label
+			| Email
+		.account-field-input-wrapper
+			input.account-field-input( type='text', name='email', required='', placeholder='Your email', ng-model='user.email' )
+	.account-field
+		.account-field-label
+			| Change password
+		.account-field-input-wrapper
+			input.account-field-input( type='password', name='password', placeholder='New password' )
+	.account-save-button.big-green-button
+		| Update

@@ -7,6 +7,8 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 {
 	var sessionFactoryApi = {  };
 
+	sessionFactoryApi.user = {  };
+
 	sessionFactoryApi.registerAndLogin = function( user )
 	{
 		console.log( 'userFactoryApi registerAndLogin' );
@@ -26,6 +28,8 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		.success( function( data )
 		{
 			console.log( 'Registration success: ', data );
+
+			sessionFactoryApi.user = data;
 
 			deferred.resolve( data );
 		} )
@@ -58,6 +62,8 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		{
 			console.log( 'Login success: ', data );
 
+			sessionFactoryApi.user = data;
+
 			deferred.resolve( data );
 		} )
 		.error( function( error )
@@ -87,6 +93,8 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		.success( function( data )
 		{
 			console.log( 'Logout success: ', data );
+
+			sessionFactoryApi.user = {  };
 
 			deferred.resolve( data );
 		} )

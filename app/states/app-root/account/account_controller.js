@@ -2,13 +2,17 @@
 
 var account = angular.module( 'account' );
 
-account.controller( 'AccountController', function( $rootScope, $scope )
+account.controller( 'AccountController', function( $rootScope, $scope, sessionFactory, $timeout )
 {
-
-	// This is a controller.
-
 	$scope.stateName = 'app.account';
 
 	console.log( 'AccountController active!' );
+
+	$timeout( function(  )
+	{
+		$scope.user = sessionFactory.user;
+		console.log( $scope.user );
+	} );
+	
 
 } );
