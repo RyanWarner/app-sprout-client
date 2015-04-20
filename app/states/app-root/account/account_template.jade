@@ -17,10 +17,10 @@ form.account-information( name='form', novalidate )
 	.account-field
 		.account-field-label
 			| Email
-		.account-field-error( ng-show='form.$submitted && ( form.email.$error.required || form.email.$error.required )' )
+		.account-field-error( ng-show='form.$submitted && ( form.email.$error.required || form.email.$error.email )' )
 			| That's not a valid email.
 		.account-field-input-wrapper
-			input.account-field-input( type='text', name='email', required='', placeholder='Your email', ng-model='user.email' )
+			input.account-field-input( type='email', name='email', required='', placeholder='Your email', ng-model='user.email' )
 	.account-field
 		.account-field-label
 			| Change password

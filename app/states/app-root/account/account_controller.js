@@ -38,6 +38,7 @@ account.controller( 'AccountController', function( $rootScope, $scope, storageFa
 			{
 				$scope.loading = false;
 				$scope.justSaved = true;
+				$scope.user.password = '';
 
 				$timeout( function(  )
 				{
