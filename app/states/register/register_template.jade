@@ -24,7 +24,12 @@
 				.form-error( ng-show='form.$submitted && !form.email.$error.email' )
 					div( ng-show='form.password.$error.required' )
 						| You must have a password.
-		input.register-register-button.big-green-button( ng-click='registerAndLogin(  )', type='submit', value='Register' )
+		.register-register-button.big-green-button( ng-click='registerAndLogin(  )' )
+			.button-text( ng-hide='loading' )
+				| Register
+			.button-loading( ng-show='loading' )
+				spinner
+			input.account-save-submit( type='submit' )
 	.register-login-button.small-outline-button( ui-sref='login' )
 		| Login
 	.login-description

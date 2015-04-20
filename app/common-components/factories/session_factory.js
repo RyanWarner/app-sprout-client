@@ -92,7 +92,7 @@ sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConsta
 		{
 			console.log( 'Logout success: ', data );
 
-			sessionFactoryApi.user = {  };
+			storageFactory.local.setObject( 'user', null );
 
 			deferred.resolve( data );
 		} )

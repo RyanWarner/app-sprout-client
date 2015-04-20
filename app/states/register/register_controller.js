@@ -11,6 +11,7 @@ register.controller( 'RegisterController', function( $rootScope, $scope, $state,
 	$scope.name = '';
 	$scope.email = '';
 	$scope.password = '';
+	$scope.loading = false;
 
 	$scope.registerAndLogin = function(  )
 	{
@@ -18,6 +19,8 @@ register.controller( 'RegisterController', function( $rootScope, $scope, $state,
 		{
 			return;
 		}
+
+		$scope.loading = false;
 
 		var user = {  };
 
@@ -30,6 +33,7 @@ register.controller( 'RegisterController', function( $rootScope, $scope, $state,
 		sessionFactory.registerAndLogin( user )
 		.then( function(  )
 		{
+			$scope.loading = false;
 			$state.go( 'app-root.list' );
 		} );
 	};
