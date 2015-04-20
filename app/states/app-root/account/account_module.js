@@ -18,7 +18,6 @@ account.config( function( $stateProvider )
 				templateUrl: 'states/app-root/account/account_template.html',
 				controller: 'AccountController as account'
 			}
-		},
-		activeTopNav: 'account'
+		}
 	} );
 } );

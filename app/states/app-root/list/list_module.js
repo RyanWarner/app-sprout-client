@@ -23,7 +23,6 @@ list.config( function( $stateProvider )
 				templateUrl: 'states/app-root/list/list_template.html',
 				controller: 'ListController as list'
 			}
-		},
-		activeNav: 'list'
+		}
 	} );
 } );

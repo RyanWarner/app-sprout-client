@@ -64,7 +64,18 @@ nav
 
 	transition: background-color 0.2s ease-out;
 
-	&:hover
+	&:hover,
+	&.selected:hover
+	{
+		background-color: rgba( $background, 0.06 );
+
+		.nav-item-icon
+		{
+			color: lighten( $green, 3% );
+		}
+	}
+
+	&.selected
 	{
 		background-color: rgba( $background, 0.03 );
 
