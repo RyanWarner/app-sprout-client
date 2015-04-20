@@ -174,18 +174,7 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 		listFactory.deleteListItem( item )
 		.then( function(  )
 		{
-			if( $scope.list.length <= 1 )
-			{
-				$timeout( function(  )
-				{
-					$scope.list[ 0 ] = [ {  } ];
-				} );
-			}
-			else
-			{
-				$scope.list.splice( inverseIndex, 1 );
-			}
-
+			$scope.list.splice( inverseIndex, 1 );
 			updateListCopy(  );
 		} );
 	};

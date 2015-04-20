@@ -7,6 +7,9 @@
 ul.list
 	.spinner-wrapper( ng-show='loading' )
 		spinner
+	.empty-list( ng-show='list.length === 0' )
+		.empty-list-text
+			| No list items yet! Why don't you make some?
 	li.list-item( ng-repeat='item in list | reverse', ng-keypress='keyPress( item, $index, $event )' )
 		.list-item-text
 			input.list-item-input( type='text', ng-model='item.name', placeholder='Empty list item', ng-blur='saveList( item, $index, $event )' )

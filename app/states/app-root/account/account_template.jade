@@ -27,7 +27,7 @@ form.account-information( name='form', novalidate )
 		.account-field-error( ng-show='form.$submitted && form.password.$error.minlength' )
 			| Your password must be at least 6 characters.
 		.account-field-input-wrapper
-			input.account-field-input( type='text', name='password', placeholder='New password', ng-model='user.password' )
+			input.account-field-input( type='text', minlength='6', name='password', placeholder='New password', ng-model='user.password' )
 	.account-save-button.big-green-button( ng-click='updateUserInfo(  )' )
 		.button-text( ng-hide='loading' )
 			| Save
