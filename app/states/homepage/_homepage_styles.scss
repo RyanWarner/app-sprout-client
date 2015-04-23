@@ -95,13 +95,16 @@ section
 	font-size: 38px;
 }
 
-.github,
-.sketch
+a.github,
+a.sketch
 {
 	align-items: center;
 
 	cursor: pointer;
 	width: 48px;
+
+	color: #7b7b7b;
+	text-decoration: none;
 
 	transition: all 0.2s ease-out;
 
