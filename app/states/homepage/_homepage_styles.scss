@@ -83,7 +83,7 @@ section
 
 	margin-bottom: 10px;
 
-	font-size: 34px;
+	font-size: 38px;
 }
 
 .sketch-logo
@@ -92,7 +92,7 @@ section
 
 	margin-bottom: 10px;
 
-	font-size: 34px;
+	font-size: 38px;
 }
 
 .github,
@@ -107,7 +107,8 @@ section
 
 	&:hover
 	{
-		transform: scale( 1.1, 1.1 );
+		color: $green;
+		text-shadow: 0 1px 3px rgba( 0, 0, 0, 0.1 );
 	}
 }
 
@@ -261,7 +262,7 @@ section
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	top: 178px;
+	top: 130px;
 }
 
 .section-header
@@ -310,6 +311,9 @@ section
 
 .tool-logo
 {
+	align-items: center;
+	justify-content: center;
+
 	width: 130px;
 	height: 130px;
 	margin-bottom: 25px;
@@ -328,6 +332,77 @@ section
 	margin-bottom: 82px;
 }
 
+.angular
+{
+	width: 62px;
+	height: 65px;
+	background-image: url( './images/tools/angular.png' );
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.sass-and-jade
+{
+	width: 89px;
+	height: 76px;
+	background-image: url( './images/tools/sass-and-jade.png' );
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.eslint
+{
+	width: 57px;
+	height: 60px;
+	background-image: url( './images/tools/eslint.svg' );
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.karma-and-protractor
+{
+	width: 104px;
+	height: 61px;
+	background-image: url( './images/tools/karma-and-protractor.png' );
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.express
+{
+	width: 65px;
+	height: 18px;
+	background-image: url( './images/tools/express.svg' );
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.mongo
+{
+	width: 48px;
+	height: 79px;
+	background-image: url( './images/tools/mongo.png' );
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.passport
+{
+	width: 58px;
+	height: 58px;
+	background-image: url( './images/tools/passport.png' );
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.mocha
+{
+	width: 81px;
+	height: 81px;
+	background-image: url( './images/tools/mocha.svg' );
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 
 
 //------------+

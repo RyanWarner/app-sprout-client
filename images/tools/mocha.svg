@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>mocha</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="main" sketch:type="MSArtboardGroup" transform="translate(-921.000000, -1723.000000)">
+            <g id="tools" sketch:type="MSLayerGroup" transform="translate(128.500000, 1029.000000)">
+                <g id="tool-icons" transform="translate(92.500000, 320.000000)">
+                    <g id="server-side-tests" transform="translate(644.000000, 350.000000)">
+                        <g id="mocha" transform="translate(56.000000, 24.000000)">
+                            <circle id="Oval-10" fill="#8A6343" sketch:type="MSShapeGroup" cx="41" cy="41.1757812" r="40.5878906"></circle>
+                            <text sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="16" font-weight="normal" fill="#FFFFFF">
+                                <tspan x="16.5" y="47.1757812">mocha</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
