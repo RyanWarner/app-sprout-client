@@ -47,7 +47,4 @@ account.controller( 'AccountController', function( $rootScope, $scope, storageFa
 			}, 400 );
 		} );
 	};
-	
-	
-
 } );

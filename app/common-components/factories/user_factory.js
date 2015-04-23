@@ -12,8 +12,6 @@ userFactory.factory( 'userFactory', function( $http, $q, appConstants, storageFa
 		var deferred = $q.defer(  );
 		var promise = deferred.promise;
 
-		console.log( 'updateUserInfo', userInfo )
-
 		$http( {
 
 			method: 'post',
