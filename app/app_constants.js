@@ -6,7 +6,7 @@ appConstants.constant( 'appConstants',
 {
 	// Setup Config (!)
 
-	// BACKEND_URL: 'http://rywar.local:9000'
-	BACKEND_URL: 'http://ec2-54-186-189-69.us-west-2.compute.amazonaws.com:80'
+	BACKEND_URL: 'http://rywar.local:9000'
+	// BACKEND_URL: 'http://ec2-54-186-189-69.us-west-2.compute.amazonaws.com:80'
 
 } );

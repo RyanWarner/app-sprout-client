@@ -4,5 +4,6 @@ exports.config =
 	capabilities:
 	{
 		'browserName': 'chrome'
-	}
+	},
+	baseUrl: 'http://localhost:9000'
 };
