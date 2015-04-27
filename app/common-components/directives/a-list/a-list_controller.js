@@ -42,6 +42,7 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 	};
 
 	getList(  );
+	listCopy = angular.copy( $scope.list );
 
 	$scope.addNewListItem = function(  )
 	{
