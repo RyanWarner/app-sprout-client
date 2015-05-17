@@ -45,6 +45,10 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 
 		console.log( listFactoryApi.list );
 
+		var cleanItem = angular.toJson( item );
+		cleanItem = angular.fromJson( cleanItem );
+		console.log( cleanItem );
+
 		$http( {
 
 			method: 'post',
@@ -52,7 +56,7 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 			url: appConstants.BACKEND_URL + '/api/user/list',
 			data:
 			{
-				listItem: item
+				listItem: cleanItem
 			}
 
 		} )
@@ -73,9 +77,13 @@ listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 
 	listFactoryApi.deleteListItem = function( item )
 	{
-		console.log( item );
 		var deferred = $q.defer(  );
 		var promise = deferred.promise;
+
+		item = angular.toJson( item );
+		item = angular.fromJson( item );
+
+		console.log( item );
 
 		$http( {
 

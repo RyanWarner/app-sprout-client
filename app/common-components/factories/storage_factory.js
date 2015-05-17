@@ -19,11 +19,11 @@ storageFactory.factory( 'storageFactory', function( $window )
 		},
 		setObject: function( key, value )
 		{
-			$window.localStorage[ key ] = JSON.stringify( value );
+			$window.localStorage[ key ] = angular.toJson( value );
 		},
 		getObject: function( key )
 		{
-			return JSON.parse( $window.localStorage[ key ] || '{}' );
+			return angular.fromJson( $window.localStorage[ key ] || '{}' );
 		}
 	};
 
@@ -39,11 +39,11 @@ storageFactory.factory( 'storageFactory', function( $window )
 		},
 		setObject: function( key, value )
 		{
-			$window.sessionStorage[ key ] = JSON.stringify( value );
+			$window.sessionStorage[ key ] = angular.toJson( value );
 		},
 		getObject: function( key )
 		{
-			return JSON.parse( $window.sessionStorage[ key ] || '{}' );
+			return angular.fromJson( $window.sessionStorage[ key ] || '{}' );
 		}
 	};
 

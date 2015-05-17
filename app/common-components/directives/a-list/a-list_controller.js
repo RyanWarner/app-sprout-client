@@ -21,10 +21,10 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 		listFactory.getList(  )
 		.then( function( list )
 		{
-			if( list.length === 0 )
+			if( ( !list ) || ( list.length === 0 ) )
 			{
-				console.log( list.length );
-				$scope.list = list;
+				// console.log( list.length );
+				// $scope.list = list;
 				listCopy = angular.copy( $scope.list );
 				$scope.addNewListItem(  );
 			}

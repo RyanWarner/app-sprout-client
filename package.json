@@ -59,7 +59,7 @@
     "merge-stream": "^0.1.7",
     "mocha": "^2.2.1",
     "protractor": "^2.0.0",
-    "protractor-http-mock": "^0.1.8",
+    "protractor-http-mock": "^0.1.12",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.0.2",
     "selenium-standalone-jar": "^2.45.0",
