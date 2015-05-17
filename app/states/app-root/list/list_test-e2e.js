@@ -57,7 +57,27 @@ describe( 'App List', function(  )
 					listItem:
 					{
 						_id: 'abc',
-						name: 'new list item'
+						name: 'updated list item'
+					}
+				}
+			},
+			response:
+			{
+				status: 200
+			}
+		},
+		{
+			request:
+			{
+				path: '/api/user/list',
+				withCredentials: true,
+				method: 'post',
+				data:
+				{
+					listItem:
+					{
+						_id: 'abc',
+						name: 'updated list item'
 					}
 				}
 			},
@@ -67,12 +87,6 @@ describe( 'App List', function(  )
 			}
 		}
 	] );
-
-
-	// beforeEach( function(  )
-	// {
-	// 	mock.clearRequests(  );
-	// } );
 
 	afterEach( function(  )
 	{
@@ -116,44 +130,51 @@ describe( 'App List', function(  )
 		] );
 	} );
 
-	// it( 'should update an existing item', function(  )
-	// {
-	// 	browser.get( 'http://localhost:8080/app/list' );
+	it( 'should update an existing item', function(  )
+	{
+		mock.clearRequests(  );
 
-	// 	element( by.model( 'newItem' ) ).sendKeys( 'new list item' );
-	// 	element( by.css( 'div.enter-icon' ) ).click(  );
+		var list = element.all( by.repeater( 'item in list' ) );
 
-	// 	var list = element.all( by.repeater( 'item in list' ) );
+		expect( list.count(  ) ).toEqual( 1 );
 
-	// 	expect( list.count(  ) ).toEqual( 1 );
+		var newListItemElement = list.get( 0 ).element( by.model( 'item.name' ) );
 
-	// 	var newListItemElement = list.get( 0 ).element( by.model( 'item.name' ) );
+		newListItemElement.clear(  );
+		newListItemElement.sendKeys( 'updated list item' );
+		newListItemElement.sendKeys( protractor.Key.ENTER );
 
-	// 	newListItemElement.clear(  );
-	// 	newListItemElement.sendKeys( 'updated list item' );
-	// 	newListItemElement.sendKeys( protractor.Key.ENTER );
+		expect( newListItemElement.getAttribute( 'value' ) ).toEqual( 'updated list item' );
 
-	// 	expect( newListItemElement.getAttribute( 'value' ) ).toEqual( 'updated list item' );
-	// } );
+		expect( mock.requestsMade(  ) ).toEqual(
+		[
+			{
+				url: 'http://localhost:9000/api/user/list',
+				withCredentials: true,
+				method: 'post',
+				data:
+				{
+					listItem:
+					{
+						_id: 'abc',
+						name: 'updated list item'
+					}
+				}
+			}
+		] );
+	} );
 
 	it( 'should delete an existing item', function(  )
 	{
 		mock.clearRequests(  );
-		// browser.get( 'http://localhost:8080/app/list' );
-
-		// element( by.model( 'newItem' ) ).sendKeys( 'new list item' );
-		// element( by.css( 'div.enter-icon' ) ).click(  );
 
 		var list = element.all( by.repeater( 'item in list' ) );
 
 		expect( list.count(  ) ).toEqual( 1 );
 
 		var deleteElement = list.get( 0 ).element( by.css( '.delete-list-item' ) );
-		// var deleteElement = deleteElements.get( 0 );
-		// console.log( 'deleteElement', deleteElement );
 
 		deleteElement.click(  );
-		browser.sleep( 20 );
 		expect( list.count(  ) ).toEqual( 0 );
 
 		expect( mock.requestsMade(  ) ).toEqual(
@@ -167,7 +188,7 @@ describe( 'App List', function(  )
 					listItem:
 					{
 						_id: 'abc',
-						name: 'new list item'
+						name: 'updated list item'
 					}
 				}
 			}
