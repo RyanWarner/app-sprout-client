@@ -11,7 +11,7 @@
 						| Your email is required.
 			hr.login-rule
 			.login-password
-				input( type='text', name='password', required='', placeholder='Password', ng-model='password' )
+				input( type='password', name='password', required='', placeholder='Password', ng-model='password' )
 				.form-error( ng-show='form.$submitted && !form.email.$error.email' )
 					div( ng-show='form.password.$error.required' )
 						| Your password is required.

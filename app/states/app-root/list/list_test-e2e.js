@@ -1,16 +1,197 @@
 'use strict';
 
-describe( 'angularjs homepage todo list', function(  )
+var mock = require( 'protractor-http-mock' );
+
+describe( 'App List', function(  )
 {
-	it( 'should add a todo', function(  )
+	mock(
+	[
+		{
+			request:
+			{
+				path: '/api/user/list',
+				withCredentials: true,
+				method: 'post',
+				data:
+				{
+					listItem:
+					{
+						name: 'new list item'
+					}
+				}
+			},
+			response:
+			{
+				status: 200,
+				data:
+				{
+					newListItem:
+					{
+						_id: 'abc',
+						name: 'new list item'
+					}
+				}
+			}
+		},
+		{
+			request:
+			{
+				path: '/api/user/list',
+				withCredentials: true,
+				method: 'get'
+			},
+			response:
+			{
+				status: 200,
+				data: []
+			}
+		},
+		{
+			request:
+			{
+				path: '/api/user/list',
+				withCredentials: true,
+				method: 'put',
+				data:
+				{
+					listItem:
+					{
+						_id: 'abc',
+						name: 'updated list item'
+					}
+				}
+			},
+			response:
+			{
+				status: 200
+			}
+		},
+		{
+			request:
+			{
+				path: '/api/user/list',
+				withCredentials: true,
+				method: 'post',
+				data:
+				{
+					listItem:
+					{
+						_id: 'abc',
+						name: 'updated list item'
+					}
+				}
+			},
+			response:
+			{
+				status: 200
+			}
+		}
+	] );
+
+	afterEach( function(  )
 	{
-		browser.get( 'http://www.angularjs.org' );
+		mock.teardown(  );
+	} );
 
-		element( by.model( 'todoText' ) ).sendKeys( 'write a protractor test' );
-		element( by.css( '[value="add"]' ) ).click(  );
 
-		var todoList = element.all( by.repeater( 'todo in todos' ) );
-		expect( todoList.count(  ) ).toEqual( 3 );
-		expect( todoList.get( 2 ).getText(  ) ).toEqual( 'write a protractor test' );
+	it( 'should add an item to the list', function(  )
+	{
+		browser.ignoreSynchronization = false;
+
+		browser.get( 'http://localhost:8080/app/list' );
+
+		element( by.model( 'newItem' ) ).sendKeys( 'new list item' );
+		element( by.css( '.enter-icon' ) ).click(  );
+
+		var list = element.all( by.repeater( 'item in list' ) );
+		browser.sleep( 20 );
+
+		expect( list.count(  ) ).toEqual( 1 );
+		expect( list.get( 0 ).element( by.model( 'item.name' ) ).getAttribute( 'value' ) ).toEqual( 'new list item' );
+
+		expect( mock.requestsMade(  ) ).toEqual(
+		[
+			{
+				url: 'http://localhost:9000/api/user/list',
+				withCredentials: true,
+				method: 'get'
+			},
+			{
+				url: 'http://localhost:9000/api/user/list',
+				withCredentials: true,
+				method: 'post',
+				data:
+				{
+					listItem:
+					{
+						name: 'new list item'
+					}
+				} }
+		] );
+	} );
+
+	it( 'should update an existing item', function(  )
+	{
+		mock.clearRequests(  );
+
+		var list = element.all( by.repeater( 'item in list' ) );
+
+		expect( list.count(  ) ).toEqual( 1 );
+
+		var newListItemElement = list.get( 0 ).element( by.model( 'item.name' ) );
+
+		newListItemElement.clear(  );
+		newListItemElement.sendKeys( 'updated list item' );
+		newListItemElement.sendKeys( protractor.Key.ENTER );
+
+		expect( newListItemElement.getAttribute( 'value' ) ).toEqual( 'updated list item' );
+
+		expect( mock.requestsMade(  ) ).toEqual(
+		[
+			{
+				url: 'http://localhost:9000/api/user/list',
+				withCredentials: true,
+				method: 'post',
+				data:
+				{
+					listItem:
+					{
+						_id: 'abc',
+						name: 'updated list item'
+					}
+				}
+			}
+		] );
+	} );
+
+	it( 'should delete an existing item', function(  )
+	{
+		mock.clearRequests(  );
+
+		var list = element.all( by.repeater( 'item in list' ) );
+
+		expect( list.count(  ) ).toEqual( 1 );
+
+		var deleteElement = list.get( 0 ).element( by.css( '.delete-list-item' ) );
+
+		deleteElement.click(  );
+		expect( list.count(  ) ).toEqual( 0 );
+
+		expect( mock.requestsMade(  ) ).toEqual(
+		[
+			{
+				url: 'http://localhost:9000/api/user/list',
+				withCredentials: true,
+				method: 'put',
+				data:
+				{
+					listItem:
+					{
+						_id: 'abc',
+						name: 'updated list item'
+					}
+				}
+			}
+		] );
 	} );
 } );
