@@ -10,6 +10,11 @@ section
 {
 	margin-bottom: 78px;
 
+	&:first-child
+	{
+		margin-bottom: 40px;
+	}
+
 	&.features
 	{
 		margin-bottom: 0;
@@ -22,8 +27,8 @@ section
 
 	width: 92px;
 	height: 200px;
-	margin-top: 42px;
-	margin-bottom: 30px;
+	margin-top: 32px;
+	margin-bottom: 22px;
 	background-image: url( 'images/sprout-logo.png' );
 	background-position: center;
 	background-size: cover;
@@ -34,7 +39,7 @@ section
 {
 	align-self: center;
 
-	margin-bottom: 16px;
+	margin-bottom: 10px;
 
 	font-size: 31px;
 }
@@ -43,9 +48,10 @@ section
 {
 	align-self: center;
 
-	margin-bottom: 70px;
+	margin-bottom: 34px;
 
-	font-size: 20px;
+	color: rgba( 123, 123, 123, 0.5 );
+	font-size: 18px;
 }
 
 .footer-source-links
@@ -65,7 +71,7 @@ section
 
 	.github
 	{
-		margin-bottom: 50px;
+		margin-bottom: 30px;
 	}
 }
 
@@ -83,7 +89,7 @@ section
 
 	margin-bottom: 10px;
 
-	font-size: 38px;
+	font-size: 32px;
 }
 
 .sketch-logo
@@ -92,7 +98,7 @@ section
 
 	margin-bottom: 10px;
 
-	font-size: 38px;
+	font-size: 32px;
 }
 
 a.github,
@@ -114,6 +120,20 @@ a.sketch
 		text-shadow: 0 1px 3px rgba( 0, 0, 0, 0.1 );
 	}
 }
+
+// .scroll-down
+// {
+// 	align-items: center;
+
+// 	width: 100%;
+// 	margin-top: 40px;
+
+// 	color: darken( #ffffff, 20% );
+// 	font-weight: 500;
+// 	font-size: 12px;
+// 	text-transform: uppercase;
+// 	// text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.2 );
+// }
 
 .login-form
 {
