@@ -13,12 +13,8 @@ gulp.task( 'connect', function(  )
 	connect.server(
 	{
 		root: path.to.destination,
-		hostname: '0.0.0.0',
+		host: '0.0.0.0',
 		livereload: true,
-		middleware: function(  )
-		{
-			// This get's rid of the # symbol in the URL
-			return [ noHash ];
-		}
+		fallback: path.to.destination + '/index.html'
 	} );
 } );
