@@ -19,7 +19,7 @@ userFactory.factory( 'userFactory', function( $http, $q, appConstants, storageFa
 			withCredentials: true,
 			data:
 			{
-				'userInfo': userInfo
+				userInfo: userInfo
 			}
 
 		} )

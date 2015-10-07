@@ -13,7 +13,7 @@ homepage.config( function( $stateProvider )
 		url: '/',
 		views:
 		{
-			'homepage':
+			homepage:
 			{
 				templateUrl: 'states/homepage/homepage_template.html',
 				controller: 'HomepageController as homepage'

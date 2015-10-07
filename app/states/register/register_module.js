@@ -13,7 +13,7 @@ register.config( function( $stateProvider )
 		url: '/register',
 		views:
 		{
-			'homepage':
+			homepage:
 			{
 				templateUrl: 'states/register/register_template.html',
 				controller: 'RegisterController as register'

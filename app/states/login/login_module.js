@@ -13,7 +13,7 @@ login.config( function( $stateProvider )
 		url: '/login',
 		views:
 		{
-			'homepage':
+			homepage:
 			{
 				templateUrl: 'states/login/login_template.html',
 				controller: 'LoginController as login'
