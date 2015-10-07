@@ -47,7 +47,7 @@
     	"no-trailing-spaces": 1,
     	"no-underscore-dangle": 0,
     	"quotes": [1, "single"],
-    	"quote-props": true,
+    	"quote-props": [2, "always"],
     	"semi": [2, "always"],
     	"space-in-brackets": [2, "always"],
     	"space-in-parens": [2, "always"],
