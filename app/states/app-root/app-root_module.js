@@ -16,7 +16,7 @@ appRoot.config( function( $stateProvider )
 		url: '/app',
 		views:
 		{
-			'app':
+			app:
 			{
 				templateUrl: 'states/app-root/app-root_template.html',
 				controller: 'AppRootController as appRoot'

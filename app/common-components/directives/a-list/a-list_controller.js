@@ -74,7 +74,7 @@ aList.controller( 'AListController', function( $rootScope, $scope, listFactory, 
 
 		var newItem =
 		{
-			'name': itemValue
+			name: itemValue
 		};
 
 		$scope.list.push( newItem );
