@@ -1,6 +1,6 @@
 # app-sprout-client
 
-An opinionated starting point for AngularJS web applications. Pair this with app-sprout-server.
+An opinionated starting point for Angular 1.x web applications. Pair this with app-sprout-server.
 
 Why? What's wrong with existing seeds like [nghellostyle](https://github.com/zemirco/nghellostyle), the official [angular-seed](https://github.com/angular/angular-seed), or [ngbp](https://github.com/ngbp/ngbp)? Nothing, really. In fact, I learned an incredible amount from all of the above, and copied the important stuff like:
 - [Grouping everything in 'states' and 'components'](https://github.com/zemirco/nghellostyle#everything-is-grouped-in-states-and-components).
@@ -25,7 +25,7 @@ I still have many questions to answer and best practices to discover, and when I
 What defining tools and libraries make up this project's architecture?
 
 #### Front-end framework
-- [Angular](https://angularjs.org/) with [AngularUI Router](https://github.com/angular-ui/ui-router)
+- [Angular 1](https://angularjs.org/) with [AngularUI Router](https://github.com/angular-ui/ui-router)
 
 #### Preprocessors
 - [Jade](http://jade-lang.com/)
