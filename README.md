@@ -172,7 +172,7 @@ Building does a number of things:
 
 ## Coding Style
 
-angular-sprout uses [squint-style](https://github.com/RyanWarner/squint-style).
+This project uses [squint-style](https://github.com/RyanWarner/squint-style).
 
 ### File Naming Conventions
 
