@@ -24,14 +24,80 @@ module.exports = function( config )
     // list of files / patterns to load in the browser
     files:
     [
-        '../bower_components/angular/angular.js',
-        '../bower_components/angular-mocks/angular-mocks.js',
-        '../bower_components/angular-ui-router/release/angular-ui-router.js',
 
-        '../app/**/*_module.js',
-        '../app/**/*_controller.js',
-        '../app/**/*_test-unit.js'
-    ],
+          "../build-destination/bower/angular/angular.js",
+
+          "../build-destination/bower/angular-animate/angular-animate.js",
+
+          "../build-destination/bower/angular-mocks/angular-mocks.js",
+
+          "../app/states/app-root/app-root_test-unit.js",
+
+          "../build-destination/bower/velocity/velocity.js",
+
+          "../app/states/homepage/homepage_test-unit.js",
+
+          "../build-destination/bower/velocity/velocity.ui.js",
+
+          "../app/states/login/login_test-unit.js",
+
+          "../build-destination/bower/angular-ui-router/release/angular-ui-router.js",
+
+          "../app/states/register/register_test-unit.js",
+
+          "../build-destination/bower/jquery/dist/jquery.js",
+
+          "../app/states/app-root/account/account_test-unit.js",
+
+          "../app/states/app-root/list/list_test-unit.js",
+
+          "../build-destination/states/app-root/list/list_module.js",
+
+          "../build-destination/states/app-root/list/list_controller.js",
+
+          "../build-destination/states/app-root/account/account_module.js",
+
+          "../build-destination/states/app-root/account/account_controller.js",
+
+          "../build-destination/common-components/directives/spinner/spinner_module.js",
+
+          "../build-destination/common-components/directives/a-list/a-list_module.js",
+
+          "../build-destination/common-components/directives/a-list/a-list_controller.js",
+
+          "../build-destination/common-components/directives/example-directive/example-directive_module.js",
+
+          "../build-destination/states/register/register_module.js",
+
+          "../build-destination/states/register/register_controller.js",
+
+          "../build-destination/states/login/login_module.js",
+
+          "../build-destination/states/login/login_controller.js",
+
+          "../build-destination/states/homepage/homepage_module.js",
+
+          "../build-destination/states/homepage/homepage_controller.js",
+
+          "../build-destination/states/app-root/app-root_module.js",
+
+          "../build-destination/states/app-root/app-root_controller.js",
+
+          "../build-destination/common-components/filters/reverse_module.js",
+
+          "../build-destination/common-components/factories/user_factory.js",
+
+          "../build-destination/common-components/factories/storage_factory.js",
+
+          "../build-destination/common-components/factories/session_factory.js",
+
+          "../build-destination/common-components/factories/list_factory.js",
+
+          "../build-destination/app_module.js",
+
+          "../build-destination/app_constants.js"
+
+          ],
 
 
     // list of files to exclude

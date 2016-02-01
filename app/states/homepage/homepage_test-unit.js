@@ -13,11 +13,11 @@ describe( 'Root', function(  )
 	beforeEach( inject( function( $rootScope, $controller )
 	{
 		scope = $rootScope.$new(  );
-		controller = $controller( 'RootController', { $scope: scope } );
+		controller = $controller( 'HomepageController', { $scope: scope } );
 	} ) );
 
 	it( 'should have a scope variable', function(  )
 	{
-		expect( scope.stateName ).to.equal( 'root' );
+		expect( scope.stateName ).to.equal( 'homepage' );
 	} );
 } );
