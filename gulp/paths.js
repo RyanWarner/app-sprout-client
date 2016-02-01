@@ -75,6 +75,7 @@ module.exports =
 		{
 			source: root + '/app/**/*_test*.js',
 			e2e: root + '/app/**/*_test-e2e.js',
+			unit: root + '/app/**/*_test-unit.js',
 			karmaConfig: root + '/tests/karma.config.js',
 			protractorConfig: root + '/tests/protractor.config.js'
 		},
