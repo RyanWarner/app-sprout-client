@@ -4,7 +4,7 @@ var gulp            = require( 'gulp' );
 var Karma           = require( 'karma' ).Server;
 var inject          = require( 'gulp-inject' );
 var angularFilesort = require( 'gulp-angular-filesort' );
-var es = require('event-stream');
+var es              = require( 'event-stream' );
 
 var path            = require( '../../paths.js' );
 var error           = require( '../../error-handler.js' );
@@ -16,9 +16,9 @@ gulp.task( 'karma-inject', function( done )
 
 	var bowerSource    = gulp.src( [ path.to.bower.scripts ], { read: false } );
 
-	var unitTestsSource    = gulp.src( [ path.to.tests.unit ], { read: false } );
+	var unitTestsSrc   = gulp.src( [ path.to.tests.unit ], { read: false } );
 
-	var allJs = es.merge( sortedAppJs, bowerSource, unitTestsSource );
+	var allJs = es.merge( sortedAppJs, bowerSource, unitTestsSrc );
 
 	gulp.src( path.to.tests.karmaConfig )
 		.pipe( inject( allJs,
@@ -29,15 +29,15 @@ gulp.task( 'karma-inject', function( done )
 			{
 				return '"..' + filepath + '"' + ( i + 1 < length ? ',' : '' );
 			}
-	  } ) )
-	  .pipe( gulp.dest( './tests/' ) );
+		} ) )
+		.pipe( gulp.dest( './tests/' ) );
 } );
 
-gulp.task( 'unit-tests', function( done )
+gulp.task( 'unit-tests', [ 'karma-inject' ], function( done )
 {
 	new Karma(
 	{
-	    configFile: path.to.tests.karmaConfig,
-	    singleRun: true
-  	}, done ).start(  );
+		configFile: path.to.tests.karmaConfig,
+		singleRun: true
+	}, done ).start(  );
 } );
