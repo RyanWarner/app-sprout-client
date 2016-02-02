@@ -1,4 +1,9 @@
-# app-sprout-client [![Dependency Status](https://gemnasium.com/RyanWarner/app-sprout-client.svg)](https://gemnasium.com/RyanWarner/app-sprout-client) ![https://david-dm.org/RyanWarner/app-sprout-client#info=devDependencies](https://david-dm.org/RyanWarner/app-sprout-client/dev-status.svg)
+[dep-status-img]: https://gemnasium.com/RyanWarner/app-sprout-client.svg
+[dep-status-link]: https://gemnasium.com/RyanWarner/app-sprout-client
+[dev-status-img]: https://david-dm.org/RyanWarner/app-sprout-client/dev-status.svg
+[dev-status-link]: https://david-dm.org/RyanWarner/app-sprout-client#info=devDependencies
+
+# app-sprout-client [![Dependency Status][dep-status-img]][dep-status-link] [![dev-status-img]][dev-status-link]
 
 An opinionated starting point for Angular 1.x web applications. Pair this with app-sprout-server.
 
