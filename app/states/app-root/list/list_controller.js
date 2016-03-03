@@ -1,20 +1,24 @@
 'use strict';
 
-var list = angular.module( 'list' );
-
-list.controller( 'ListController', function( $rootScope, $scope, listFactory, $timeout )
+( function(  )
 {
-	// This is a controller.
+	var list = angular.module( 'list' );
 
-	$scope.stateName = 'list';
-
-	// console.log( window.Velocity ); this is working!
-
-	console.log( 'ListController active!' );
-
-	$scope.$watch( 'aList', function(  )
+	list.controller( 'ListController', function( $rootScope, $scope, listFactory, $timeout )
 	{
-		console.log( $scope.aList );
-		console.log( '' );
+		// This is a controller.
+
+		$scope.stateName = 'list';
+
+		// console.log( window.Velocity ); this is working!
+
+		console.log( 'ListController active!' );
+
+		$scope.$watch( 'aList', function(  )
+		{
+			console.log( $scope.aList );
+			console.log( '' );
+		} );
 	} );
-} );
+
+} )(  );

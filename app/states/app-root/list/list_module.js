@@ -1,28 +1,32 @@
 'use strict';
 
-var list = angular.module( 'list',
-[
-	'ui.router',
-	'listFactory',
-	'ngEnter',
-	'ngAnimate',
-	'spinner',
-	'aList'
-] );
-
-
-list.config( function( $stateProvider )
+( function(  )
 {
-	$stateProvider.state( 'app-root.list',
+	var list = angular.module( 'list',
+	[
+		'ui.router',
+		'listFactory',
+		'ngEnter',
+		'ngAnimate',
+		'spinner',
+		'aList'
+	] );
+
+
+	list.config( function( $stateProvider )
 	{
-		url: '/list',
-		views:
+		$stateProvider.state( 'app-root.list',
 		{
-			'app-content':
+			url: '/list',
+			views:
 			{
-				templateUrl: 'states/app-root/list/list_template.html',
-				controller: 'ListController as list'
+				'app-content':
+				{
+					templateUrl: 'states/app-root/list/list_template.html',
+					controller: 'ListController as list'
+				}
 			}
-		}
+		} );
 	} );
-} );
+
+} )(  );
