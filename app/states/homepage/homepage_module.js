@@ -1,23 +1,27 @@
 'use strict';
 
-var homepage = angular.module( 'homepage',
-[
-	'ui.router',
-	'sessionFactory'
-] );
-
-homepage.config( function( $stateProvider )
+( function(  )
 {
-	$stateProvider.state( 'homepage',
+	var homepage = angular.module( 'homepage',
+	[
+		'ui.router',
+		'sessionFactory'
+	] );
+
+	homepage.config( function( $stateProvider )
 	{
-		url: '/',
-		views:
+		$stateProvider.state( 'homepage',
 		{
-			homepage:
+			url: '/',
+			views:
 			{
-				templateUrl: 'states/homepage/homepage_template.html',
-				controller: 'HomepageController as homepage'
+				homepage:
+				{
+					templateUrl: 'states/homepage/homepage_template.html',
+					controller: 'HomepageController as homepage'
+				}
 			}
-		}
+		} );
 	} );
-} );
+
+} )(  );

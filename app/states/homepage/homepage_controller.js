@@ -1,32 +1,36 @@
 'use strict';
 
-var homepage = angular.module( 'homepage' );
-
-homepage.controller( 'HomepageController', function( $rootScope, $scope, $state, sessionFactory )
+( function(  )
 {
-	// This is a controller.
+	var homepage = angular.module( 'homepage' );
 
-	$scope.stateName = 'homepage';
-
-	$scope.email = '';
-	$scope.password = '';
-
-	$scope.registerAndLogin = function(  )
+	homepage.controller( 'HomepageController', function( $rootScope, $scope, $state, sessionFactory )
 	{
-		var user = {  };
+		// This is a controller.
 
-		user.email = $scope.email;
-		user.password = $scope.password;
+		$scope.stateName = 'homepage';
 
-		console.log( user );
+		$scope.email = '';
+		$scope.password = '';
 
-		sessionFactory.registerAndLogin( user )
-		.then( function(  )
+		$scope.registerAndLogin = function(  )
 		{
-			$state.go( 'app-root.list' );
-		} );
-	};
+			var user = {  };
 
-	console.log( 'HomepageController active!' );
+			user.email = $scope.email;
+			user.password = $scope.password;
 
-} );
+			console.log( user );
+
+			sessionFactory.registerAndLogin( user )
+			.then( function(  )
+			{
+				$state.go( 'app-root.list' );
+			} );
+		};
+
+		console.log( 'HomepageController active!' );
+
+	} );
+
+} )(  );
