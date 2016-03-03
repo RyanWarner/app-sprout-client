@@ -1,27 +1,31 @@
 'use strict';
 
-var appRoot = angular.module( 'appRoot',
-[
-	'ui.router',
-
-	'list',
-	'account'
-] );
-
-
-appRoot.config( function( $stateProvider )
+( function(  )
 {
-	$stateProvider.state( 'app-root',
+	var appRoot = angular.module( 'appRoot',
+	[
+		'ui.router',
+
+		'list',
+		'account'
+	] );
+
+
+	appRoot.config( function( $stateProvider )
 	{
-		url: '/app',
-		views:
+		$stateProvider.state( 'app-root',
 		{
-			app:
+			url: '/app',
+			views:
 			{
-				templateUrl: 'states/app-root/app-root_template.html',
-				controller: 'AppRootController as appRoot'
-			}
-		},
-		abstract: true
+				app:
+				{
+					templateUrl: 'states/app-root/app-root_template.html',
+					controller: 'AppRootController as appRoot'
+				}
+			},
+			abstract: true
+		} );
 	} );
-} );
+
+} )(  );
