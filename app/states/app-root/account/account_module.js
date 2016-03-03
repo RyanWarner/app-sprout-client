@@ -1,23 +1,27 @@
 'use strict';
 
-var account = angular.module( 'account',
-[
-	'ui.router'
-] );
-
-
-account.config( function( $stateProvider )
+( function(  )
 {
-	$stateProvider.state( 'app-root.account',
+	var account = angular.module( 'account',
+	[
+		'ui.router'
+	] );
+
+
+	account.config( function( $stateProvider )
 	{
-		url: '/account',
-		views:
+		$stateProvider.state( 'app-root.account',
 		{
-			'app-content':
+			url: '/account',
+			views:
 			{
-				templateUrl: 'states/app-root/account/account_template.html',
-				controller: 'AccountController as account'
+				'app-content':
+				{
+					templateUrl: 'states/app-root/account/account_template.html',
+					controller: 'AccountController as account'
+				}
 			}
-		}
+		} );
 	} );
-} );
+
+} )(  );

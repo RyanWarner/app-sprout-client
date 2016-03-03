@@ -1,50 +1,54 @@
 'use strict';
 
-var account = angular.module( 'account' );
-
-account.controller( 'AccountController', function( $rootScope, $scope, storageFactory, userFactory, $timeout )
+( function(  )
 {
-	$scope.stateName = 'app.account';
-	$scope.loading = false;
-	$scope.justSaved = false;
+	var account = angular.module( 'account' );
 
-	console.log( 'AccountController active!' );
-
-	$timeout( function(  )
+	account.controller( 'AccountController', function( $rootScope, $scope, storageFactory, userFactory, $timeout )
 	{
-		$scope.user = storageFactory.local.getObject( 'user' );
-		console.log( $scope.user );
-	} );
+		$scope.stateName = 'app.account';
+		$scope.loading = false;
+		$scope.justSaved = false;
 
-	$scope.updateUserInfo = function(  )
-	{
-		if( !$scope.form.$valid )
+		console.log( 'AccountController active!' );
+
+		$timeout( function(  )
 		{
-			return;
-		}
+			$scope.user = storageFactory.local.getObject( 'user' );
+			console.log( $scope.user );
+		} );
 
-		$scope.loading = true;
-
-		var userInfo = {  };
-
-		userInfo.name = $scope.user.name;
-		userInfo.email = $scope.user.email;
-		userInfo.password = $scope.user.password;
-
-		userFactory.updateUserInfo( userInfo )
-		.then( function(  )
+		$scope.updateUserInfo = function(  )
 		{
-			$timeout( function(  )
+			if( !$scope.form.$valid )
 			{
-				$scope.loading = false;
-				$scope.justSaved = true;
-				$scope.user.password = '';
+				return;
+			}
 
+			$scope.loading = true;
+
+			var userInfo = {  };
+
+			userInfo.name = $scope.user.name;
+			userInfo.email = $scope.user.email;
+			userInfo.password = $scope.user.password;
+
+			userFactory.updateUserInfo( userInfo )
+			.then( function(  )
+			{
 				$timeout( function(  )
 				{
-					$scope.justSaved = false;
-				}, 2200 );
-			}, 400 );
-		} );
-	};
-} );
+					$scope.loading = false;
+					$scope.justSaved = true;
+					$scope.user.password = '';
+
+					$timeout( function(  )
+					{
+						$scope.justSaved = false;
+					}, 2200 );
+				}, 400 );
+			} );
+		};
+	} );
+
+} )(  );
