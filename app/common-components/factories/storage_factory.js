@@ -1,53 +1,56 @@
 'use strict';
 
-
-var storageFactory = angular.module( 'storageFactory', [  ] );
-
-storageFactory.factory( 'storageFactory', function( $window )
+( function(  )
 {
-	var storageFactoryApi = {  };
+	var storageFactory = angular.module( 'storageFactory', [  ] );
 
-	storageFactoryApi.local =
+	storageFactory.factory( 'storageFactory', function( $window )
 	{
-		set: function( key, value )
-		{
-			$window.localStorage[ key ] = value;
-		},
-		get: function( key )
-		{
-			return $window.localStorage[ key ];
-		},
-		setObject: function( key, value )
-		{
-			$window.localStorage[ key ] = angular.toJson( value );
-		},
-		getObject: function( key )
-		{
-			return angular.fromJson( $window.localStorage[ key ] || '{}' );
-		}
-	};
+		var storageFactoryApi = {  };
 
-	storageFactoryApi.session =
-	{
-		set: function( key, value )
+		storageFactoryApi.local =
 		{
-			$window.sessionStorage[ key ] = value;
-		},
-		get: function( key )
-		{
-			return $window.sessionStorage[ key ];
-		},
-		setObject: function( key, value )
-		{
-			$window.sessionStorage[ key ] = angular.toJson( value );
-		},
-		getObject: function( key )
-		{
-			return angular.fromJson( $window.sessionStorage[ key ] || '{}' );
-		}
-	};
+			set: function( key, value )
+			{
+				$window.localStorage[ key ] = value;
+			},
+			get: function( key )
+			{
+				return $window.localStorage[ key ];
+			},
+			setObject: function( key, value )
+			{
+				$window.localStorage[ key ] = angular.toJson( value );
+			},
+			getObject: function( key )
+			{
+				return angular.fromJson( $window.localStorage[ key ] || '{}' );
+			}
+		};
 
-	// Return public API.
+		storageFactoryApi.session =
+		{
+			set: function( key, value )
+			{
+				$window.sessionStorage[ key ] = value;
+			},
+			get: function( key )
+			{
+				return $window.sessionStorage[ key ];
+			},
+			setObject: function( key, value )
+			{
+				$window.sessionStorage[ key ] = angular.toJson( value );
+			},
+			getObject: function( key )
+			{
+				return angular.fromJson( $window.sessionStorage[ key ] || '{}' );
+			}
+		};
 
-	return storageFactoryApi;
-} );
+		// Return public API.
+
+		return storageFactoryApi;
+	} );
+
+} )(  );

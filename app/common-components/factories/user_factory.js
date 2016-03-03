@@ -1,46 +1,49 @@
 'use strict';
 
-
-var userFactory = angular.module( 'userFactory', [  ] );
-
-userFactory.factory( 'userFactory', function( $http, $q, appConstants, storageFactory )
+( function(  )
 {
-	var userFactoryApi = {  };
+	var userFactory = angular.module( 'userFactory', [  ] );
 
-	userFactoryApi.updateUserInfo = function( userInfo )
+	userFactory.factory( 'userFactory', function( $http, $q, appConstants, storageFactory )
 	{
-		var deferred = $q.defer(  );
-		var promise = deferred.promise;
+		var userFactoryApi = {  };
 
-		$http( {
+		userFactoryApi.updateUserInfo = function( userInfo )
+		{
+			var deferred = $q.defer(  );
+			var promise = deferred.promise;
 
-			method: 'post',
-			url: appConstants.BACKEND_URL + '/api/user/info',
-			withCredentials: true,
-			data:
+			$http( {
+
+				method: 'post',
+				url: appConstants.BACKEND_URL + '/api/user/info',
+				withCredentials: true,
+				data:
+				{
+					userInfo: userInfo
+				}
+
+			} )
+			.success( function( data )
 			{
-				userInfo: userInfo
-			}
+				console.log( 'Update account success: ', data );
 
-		} )
-		.success( function( data )
-		{
-			console.log( 'Update account success: ', data );
+				storageFactory.local.setObject( 'user', data );
 
-			storageFactory.local.setObject( 'user', data );
+				deferred.resolve( data );
+			} )
+			.error( function( error )
+			{
+				console.log( 'Update account error: ', error );
+				deferred.reject( error );
+			} );
 
-			deferred.resolve( data );
-		} )
-		.error( function( error )
-		{
-			console.log( 'Update account error: ', error );
-			deferred.reject( error );
-		} );
+			return promise;
+		};
 
-		return promise;
-	};
+		// Return public API.
 
-	// Return public API.
+		return userFactoryApi;
+	} );
 
-	return userFactoryApi;
-} );
+} )(  );

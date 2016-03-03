@@ -1,112 +1,115 @@
 'use strict';
 
-
-var sessionFactory = angular.module( 'sessionFactory', [  ] );
-
-sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConstants, storageFactory )
+( function(  )
 {
-	var sessionFactoryApi = {  };
+	var sessionFactory = angular.module( 'sessionFactory', [  ] );
 
-	sessionFactoryApi.registerAndLogin = function( user )
+	sessionFactory.factory( 'sessionFactory', function( $http, $q, $state, appConstants, storageFactory )
 	{
-		console.log( 'userFactoryApi registerAndLogin' );
-		console.log( 'Registering user with backend at: ', appConstants.BACKEND_URL );
+		var sessionFactoryApi = {  };
 
-		var deferred = $q.defer(  );
-		var promise = deferred.promise;
-
-		$http( {
-
-			method: 'post',
-			url: appConstants.BACKEND_URL + '/api/user/register',
-			withCredentials: true,
-			data: user
-
-		} )
-		.success( function( data )
+		sessionFactoryApi.registerAndLogin = function( user )
 		{
-			console.log( 'Registration success: ', data );
+			console.log( 'userFactoryApi registerAndLogin' );
+			console.log( 'Registering user with backend at: ', appConstants.BACKEND_URL );
 
-			storageFactory.local.setObject( 'user', data );
+			var deferred = $q.defer(  );
+			var promise = deferred.promise;
 
-			deferred.resolve( data );
-		} )
-		.error( function( error )
+			$http( {
+
+				method: 'post',
+				url: appConstants.BACKEND_URL + '/api/user/register',
+				withCredentials: true,
+				data: user
+
+			} )
+			.success( function( data )
+			{
+				console.log( 'Registration success: ', data );
+
+				storageFactory.local.setObject( 'user', data );
+
+				deferred.resolve( data );
+			} )
+			.error( function( error )
+			{
+				console.log( 'Registration error: ', error );
+				deferred.reject( error );
+			} );
+
+			return promise;
+		};
+
+		sessionFactoryApi.login = function( user )
 		{
-			console.log( 'Registration error: ', error );
-			deferred.reject( error );
-		} );
+			console.log( 'sessionFactoryApi login' );
+			console.log( 'Login user with backend: ', appConstants.BACKEND_URL );
 
-		return promise;
-	};
+			var deferred = $q.defer(  );
+			var promise = deferred.promise;
 
-	sessionFactoryApi.login = function( user )
-	{
-		console.log( 'sessionFactoryApi login' );
-		console.log( 'Login user with backend: ', appConstants.BACKEND_URL );
+			$http( {
 
-		var deferred = $q.defer(  );
-		var promise = deferred.promise;
+				method: 'post',
+				url: appConstants.BACKEND_URL + '/api/user/session',
+				withCredentials: true,
+				data: user
 
-		$http( {
+			} )
+			.success( function( data )
+			{
+				console.log( 'Login success: ', data );
 
-			method: 'post',
-			url: appConstants.BACKEND_URL + '/api/user/session',
-			withCredentials: true,
-			data: user
+				storageFactory.local.setObject( 'user', data );
 
-		} )
-		.success( function( data )
+				deferred.resolve( data );
+			} )
+			.error( function( error )
+			{
+				console.log( 'Login error: ', error );
+				deferred.reject( error );
+			} );
+
+			return promise;
+		};
+
+		sessionFactoryApi.logout = function(  )
 		{
-			console.log( 'Login success: ', data );
+			console.log( 'userFactoryApi registerAndLogin' );
+			console.log( 'Registering user with backend at: ', appConstants.BACKEND_URL );
 
-			storageFactory.local.setObject( 'user', data );
+			var deferred = $q.defer(  );
+			var promise = deferred.promise;
 
-			deferred.resolve( data );
-		} )
-		.error( function( error )
-		{
-			console.log( 'Login error: ', error );
-			deferred.reject( error );
-		} );
+			$http( {
 
-		return promise;
-	};
+				method: 'delete',
+				url: appConstants.BACKEND_URL + '/api/user/session',
+				withCredentials: true
 
-	sessionFactoryApi.logout = function(  )
-	{
-		console.log( 'userFactoryApi registerAndLogin' );
-		console.log( 'Registering user with backend at: ', appConstants.BACKEND_URL );
+			} )
+			.success( function( data )
+			{
+				console.log( 'Logout success: ', data );
 
-		var deferred = $q.defer(  );
-		var promise = deferred.promise;
+				storageFactory.local.setObject( 'user', null );
 
-		$http( {
+				deferred.resolve( data );
+			} )
+			.error( function( error )
+			{
+				console.log( 'Logout error: ', error );
+				deferred.reject( error );
+			} );
 
-			method: 'delete',
-			url: appConstants.BACKEND_URL + '/api/user/session',
-			withCredentials: true
-
-		} )
-		.success( function( data )
-		{
-			console.log( 'Logout success: ', data );
-
-			storageFactory.local.setObject( 'user', null );
-
-			deferred.resolve( data );
-		} )
-		.error( function( error )
-		{
-			console.log( 'Logout error: ', error );
-			deferred.reject( error );
-		} );
-
-		return promise;
-	};
+			return promise;
+		};
 
 
-	// Return public API.
+		// Return public API.
 
-	return sessionFactoryApi;
-} );
+		return sessionFactoryApi;
+	} );
+
+} )(  );

@@ -1,118 +1,121 @@
 'use strict';
 
-
-var listFactory = angular.module( 'listFactory', [ ] );
-
-listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
+( function(  )
 {
-	var listFactoryApi = {  };
+	var listFactory = angular.module( 'listFactory', [ ] );
 
-	listFactoryApi.list = [  ];
-
-	listFactoryApi.getList = function(  )
+	listFactory.factory( 'listFactory', function( $http, $q, $state, appConstants )
 	{
-		var deferred = $q.defer(  );
-		var promise = deferred.promise;
+		var listFactoryApi = {  };
 
-		$http( {
+		listFactoryApi.list = [  ];
 
-			method: 'get',
-			withCredentials: true,
-			url: appConstants.BACKEND_URL + '/api/user/list'
-
-		} )
-		.success( function( data )
+		listFactoryApi.getList = function(  )
 		{
-			console.log( 'Get list success: ', data );
+			var deferred = $q.defer(  );
+			var promise = deferred.promise;
 
-			listFactoryApi.list = data.listItems;
+			$http( {
 
-			deferred.resolve( data.listItems );
-		} )
-		.error( function( error )
-		{
-			console.log( 'Get list error: ', error );
-			deferred.reject( error );
-		} );
+				method: 'get',
+				withCredentials: true,
+				url: appConstants.BACKEND_URL + '/api/user/list'
 
-		return promise;
-	};
-
-	listFactoryApi.upsertListItem = function( item )
-	{
-		var deferred = $q.defer(  );
-		var promise = deferred.promise;
-
-		console.log( listFactoryApi.list );
-
-		var cleanItem = angular.toJson( item );
-		cleanItem = angular.fromJson( cleanItem );
-		console.log( cleanItem );
-
-		$http( {
-
-			method: 'post',
-			withCredentials: true,
-			url: appConstants.BACKEND_URL + '/api/user/list',
-			data:
+			} )
+			.success( function( data )
 			{
-				listItem: cleanItem
-			}
+				console.log( 'Get list success: ', data );
 
-		} )
-		.success( function( data )
-		{
-			console.log( 'addListItem success: ', data );
+				listFactoryApi.list = data.listItems;
 
-			deferred.resolve( data );
-		} )
-		.error( function( error )
-		{
-			console.log( 'addListItem error: ', error );
-			deferred.reject( error );
-		} );
-
-		return promise;
-	};
-
-	listFactoryApi.deleteListItem = function( item )
-	{
-		var deferred = $q.defer(  );
-		var promise = deferred.promise;
-
-		item = angular.toJson( item );
-		item = angular.fromJson( item );
-
-		console.log( item );
-
-		$http( {
-
-			method: 'put',
-			withCredentials: true,
-			url: appConstants.BACKEND_URL + '/api/user/list',
-			data:
+				deferred.resolve( data.listItems );
+			} )
+			.error( function( error )
 			{
-				listItem: item
-			}
+				console.log( 'Get list error: ', error );
+				deferred.reject( error );
+			} );
 
-		} )
-		.success( function( data )
+			return promise;
+		};
+
+		listFactoryApi.upsertListItem = function( item )
 		{
-			console.log( 'deleteListItem success: ', data );
+			var deferred = $q.defer(  );
+			var promise = deferred.promise;
 
-			deferred.resolve( data );
-		} )
-		.error( function( error )
+			console.log( listFactoryApi.list );
+
+			var cleanItem = angular.toJson( item );
+			cleanItem = angular.fromJson( cleanItem );
+			console.log( cleanItem );
+
+			$http( {
+
+				method: 'post',
+				withCredentials: true,
+				url: appConstants.BACKEND_URL + '/api/user/list',
+				data:
+				{
+					listItem: cleanItem
+				}
+
+			} )
+			.success( function( data )
+			{
+				console.log( 'addListItem success: ', data );
+
+				deferred.resolve( data );
+			} )
+			.error( function( error )
+			{
+				console.log( 'addListItem error: ', error );
+				deferred.reject( error );
+			} );
+
+			return promise;
+		};
+
+		listFactoryApi.deleteListItem = function( item )
 		{
-			console.log( 'deleteListItem error: ', error );
-			deferred.reject( error );
-		} );
+			var deferred = $q.defer(  );
+			var promise = deferred.promise;
 
-		return promise;
-	};
+			item = angular.toJson( item );
+			item = angular.fromJson( item );
+
+			console.log( item );
+
+			$http( {
+
+				method: 'put',
+				withCredentials: true,
+				url: appConstants.BACKEND_URL + '/api/user/list',
+				data:
+				{
+					listItem: item
+				}
+
+			} )
+			.success( function( data )
+			{
+				console.log( 'deleteListItem success: ', data );
+
+				deferred.resolve( data );
+			} )
+			.error( function( error )
+			{
+				console.log( 'deleteListItem error: ', error );
+				deferred.reject( error );
+			} );
+
+			return promise;
+		};
 
 
-	// Return public API.
+		// Return public API.
 
-	return listFactoryApi;
-} );
+		return listFactoryApi;
+	} );
+
+} )(  );
