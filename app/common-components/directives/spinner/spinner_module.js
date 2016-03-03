@@ -1,13 +1,17 @@
 'use strict';
 
-var spinner = angular.module( 'spinner', [ ] );
-
-spinner.directive( 'spinner', function(  )
+( function(  )
 {
-	return {
+	var spinner = angular.module( 'spinner', [  ] );
 
-		restrict: 'E',
-		templateUrl: 'common-components/directives/spinner/spinner_template.html'
+	spinner.directive( 'spinner', function(  )
+	{
+		return {
 
-	};
-} );
+			restrict: 'E',
+			templateUrl: 'common-components/directives/spinner/spinner_template.html'
+
+		};
+	} );
+
+} )(  );

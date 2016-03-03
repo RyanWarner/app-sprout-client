@@ -1,18 +1,22 @@
 'use strict';
 
-var aList = angular.module( 'aList', [ ] );
-
-aList.directive( 'aList', function(  )
+( function(  )
 {
-	return {
+	var aList = angular.module( 'aList', [ ] );
 
-		restrict: 'E',
-		scope:
-		{
-			list: '='
-		},
-		controller: 'AListController',
-		templateUrl: 'common-components/directives/a-list/a-list_template.html'
+	aList.directive( 'aList', function(  )
+	{
+		return {
 
-	};
-} );
+			restrict: 'E',
+			scope:
+			{
+				list: '='
+			},
+			controller: 'AListController',
+			templateUrl: 'common-components/directives/a-list/a-list_template.html'
+
+		};
+	} );
+
+} )(  );
