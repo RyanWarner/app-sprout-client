@@ -1,43 +1,47 @@
 'use strict';
 
-var register = angular.module( 'register' );
-
-register.controller( 'RegisterController', function( $rootScope, $scope, $state, sessionFactory )
+( function(  )
 {
-	// This is a controller.
+	var register = angular.module( 'register' );
 
-	$scope.stateName = 'register';
-
-	$scope.name = '';
-	$scope.email = '';
-	$scope.password = '';
-	$scope.loading = false;
-
-	$scope.registerAndLogin = function(  )
+	register.controller( 'RegisterController', function( $rootScope, $scope, $state, sessionFactory )
 	{
-		if( !$scope.form.$valid )
-		{
-			return;
-		}
+		// This is a controller.
 
+		$scope.stateName = 'register';
+
+		$scope.name = '';
+		$scope.email = '';
+		$scope.password = '';
 		$scope.loading = false;
 
-		var user = {  };
-
-		user.name = $scope.name;
-		user.email = $scope.email;
-		user.password = $scope.password;
-
-		console.log( user );
-
-		sessionFactory.registerAndLogin( user )
-		.then( function(  )
+		$scope.registerAndLogin = function(  )
 		{
+			if( !$scope.form.$valid )
+			{
+				return;
+			}
+
 			$scope.loading = false;
-			$state.go( 'app-root.list' );
-		} );
-	};
 
-	console.log( 'RegisterController active!' );
+			var user = {  };
 
-} );
+			user.name = $scope.name;
+			user.email = $scope.email;
+			user.password = $scope.password;
+
+			console.log( user );
+
+			sessionFactory.registerAndLogin( user )
+			.then( function(  )
+			{
+				$scope.loading = false;
+				$state.go( 'app-root.list' );
+			} );
+		};
+
+		console.log( 'RegisterController active!' );
+
+	} );
+
+} )(  );

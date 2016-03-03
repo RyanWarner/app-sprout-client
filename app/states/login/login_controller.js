@@ -1,35 +1,39 @@
 'use strict';
 
-var login = angular.module( 'login' );
-
-login.controller( 'LoginController', function( $rootScope, $scope, $state, sessionFactory )
+( function(  )
 {
-	// This is a controller.
+	var login = angular.module( 'login' );
 
-	$scope.stateName = 'login';
-
-	$scope.email = '';
-	$scope.password = '';
-
-	$scope.loginUser = function(  )
+	login.controller( 'LoginController', function( $rootScope, $scope, $state, sessionFactory )
 	{
-		if( !$scope.form.$valid )
+		// This is a controller.
+
+		$scope.stateName = 'login';
+
+		$scope.email = '';
+		$scope.password = '';
+
+		$scope.loginUser = function(  )
 		{
-			return;
-		}
+			if( !$scope.form.$valid )
+			{
+				return;
+			}
 
-		var user = {  };
+			var user = {  };
 
-		user.email = $scope.email;
-		user.password = $scope.password;
+			user.email = $scope.email;
+			user.password = $scope.password;
 
-		sessionFactory.login( user )
-		.then( function(  )
-		{
-			$state.go( 'app-root.list' );
-		} );
-	};
+			sessionFactory.login( user )
+			.then( function(  )
+			{
+				$state.go( 'app-root.list' );
+			} );
+		};
 
-	console.log( 'LoginController active!' );
+		console.log( 'LoginController active!' );
 
-} );
+	} );
+
+} )(  );

@@ -1,23 +1,27 @@
 'use strict';
 
-var login = angular.module( 'login',
-[
-	'ui.router',
-	'sessionFactory'
-] );
-
-login.config( function( $stateProvider )
+( function(  )
 {
-	$stateProvider.state( 'login',
+	var login = angular.module( 'login',
+	[
+		'ui.router',
+		'sessionFactory'
+	] );
+
+	login.config( function( $stateProvider )
 	{
-		url: '/login',
-		views:
+		$stateProvider.state( 'login',
 		{
-			homepage:
+			url: '/login',
+			views:
 			{
-				templateUrl: 'states/login/login_template.html',
-				controller: 'LoginController as login'
+				homepage:
+				{
+					templateUrl: 'states/login/login_template.html',
+					controller: 'LoginController as login'
+				}
 			}
-		}
+		} );
 	} );
-} );
+
+} )(  );
