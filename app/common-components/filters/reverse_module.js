@@ -1,18 +1,22 @@
 'use strict';
 
-var reverseFilter = angular.module( 'reverseFilter', [  ] );
-
-reverseFilter.filter( 'reverse', function(  )
+( function(  )
 {
-	return function( items )
+	var reverseFilter = angular.module( 'reverseFilter', [  ] );
+
+	reverseFilter.filter( 'reverse', function(  )
 	{
-		if( ( items ) && ( items.length > 0 ) )
+		return function( items )
 		{
-			return items.slice(  ).reverse(  );
-		}
-		else
-		{
-			return;
-		}
-	};
-} );
+			if( ( items ) && ( items.length > 0 ) )
+			{
+				return items.slice(  ).reverse(  );
+			}
+			else
+			{
+				return;
+			}
+		};
+	} );
+
+} )(  );
