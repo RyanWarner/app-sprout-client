@@ -78,6 +78,9 @@ linters:
     extra_properties:
       - overflow-scrolling
 
+  QualifyingElement:
+    enabled: false
+
   SelectorDepth:
     enabled: true
     max_depth: 3

@@ -102,13 +102,3 @@ input
 {
 	box-sizing: border-box;
 }
-
-input[ type='submit' ]
-{
-	border: 0;
-
-	&:focus
-	{
-		outline: 0;
-	}
-}
