@@ -51,22 +51,6 @@
 			$scope.list.push( { } );
 		};
 
-		$scope.keyPress = function( item, index, event )
-		{
-			if( event.keyCode === 13 )
-			{
-				$scope.saveList( item, index, event );
-			}
-		};
-
-		$scope.addNewKeyPress = function( item, event )
-		{
-			if( event.keyCode === 13 )
-			{
-				$scope.addNewListItem( item );
-			}
-		};
-
 		$scope.addNewListItem = function( itemValue )
 		{
 			if( ( itemValue === '' ) || ( itemValue === undefined ) )
@@ -116,7 +100,7 @@
 			listCopy = angular.copy( $scope.list );
 		};
 
-		$scope.saveList = function( item, index, event )
+		$scope.saveList = function( item, index )
 		{
 
 
