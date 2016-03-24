@@ -1,7 +1,7 @@
 .list.add-new-list-item-field
 	.add-new-list-item
 		.list-item-text
-			input.list-item-input( type='text', ng-keypress='addNewKeyPress( newItem, $event )', ng-model='newItem', placeholder='New list item' )
+			input.list-item-input( type='text', ng-enter='addNewListItem( newItem )', ng-model='newItem', placeholder='New list item' )
 		.enter-icon( ng-click='addNewListItem( newItem )' )
 			| Enter
 ul.list
@@ -10,7 +10,7 @@ ul.list
 	.empty-list( ng-show='list.length === 0' )
 		.empty-list-text
 			| No list items yet! Why don't you make some?
-	li.list-item( ng-repeat='item in list | reverse', ng-keypress='keyPress( item, $index, $event )' )
+	li.list-item( ng-repeat='item in list | reverse', ng-enter='saveList( item, $index )' )
 		.list-item-text
 			input.list-item-input( type='text', ng-model='item.name', placeholder='Empty list item', ng-blur='saveList( item, $index, $event )' )
 		.delete-list-item( ng-click='deleteListItem( item, $index )' )
