@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RyanWarner/app-seed-client.git"
+    "url": "git+https://github.com/RyanWarner/app-seed-client.git"
   },
   "keywords": [
     "angular"
@@ -35,7 +35,7 @@
     "gulp-csscomb": "^3.0.7",
     "gulp-eslint": "^2.0.0",
     "gulp-filter": "^4.0.0",
-    "gulp-imagemin": "^2.4.0",
+    "gulp-imagemin": "^3.0.0",
     "gulp-inject": "^4.0.0",
     "gulp-jade": "^1.1.0",
     "gulp-minify-css": "^1.2.1",
@@ -69,5 +69,9 @@
     "sinon": "^1.17.1",
     "sinon-chai": "^2.8.0",
     "streamqueue": "^1.1.1"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {}
 }
