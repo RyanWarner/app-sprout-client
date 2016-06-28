@@ -18,8 +18,6 @@ var path            = require( '../../paths.js' );
 
 
 
-// Build process.
-
 gulp.task( 'build-scripts', [ 'eslint' ], function(  )
 {
 	return streamqueue( { objectMode: true },
