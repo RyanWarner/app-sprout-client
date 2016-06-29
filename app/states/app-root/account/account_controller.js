@@ -1,54 +1,44 @@
 'use strict';
 
-( function(  )
-{
-	var account = angular.module( 'account' );
+/* global angular */
 
-	account.controller( 'AccountController', function( $rootScope, $scope, storageFactory, userFactory, $timeout )
-	{
+(function() {
+	var account = angular.module('account');
+
+	account.controller('AccountController', function($scope, storageFactory, userFactory, $timeout) {
 		$scope.stateName = 'app.account';
 		$scope.loading = false;
 		$scope.justSaved = false;
 
-		console.log( 'AccountController active!' );
+		$timeout(function() {
+			$scope.user = storageFactory.local.getObject('user');
+		});
 
-		$timeout( function(  )
-		{
-			$scope.user = storageFactory.local.getObject( 'user' );
-			console.log( $scope.user );
-		} );
-
-		$scope.updateUserInfo = function(  )
-		{
-			if( !$scope.form.$valid )
-			{
+		$scope.updateUserInfo = function() {
+			if (!$scope.form.$valid) {
 				return;
 			}
 
 			$scope.loading = true;
 
-			var userInfo = {  };
+			var userInfo = {};
 
 			userInfo.name = $scope.user.name;
 			userInfo.email = $scope.user.email;
 			userInfo.password = $scope.user.password;
 
-			userFactory.updateUserInfo( userInfo )
-			.then( function(  )
-			{
-				$timeout( function(  )
-				{
+			userFactory.updateUserInfo(userInfo)
+			.then(function() {
+				$timeout(function() {
 					$scope.loading = false;
 					$scope.justSaved = true;
 					$scope.user.password = '';
 
-					$timeout( function(  )
-					{
+					$timeout(function() {
 						$scope.justSaved = false;
-					}, 2200 );
-				}, 400 );
-			} );
+					}, 2200);
+				}, 400);
+			});
 		};
-	} );
-
-} )(  );
+	});
+})();

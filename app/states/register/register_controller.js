@@ -1,11 +1,11 @@
 'use strict';
 
-( function(  )
-{
-	var register = angular.module( 'register' );
+/* global angular */
 
-	register.controller( 'RegisterController', function( $rootScope, $scope, $state, sessionFactory )
-	{
+(function() {
+	var register = angular.module('register');
+
+	register.controller('RegisterController', function($rootScope, $scope, $state, sessionFactory) {
 		$scope.stateName = 'register';
 
 		$scope.name = '';
@@ -13,28 +13,24 @@
 		$scope.password = '';
 		$scope.loading = false;
 
-		$scope.registerAndLogin = function(  )
-		{
-			if( !$scope.form.$valid )
-			{
+		$scope.registerAndLogin = function() {
+			if (!$scope.form.$valid) {
 				return;
 			}
 
 			$scope.loading = false;
 
-			var user = {  };
+			var user = { };
 
 			user.name = $scope.name;
 			user.email = $scope.email;
 			user.password = $scope.password;
 
-			sessionFactory.registerAndLogin( user )
-			.then( function(  )
-			{
+			sessionFactory.registerAndLogin(user)
+			.then(function() {
 				$scope.loading = false;
-				$state.go( 'app-root.list' );
-			} );
+				$state.go('app-root.list');
+			});
 		};
-	} );
-
-} )(  );
+	});
+})();

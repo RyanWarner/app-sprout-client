@@ -1,39 +1,38 @@
-.login-app-sprout-logo( ui-sref='homepage' )
+.login-app-sprout-logo(ui-sref='homepage')
 .login
-	form( name='form', novalidate='' )
+	form(name='form', novalidate='')
 		.login-form
 			.registration-name
-				input( type='text', name='name', placeholder='Name', required='', minlength='1', ng-model='name', ng-model-options='{ updateOn: "blur" }' )
-				.form-error( ng-show='form.$submitted' )
-					div( ng-show='form.name.$error.required' )
+				input(type='text', name='name', placeholder='Name', required='', minlength='1', ng-model='name', ng-model-options='{ updateOn: "blur" }')
+				.form-error(ng-show='form.$submitted')
+					div(ng-show='form.name.$error.required')
 						| What should we call you?
 			hr.login-rule
 			.registration-email
-				input( type='email', name='email', placeholder='Email', required='', ng-model='email', ng-model-options='{ updateOn: "blur" }' )
-				.form-error( ng-show='form.email.$error.email' )
+				input(type='email', name='email', placeholder='Email', required='', ng-model='email', ng-model-options='{ updateOn: "blur" }')
+				.form-error(ng-show='form.email.$error.email')
 					| Invalid email.
-				.form-error( ng-show='form.$submitted && !form.email.$error.email' )
-					div( ng-show='form.password.$error.required' )
+				.form-error(ng-show='form.$submitted && !form.email.$error.email')
+					div(ng-show='form.password.$error.required')
 						| Your email is required.
 			hr.login-rule
 			.registration-password
-				input( type='password', name='password', minlength='6', required='', maxlength='100', placeholder='Password', ng-model-options='{ updateOn: "blur" }', ng-model='password' )
-				.form-error( ng-show='form.password.$error.minlength' )
+				input(type='password', name='password', minlength='6', required='', maxlength='100', placeholder='Password', ng-model-options='{ updateOn: "blur" }', ng-model='password')
+				.form-error( ng-show='form.password.$error.minlength')
 					| Your password must be at least 6 characters.
 
-				.form-error( ng-show='form.$submitted && !form.email.$error.email' )
+				.form-error(ng-show='form.$submitted && !form.email.$error.email')
 					div( ng-show='form.password.$error.required' )
 						| You must have a password.
-		.register-register-button.big-green-button( ng-click='registerAndLogin(  )' )
-			.button-text( ng-hide='loading' )
+		.register-register-button.big-green-button( ng-click='registerAndLogin()')
+			.button-text(ng-hide='loading')
 				| Register
-			.button-loading( ng-show='loading' )
+			.button-loading(ng-show='loading')
 				spinner
-			input.account-save-submit( type='submit' )
-	.register-login-button.small-outline-button( ui-sref='login' )
+			input.account-save-submit(type='submit')
+	.register-login-button.small-outline-button(ui-sref='login')
 		| Login
 	.login-description
 		| Registration and login is for demo purposes
 		| only. All fields are required, but it
 		| doesn’t matter if they're real.
-	

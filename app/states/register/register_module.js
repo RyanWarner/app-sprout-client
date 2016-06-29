@@ -1,17 +1,15 @@
 'use strict';
 
-( function(  )
-{
-	var register = angular.module( 'register',
-	[
+/* global angular */
+
+(function() {
+	var register = angular.module('register', [
 		'ui.router',
 		'sessionFactory'
-	] );
+	]);
 
-	register.config( function( $stateProvider )
-	{
-		$stateProvider.state( 'register',
-		{
+	register.config(function($stateProvider) {
+		$stateProvider.state('register', {
 			url: '/register',
 			views:
 			{
@@ -21,7 +19,6 @@
 					controller: 'RegisterController as register'
 				}
 			}
-		} );
-	} );
-
-} )(  );
+		});
+	});
+})();

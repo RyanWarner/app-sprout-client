@@ -1,17 +1,14 @@
 // _register_style.scss
 
-.register-register-button
-{
+.register-register-button {
 	margin-bottom: 50px;
 }
 
-.register-login-button
-{
+.register-login-button {
 	margin-bottom: 30px;
 }
 
-.form-error
-{
+.form-error {
 	flex-direction: row;
 	align-items: center;
 
@@ -27,7 +24,6 @@
 
 .registration-name,
 .registration-email,
-.registration-password
-{
+.registration-password {
 	width: 100%;
 }

@@ -1,31 +1,26 @@
-.account-header
-{
+.account-header {
 	align-self: center;
 
 	width: 80%;
 	margin-top: 30px;
 	margin-bottom: 60px;
 
-	h2
-	{
+	h2 {
 		margin-bottom: 10px;
 	}
 }
 
-.account-information
-{
+.account-information {
 	align-self: center;
 
 	width: 80%;
 }
 
-.account-field
-{
+.account-field {
 	margin-bottom: 40px;
 }
 
-.account-field-label
-{
+.account-field-label {
 	margin-bottom: 10px;
 	margin-left: 3px;
 
@@ -33,8 +28,7 @@
 	text-transform: uppercase;
 }
 
-.account-field-input-wrapper
-{
+.account-field-input-wrapper {
 	flex-grow: 1;
 
 	overflow: hidden;
@@ -49,8 +43,7 @@
 	transition: all 0.2s ease-out;
 }
 
-.account-field-input
-{
+.account-field-input {
 	width: 100%;
 	height: 100%;
 	outline: 0;
@@ -61,8 +54,7 @@
 	font-family: 'Muli';
 }
 
-.account-field-error
-{
+.account-field-error {
 	margin-bottom: 10px;
 	margin-left: 3px;
 
@@ -70,19 +62,16 @@
 	font-size: 12px;
 }
 
-.account-save-button
-{
+.account-save-button {
 	position: relative;
 	cursor: pointer;
 
-	.spinner
-	{
-		@include spinner-dots( rgba( #ffffff, 1 ) );
+	.spinner {
+		@include spinner-dots( rgba( #fff, 1 ) );
 	}
 }
 
-.button-loading
-{
+.button-loading {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -91,26 +80,22 @@
 
 	transition: opacity 0.2s ease-in;
 
-	&.ng-hide
-	{
+	&.ng-hide {
 		opacity: 0;
 	}
 }
 
-.button-text
-{
+.button-text {
 	transition: all 0.2s ease-in;
 
-	&.ng-hide
-	{
+	&.ng-hide {
 		opacity: 0;
 
 		transform: rotate( 25deg );
 	}
 }
 
-.account-save-submit
-{
+.account-save-submit {
 	opacity: 0;
 	position: absolute;
 	cursor: pointer;
@@ -120,8 +105,7 @@
 	left: 0;
 }
 
-.save-notification-wrapper
-{
+.save-notification-wrapper {
 	align-items: center;
 
 	opacity: 1;
@@ -133,29 +117,26 @@
 	transition: all 0.4s ease-in;
 	transform: translate3d( 0, 0, 0 );
 
-	&.ng-hide
-	{
+	&.ng-hide {
 		opacity: 0;
 
 		transform: translate3d( 0, -80px, 0 );
 	}
 }
 
-.save-notification
-{
+.save-notification {
 	padding: 20px 30px 20px 30px;
 	border-right: 1px solid rgba( 0, 0, 0, 0.1 );
 	border-bottom: 1px solid rgba( 0, 0, 0, 0.1 );
 	border-left: 1px solid rgba( 0, 0, 0, 0.1 );
 	border-radius: 0 0 6px 6px;
-	background-color: #ffffff;
+	background-color: #fff;
 	box-shadow: 0 2px 9px rgba( 0, 0, 0, 0.06 );
 
 	color: $green;
 }
 
-.empty-list
-{
+.empty-list {
 	align-items: center;
 	justify-content: center;
 
@@ -170,8 +151,7 @@
 
 	transition: all 0.3s ease;
 
-	&.ng-hide
-	{
+	&.ng-hide {
 		opacity: 0;
 	}
 }

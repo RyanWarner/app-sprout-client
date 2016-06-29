@@ -1,18 +1,15 @@
 // Global styles.
 
-::selection
-{
+::selection {
 	background-color: #cdfb9a;
 }
 
-::placeholder
-{
+::placeholder {
 	color: #aea9a9;
 }
 
 body,
-html
-{
+html {
 	background-color: $background;
 
 	color: $dark;
@@ -20,34 +17,29 @@ html
 	// min-height: 100%;
 }
 
-hr
-{
+hr {
 	margin: 0;
 	border: 0;
 }
 
-h1
-{
+h1 {
 	margin-bottom: 38px;
 
 	font-size: 38px;
 	line-height: 48px;
 }
 
-h2
-{
+h2 {
 	font-size: 30px;
 }
 
-h3
-{
+h3 {
 	color: $green;
 	font-size: 22px;
 	line-height: 33px;
 }
 
-p
-{
+p {
 	flex-flow: row;
 	flex-wrap: wrap;
 
@@ -56,14 +48,12 @@ p
 	font-size: 16px;
 	line-height: 28px;
 
-	&:last-child
-	{
+	&:last-child {
 		margin-bottom: 0;
 	}
 }
 
-pre
-{
+pre {
 	display: inline-block;
 	padding: 10px 15px 10px 15px;
 	background-color: #f5f0ed;
@@ -73,32 +63,26 @@ pre
 	line-height: 18px;
 }
 
-span
-{
+span {
 	display: inline-block;
 }
 
-a
-{
+a {
 	color: #4e88d4;
 
-	&:hover
-	{
+	&:hover {
 		color: #58beed;
 	}
 
-	&:active
-	{
+	&:active {
 		color: #4578ba;
 	}
 
-	&:visited
-	{
+	&:visited {
 		color: #4e88d4;
 	}
 }
 
-input
-{
+input {
 	box-sizing: border-box;
 }

@@ -1,21 +1,21 @@
 .app-root
 	nav
-		.nav-logo( ui-sref='homepage' )
+		.nav-logo(ui-sref='homepage')
 			.nav-app-sprout-logo
 			.nav-logo-text
 				| app-sprout
 			.nav-rule
 		.nav-items
-			.nav-item.account-nav-item( ui-sref='app-root.account', ng-class='{ selected: toState.name === "app-root.account" }' )
+			.nav-item.account-nav-item(ui-sref='app-root.account', ng-class='{ selected: toState.name === "app-root.account" }')
 				.nav-item-icon.account-icon
 				.nav-item-text
 					| Account
-			.nav-item.list-nav-item( ui-sref='app-root.list', ng-class='{ selected: toState.name === "app-root.list" }' )
+			.nav-item.list-nav-item(ui-sref='app-root.list', ng-class='{ selected: toState.name === "app-root.list" }')
 				.nav-item-icon.list-icon
 				.nav-item-text
 					| List
-			.nav-item.logout-nav-item( ng-click='logout(  )' )
+			.nav-item.logout-nav-item(ng-click='logout()')
 				.nav-item-icon.logout-icon
 				.nav-item-text
 					| Logout
-	.app-content( ui-view='app-content' )
+	.app-content(ui-view='app-content')

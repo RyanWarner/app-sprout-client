@@ -1,29 +1,24 @@
 'use strict';
 
-( function(  )
-{
-	var appRoot = angular.module( 'appRoot' );
+/* global angular */
 
-	appRoot.controller( 'AppRootController', function( $rootScope, $scope, $state, sessionFactory )
-	{
-		console.log( 'AppRootController active!' );
+(function() {
+	var appRoot = angular.module('appRoot');
+
+	appRoot.controller('AppRootController', function($rootScope, $scope, $state, sessionFactory) {
 		$scope.stateName = 'app-root';
 
 		$scope.activeChildNav = $state.current.activeChildNav;
 
-		$rootScope.$on( '$stateChangeSuccess', function(  )
-		{
+		$rootScope.$on('$stateChangeSuccess', function() {
 			$scope.activeChildNav = $state.current.activeChildNav;
-		} );
+		});
 
-		$scope.logout = function(  )
-		{
-			sessionFactory.logout(  )
-			.then( function(  )
-			{
-				$state.go( 'homepage' );
-			} );
+		$scope.logout = function() {
+			sessionFactory.logout()
+			.then(function() {
+				$state.go('homepage');
+			});
 		};
-	} );
-
-} )(  );
+	});
+})();

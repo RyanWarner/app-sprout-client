@@ -1,10 +1,10 @@
 doctype html
 html(lang='en' )
 	head
-		base( href='/' )
-		meta( name='viewport', content='width=device-width, height=device-height, initial-scale=1')
-		link( href='http://fonts.googleapis.com/css?family=Muli|Anonymous+Pro:400,400italic', rel='stylesheet', type='text/css' )
-		link( rel='icon', type='image/png', href='favicon.png' )
+		base(href='/')
+		meta(name='viewport', content='width=device-width, height=device-height, initial-scale=1')
+		link(href='http://fonts.googleapis.com/css?family=Muli|Anonymous+Pro:400,400italic', rel='stylesheet', type='text/css')
+		link(rel='icon', type='image/png', href='favicon.png')
 		// min:js 
 		// endinject 
 		// min:css 
@@ -12,12 +12,12 @@ html(lang='en' )
 		// inject:css 
 		// endinject 
 
-	body( ng-app='appSproutClient' )
+	body(ng-app='appSproutClient')
 
 		//- You could put other ui-views here, like a modal.
 
-		.homepage( ui-view='homepage' )
-		.app-view( ui-view='app' )
+		.homepage(ui-view='homepage')
+		.app-view(ui-view='app')
 		// inject:bower:js 
 		// endinject 
 		// inject:js 

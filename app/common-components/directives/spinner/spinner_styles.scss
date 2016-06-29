@@ -1,18 +1,14 @@
-@keyframes spinner
-{
-	0%
-	{
+@keyframes spinner {
+	0% {
 		transform: rotate( 0deg );
 	}
 
-	100%
-	{
+	100% {
 		transform: rotate( 360deg );
 	}
 }
 
-@mixin spinner-dots( $color )
-{
+@mixin spinner-dots( $color ) {
 	box-shadow: $color 12px 0 0 0,
 	$color 8px 8px 0 0,
 	$color 0 12px 0 0,
@@ -23,8 +19,7 @@
 	$color 8px -8px 0 0;
 }
 
-.spinner
-{
+.spinner {
 	@include spinner-dots( rgba( #d9d9ce, 0.5 ) );
 
 	align-self: center;

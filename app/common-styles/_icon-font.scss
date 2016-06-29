@@ -1,5 +1,4 @@
-@font-face
-{
+@font-face {
 	font-weight: normal;
 	font-style: normal;
 	font-family: 'symbols';
@@ -11,8 +10,7 @@
 	url( '../fonts/icon-font/symbols.svg?v4kp9#symbols' ) format( 'svg' );
 }
 
-%icon-font
-{
+%icon-font {
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
@@ -28,62 +26,50 @@
 
 
 
-%icon-account-outline
-{
+%icon-account-outline {
 	@extend %icon-font;
 
-	&:before
-	{
+	&:before {
 		content: '\e001';
 	}
 }
 
-%icon-github-outline
-{
+%icon-github-outline {
 	@extend %icon-font;
 
-	&:before
-	{
+	&:before {
 		content: '\e002';
 	}
 }
 
-%icon-list-outline
-{
+%icon-list-outline {
 	@extend %icon-font;
 
-	&:before
-	{
+	&:before {
 		content: '\e003';
 	}
 }
 
-%icon-log-out-outline
-{
+%icon-log-out-outline {
 	@extend %icon-font;
 
-	&:before
-	{
+	&:before {
 		content: '\e004';
 	}
 }
 
-%icon-sketch-outline
-{
+%icon-sketch-outline {
 	@extend %icon-font;
 
-	&:before
-	{
+	&:before {
 		content: '\e005';
 	}
 }
 
-%icon-x-solid
-{
+%icon-x-solid {
 	@extend %icon-font;
 
-	&:before
-	{
+	&:before {
 		content: '\e006';
 	}
 }

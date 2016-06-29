@@ -1,32 +1,27 @@
 'use strict';
 
-var mock = require( 'protractor-http-mock' );
+/* global expect, browser, element, by, protractor */
 
-describe( 'App List', function(  )
-{
-	mock(
-	[
+
+var mock = require('protractor-http-mock');
+
+describe('App List', function() {
+	mock([
 		{
-			request:
-			{
+			request: {
 				path: '/api/user/list',
 				withCredentials: true,
 				method: 'post',
-				data:
-				{
-					listItem:
-					{
+				data: {
+					listItem: {
 						name: 'new list item'
 					}
 				}
 			},
-			response:
-			{
+			response: {
 				status: 200,
-				data:
-				{
-					newListItem:
-					{
+				data: {
+					newListItem: {
 						_id: 'abc',
 						name: 'new list item'
 					}
@@ -34,48 +29,39 @@ describe( 'App List', function(  )
 			}
 		},
 		{
-			request:
-			{
+			request: {
 				path: '/api/user/list',
 				withCredentials: true,
 				method: 'get'
 			},
-			response:
-			{
+			response: {
 				status: 200,
 				data: []
 			}
 		},
 		{
-			request:
-			{
+			request: {
 				path: '/api/user/list',
 				withCredentials: true,
 				method: 'put',
-				data:
-				{
-					listItem:
-					{
+				data: {
+					listItem: {
 						_id: 'abc',
 						name: 'updated list item'
 					}
 				}
 			},
-			response:
-			{
+			response: {
 				status: 200
 			}
 		},
 		{
-			request:
-			{
+			request: {
 				path: '/api/user/list',
 				withCredentials: true,
 				method: 'post',
-				data:
-				{
-					listItem:
-					{
+				data: {
+					listItem: {
 						_id: 'abc',
 						name: 'updated list item'
 					}
@@ -86,31 +72,28 @@ describe( 'App List', function(  )
 				status: 200
 			}
 		}
-	] );
+	]);
 
-	afterEach( function(  )
-	{
-		mock.teardown(  );
-	} );
+	afterEach(function() {
+		mock.teardown();
+	});
 
 
-	it( 'should add an item to the list', function(  )
-	{
+	it('should add an item to the list', function() {
 		browser.ignoreSynchronization = false;
 
-		browser.get( 'http://localhost:8080/app/list' );
+		browser.get('http://localhost:8080/app/list');
 
-		element( by.model( 'newItem' ) ).sendKeys( 'new list item' );
-		element( by.css( '.enter-icon' ) ).click(  );
+		element(by.model('newItem')).sendKeys('new list item');
+		element(by.css('.enter-icon')).click();
 
-		var list = element.all( by.repeater( 'item in list' ) );
-		browser.sleep( 20 );
+		var list = element.all(by.repeater('item in list'));
+		browser.sleep(20);
 
-		expect( list.count(  ) ).toEqual( 1 );
-		expect( list.get( 0 ).element( by.model( 'item.name' ) ).getAttribute( 'value' ) ).toEqual( 'new list item' );
+		expect(list.count()).toEqual(1);
+		expect(list.get(0).element(by.model('item.name')).getAttribute('value')).toEqual('new list item');
 
-		expect( mock.requestsMade(  ) ).toEqual(
-		[
+		expect(mock.requestsMade()).toEqual([
 			{
 				url: 'http://localhost:9000/api/user/list',
 				withCredentials: true,
@@ -120,78 +103,69 @@ describe( 'App List', function(  )
 				url: 'http://localhost:9000/api/user/list',
 				withCredentials: true,
 				method: 'post',
-				data:
-				{
-					listItem:
-					{
+				data: {
+					listItem: {
 						name: 'new list item'
 					}
-				} }
-		] );
-	} );
+				}
+			}
+		]);
+	});
 
-	it( 'should update an existing item', function(  )
-	{
-		mock.clearRequests(  );
+	it('should update an existing item', function() {
+		mock.clearRequests();
 
-		var list = element.all( by.repeater( 'item in list' ) );
+		var list = element.all(by.repeater('item in list'));
 
-		expect( list.count(  ) ).toEqual( 1 );
+		expect(list.count()).toEqual(1);
 
-		var newListItemElement = list.get( 0 ).element( by.model( 'item.name' ) );
+		var newListItemElement = list.get(0).element(by.model('item.name'));
 
-		newListItemElement.clear(  );
-		newListItemElement.sendKeys( 'updated list item' );
-		newListItemElement.sendKeys( protractor.Key.ENTER );
+		newListItemElement.clear();
+		newListItemElement.sendKeys('updated list item');
+		newListItemElement.sendKeys(protractor.Key.ENTER);
 
-		expect( newListItemElement.getAttribute( 'value' ) ).toEqual( 'updated list item' );
+		expect(newListItemElement.getAttribute('value')).toEqual('updated list item');
 
-		expect( mock.requestsMade(  ) ).toEqual(
-		[
+		expect(mock.requestsMade()).toEqual([
 			{
 				url: 'http://localhost:9000/api/user/list',
 				withCredentials: true,
 				method: 'post',
-				data:
-				{
-					listItem:
-					{
+				data: {
+					listItem: {
 						_id: 'abc',
 						name: 'updated list item'
 					}
 				}
 			}
-		] );
-	} );
+		]);
+	});
 
-	it( 'should delete an existing item', function(  )
-	{
-		mock.clearRequests(  );
+	it('should delete an existing item', function() {
+		mock.clearRequests();
 
-		var list = element.all( by.repeater( 'item in list' ) );
+		var list = element.all(by.repeater('item in list'));
 
-		expect( list.count(  ) ).toEqual( 1 );
+		expect(list.count()).toEqual(1);
 
-		var deleteElement = list.get( 0 ).element( by.css( '.delete-list-item' ) );
+		var deleteElement = list.get(0).element(by.css('.delete-list-item'));
 
-		deleteElement.click(  );
-		expect( list.count(  ) ).toEqual( 0 );
+		deleteElement.click();
+		expect(list.count()).toEqual(0);
 
-		expect( mock.requestsMade(  ) ).toEqual(
-		[
+		expect(mock.requestsMade()).toEqual([
 			{
 				url: 'http://localhost:9000/api/user/list',
 				withCredentials: true,
 				method: 'put',
-				data:
-				{
-					listItem:
-					{
+				data: {
+					listItem: {
 						_id: 'abc',
 						name: 'updated list item'
 					}
 				}
 			}
-		] );
-	} );
-} );
+		]);
+	});
+});

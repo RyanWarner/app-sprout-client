@@ -1,30 +1,29 @@
-.login-app-sprout-logo( ui-sref='homepage' )
+.login-app-sprout-logo(ui-sref='homepage')
 .login
-	form( name='form', novalidate='' )
+	form(name='form', novalidate='')
 		.login-form
 			.login-email
-				input( type='text', name='email', required='', placeholder='Email', ng-model='email' )
-				.form-error( ng-show='form.email.$error.email' )
+				input(type='text', name='email', required='', placeholder='Email', ng-model='email')
+				.form-error(ng-show='form.email.$error.email')
 					| Invalid email.
-				.form-error( ng-show='form.$submitted && !form.email.$error.email' )
-					div( ng-show='form.password.$error.required' )
+				.form-error(ng-show='form.$submitted && !form.email.$error.email')
+					div(ng-show='form.password.$error.required')
 						| Your email is required.
 			hr.login-rule
 			.login-password
-				input( type='password', name='password', required='', placeholder='Password', ng-model='password' )
-				.form-error( ng-show='form.$submitted && !form.email.$error.email' )
-					div( ng-show='form.password.$error.required' )
+				input(type='password', name='password', required='', placeholder='Password', ng-model='password')
+				.form-error(ng-show='form.$submitted && !form.email.$error.email')
+					div(ng-show='form.password.$error.required')
 						| Your password is required.
-		.login-login-button.big-green-button( ng-click='loginUser(  )' )
-			.button-text( ng-hide='loading' )
+		.login-login-button.big-green-button(ng-click='loginUser()')
+			.button-text(ng-hide='loading')
 				| Login
-			.button-loading( ng-show='loading' )
+			.button-loading(ng-show='loading')
 				spinner
-			input.account-save-submit( type='submit' )
-	.login-register-button.small-outline-button( ui-sref='register' )
+			input.account-save-submit(type='submit')
+	.login-register-button.small-outline-button(ui-sref='register')
 		| Register
 	.login-description
 		| Registration and login is for demo purposes
 		| only. All fields are required, but it
 		| doesn’t matter if they're real.
-	

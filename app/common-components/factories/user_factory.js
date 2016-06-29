@@ -1,42 +1,36 @@
 'use strict';
 
-( function(  )
-{
-	var userFactory = angular.module( 'userFactory', [  ] );
+/* global angular */
 
-	userFactory.factory( 'userFactory', function( $http, $q, appConstants, storageFactory )
-	{
-		var userFactoryApi = {  };
+(function() {
+	var userFactory = angular.module('userFactory', []);
 
-		userFactoryApi.updateUserInfo = function( userInfo )
-		{
-			var deferred = $q.defer(  );
+	userFactory.factory('userFactory', function($http, $q, appConstants, storageFactory) {
+		var userFactoryApi = {};
+
+		userFactoryApi.updateUserInfo = function(userInfo) {
+			var deferred = $q.defer();
 			var promise = deferred.promise;
 
-			$http( {
+			$http({
 
 				method: 'post',
 				url: appConstants.BACKEND_URL + '/api/user/info',
 				withCredentials: true,
-				data:
-				{
+				data: {
 					userInfo: userInfo
 				}
 
-			} )
-			.success( function( data )
-			{
-				console.log( 'Update account success: ', data );
+			})
+			.success(function(data) {
+				storageFactory.local.setObject('user', data);
 
-				storageFactory.local.setObject( 'user', data );
-
-				deferred.resolve( data );
-			} )
-			.error( function( error )
-			{
-				console.log( 'Update account error: ', error );
-				deferred.reject( error );
-			} );
+				deferred.resolve(data);
+			})
+			.error(function(error) {
+				console.log('Update account error: ', error);
+				deferred.reject(error);
+			});
 
 			return promise;
 		};
@@ -44,6 +38,5 @@
 		// Return public API.
 
 		return userFactoryApi;
-	} );
-
-} )(  );
+	});
+})();

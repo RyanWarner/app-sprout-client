@@ -1,69 +1,53 @@
 'use strict';
 
-var path = require( 'path' );
-
+var path           = require('path');
 var pathToThisFile = __dirname;
+var root 		   = path.dirname(pathToThisFile);
+var destination    = root + '/build-destination';
+var bowerDir       = destination + '/bower';
 
-var root = path.dirname( pathToThisFile );
-
-var destination = root + '/build-destination';
-var bowerDir = destination + '/bower';
-
-module.exports =
-{
-	to:
-	{
+module.exports = {
+	to: {
 		destination: destination,
-		main:
-		{
-			css:
-			{
+		main: {
+			css: {
 				source: destination + '/app_styles.css',
 				file: 'angular-sprout.css'
 			},
-			script:
-			{
+			script: {
 				file: 'angular-sprout.js'
 			}
 		},
-		jade:
-		{
+		jade: {
 			source: root + '/app/**/*.jade',
 			destination: destination
 		},
-		scripts:
-		{
-			source:
-			[
+		scripts: {
+			source: [
 				'./app/**/*.js',
 				'./app/*.js',
 				'!./app/**/*_test*.js'
 			],
 			destination: destination
 		},
-		sass:
-		{
+		sass: {
 			source: root + '/app/**/*.scss',
 			main: root + '/app/app_styles.scss',
 			destination: destination
 		},
-		images:
-		{
+		images: {
 			source: root + '/images/**/*.*',
 			destination: destination + '/images'
 		},
-		favicon:
-		{
+		favicon: {
 			source: root + '/favicon.png',
 			destination: destination
 		},
-		fonts:
-		{
+		fonts: {
 			source: root + '/fonts/**/*.*',
 			destination: destination + '/fonts'
 		},
-		bower:
-		{
+		bower: {
 			source: root + '/bower_components',
 			manifest: root + '/bower.json',
 			config: root + '/.bowerrc',
@@ -71,18 +55,15 @@ module.exports =
 			css: bowerDir + '/**/*.css',
 			scripts: bowerDir + '/**/*.js'
 		},
-		tests:
-		{
+		tests: {
 			source: root + '/app/**/*_test*.js',
 			e2e: root + '/app/**/*_test-e2e.js',
 			unit: root + '/app/**/*_test-unit.js',
 			karmaConfig: root + '/tests/karma.config.js',
 			protractorConfig: root + '/tests/protractor.config.js'
 		},
-		gulp:
-		{
-			source:
-			[
+		gulp: {
+			source: [
 				root + '/gulp/**/*.js',
 				root + 'gulpfile.js'
 			]

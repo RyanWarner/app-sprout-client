@@ -1,25 +1,21 @@
-.app-root
-{
+.app-root {
 	flex-direction: row;
 }
 
-.app-content
-{
+.app-content {
 	flex-grow: 1;
 
 	overflow: scroll;
 	height: 100vh;
 }
 
-nav
-{
+nav {
 	width: 330px;
 	height: 100vh;
 	background-image: linear-gradient( to bottom right, #333331, #292928 );
 }
 
-.nav-app-sprout-logo
-{
+.nav-app-sprout-logo {
 	align-self: center;
 
 	width: 52px;
@@ -32,27 +28,24 @@ nav
 	background-repeat: no-repeat;
 }
 
-.nav-logo-text
-{
+.nav-logo-text {
 	align-self: center;
 
 	color: $background;
 	font-size: 20px;
 }
 
-.nav-rule
-{
+.nav-rule {
 	align-self: center;
 
 	width: 60px;
 	height: 1px;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	background-color: rgba( $background, 0.5 );
+	background-color: rgba($background, 0.5);
 }
 
-.nav-item
-{
+.nav-item {
 	flex-direction: row;
 	align-items: center;
 
@@ -65,29 +58,24 @@ nav
 	transition: background-color 0.2s ease-out;
 
 	&:hover,
-	&.selected:hover
-	{
-		background-color: rgba( $background, 0.06 );
+	&.selected:hover {
+		background-color: rgba($background, 0.06);
 
-		.nav-item-icon
-		{
-			color: lighten( $green, 3% );
+		.nav-item-icon {
+			color: lighten($green, 3%);
 		}
 	}
 
-	&.selected
-	{
+	&.selected {
 		background-color: rgba( $background, 0.03 );
 
-		.nav-item-icon
-		{
+		.nav-item-icon {
 			color: $green;
 		}
 	}
 }
 
-.nav-item-icon
-{
+.nav-item-icon {
 	align-items: center;
 	justify-content: center;
 
@@ -99,17 +87,14 @@ nav
 	transition: color 0.2s ease-out;
 }
 
-.account-icon
-{
+.account-icon {
 	@extend %icon-account-outline;
 }
 
-.list-icon
-{
+.list-icon {
 	@extend %icon-list-outline;
 }
 
-.logout-icon
-{
+.logout-icon {
 	@extend %icon-log-out-outline;
 }

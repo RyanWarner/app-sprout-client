@@ -1,66 +1,59 @@
 'use strict';
 
-var gulp            = require( 'gulp' );
-var connect         = require( 'gulp-connect' );
+var gulp            = require('gulp');
 
-var mainBowerFiles  = require( 'main-bower-files' );
-var inject          = require( 'gulp-inject' );
-var angularFilesort = require( 'gulp-angular-filesort' );
+var mainBowerFiles  = require('main-bower-files');
+var angularFilesort = require('gulp-angular-filesort');
 
-var ngAnnotate      = require( 'gulp-ng-annotate' );
-var uglify          = require( 'gulp-uglify' );
-var order           = require( 'gulp-order' );
-var concat          = require( 'gulp-concat' );
-var streamqueue     = require( 'streamqueue' );
-var filter          = require( 'gulp-filter' );
+var ngAnnotate      = require('gulp-ng-annotate');
+var uglify          = require('gulp-uglify');
+var order           = require('gulp-order');
+var concat          = require('gulp-concat');
+var streamqueue     = require('streamqueue');
+var filter          = require('gulp-filter');
 
-var path            = require( '../../paths.js' );
+var path            = require('../../paths.js');
 
 
 
-gulp.task( 'build-scripts', [ 'eslint' ], function(  )
-{
-	return streamqueue( { objectMode: true },
+gulp.task('build-scripts', ['eslint'], function() {
+	return streamqueue({objectMode: true},
 
 		// Select and order bower components.
 
-		gulp.src( mainBowerFiles(
-		{
-			paths:
-			{
+		gulp.src(mainBowerFiles({
+			paths: {
 				bowerDirectory: path.to.bower.source,
 				bowerrc: path.to.bower.config,
 				bowerJson: path.to.bower.manifest
 			}
-		} ),
+		}),
 		{
 			base: path.to.bower.source
-		} )
-		.pipe( order(
-		[
+		})
+		.pipe(order([
 			'angular/angular.js',
 			'*'
-		] ) )
-		.pipe( filter( '**/*.js' ) ),
+		]))
+		.pipe(filter('**/*.js')),
 
 
 
 		// Select and order source scripts.
 
-		gulp.src( path.to.scripts.source )
-		.pipe( ngAnnotate(
-		{
+		gulp.src(path.to.scripts.source)
+		.pipe(ngAnnotate({
 			remove: true,
 			add: true,
 			single_quotes: true
-		} ) )
-		.pipe( angularFilesort(  ) ) )
+		}))
+		.pipe(angularFilesort()))
 
 
 
 	// Then concatenate and uglify them.
 
-	.pipe( concat( path.to.main.script.file ) )
-	.pipe( uglify(  ) )
-	.pipe( gulp.dest( path.to.destination ) );
-} );
+	.pipe(concat(path.to.main.script.file))
+	.pipe(uglify())
+	.pipe(gulp.dest(path.to.destination));
+});

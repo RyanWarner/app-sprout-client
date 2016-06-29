@@ -1,4 +1,4 @@
-.save-notification-wrapper( ng-show='justSaved' )
+.save-notification-wrapper(ng-show='justSaved')
 	.save-notification
 		| Account information saved.
 .account-header
@@ -6,31 +6,31 @@
 		| Account
 	.state-description
 		| Edit your account information.
-form.account-information( name='form', novalidate )
+form.account-information(name='form', novalidate)
 	.account-field
 		.account-field-label
 			| Name
-		.account-field-error( ng-show='form.$submitted && form.username.$error.required' )
+		.account-field-error(ng-show='form.$submitted && form.username.$error.required')
 			| Your name cannot be blank.
 		.account-field-input-wrapper
-			input.account-field-input( type='text', name='username', required='', placeholder='Your name', ng-model='user.name' )
+			input.account-field-input(type='text', name='username', required='', placeholder='Your name', ng-model='user.name')
 	.account-field
 		.account-field-label
 			| Email
-		.account-field-error( ng-show='form.$submitted && ( form.email.$error.required || form.email.$error.email )' )
+		.account-field-error(ng-show='form.$submitted && ( form.email.$error.required || form.email.$error.email )')
 			| That's not a valid email.
 		.account-field-input-wrapper
-			input.account-field-input( type='email', name='email', required='', placeholder='Your email', ng-model='user.email' )
+			input.account-field-input(type='email', name='email', required='', placeholder='Your email', ng-model='user.email')
 	.account-field
 		.account-field-label
 			| Change password
-		.account-field-error( ng-show='form.$submitted && form.password.$error.minlength' )
+		.account-field-error(ng-show='form.$submitted && form.password.$error.minlength')
 			| Your password must be at least 6 characters.
 		.account-field-input-wrapper
-			input.account-field-input( type='text', minlength='6', name='password', placeholder='New password', ng-model='user.password' )
-	.account-save-button.big-green-button( ng-click='updateUserInfo(  )' )
-		.button-text( ng-hide='loading' )
+			input.account-field-input(type='text', minlength='6', name='password', placeholder='New password', ng-model='user.password')
+	.account-save-button.big-green-button(ng-click='updateUserInfo()')
+		.button-text(ng-hide='loading')
 			| Save
-		.button-loading( ng-show='loading' )
+		.button-loading(ng-show='loading')
 			spinner
-		input.account-save-submit( type='submit' )
+		input.account-save-submit(type='submit')
