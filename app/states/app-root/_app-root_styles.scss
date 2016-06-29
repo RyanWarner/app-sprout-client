@@ -12,7 +12,7 @@
 nav {
 	width: 330px;
 	height: 100vh;
-	background-image: linear-gradient( to bottom right, #333331, #292928 );
+	background-image: linear-gradient(to bottom right, #333331, #292928);
 }
 
 .nav-app-sprout-logo {
@@ -22,7 +22,7 @@ nav {
 	height: 109px;
 	margin-top: 70px;
 	margin-bottom: 30px;
-	background-image: url( 'images/sprout-logo.png' );
+	background-image: url('images/sprout-logo.png');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -67,7 +67,7 @@ nav {
 	}
 
 	&.selected {
-		background-color: rgba( $background, 0.03 );
+		background-color: rgba($background, 0.03);
 
 		.nav-item-icon {
 			color: $green;

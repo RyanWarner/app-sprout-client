@@ -5,7 +5,7 @@
 
 describe('App', function() {
 	var scope;
-	var controller;
+	var controller; // eslint-disable-line no-unused-vars
 
 	beforeEach(function() {
 		module('appSproutClient');
@@ -13,7 +13,7 @@ describe('App', function() {
 
 	beforeEach(inject(function($rootScope, $controller) {
 		scope = $rootScope.$new();
-		controller = $controller('AppRootController', {$scope: scope});
+		controller = $controller('AppRootController', { $scope: scope });
 	}));
 
 	it('should have a scope variable', function() {

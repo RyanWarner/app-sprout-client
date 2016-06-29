@@ -6,7 +6,7 @@
 	var storageFactory = angular.module('storageFactory', []);
 
 	storageFactory.factory('storageFactory', function($window) {
-		var storageFactoryApi = {};
+		var storageFactoryApi = { };
 
 		storageFactoryApi.local = {
 			set: function(key, value) {
@@ -39,7 +39,6 @@
 		};
 
 		// Return public API.
-
 		return storageFactoryApi;
 	});
 })();

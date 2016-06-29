@@ -17,7 +17,7 @@ var path            = require('../../paths.js');
 
 
 gulp.task('build-scripts', ['eslint'], function() {
-	return streamqueue({objectMode: true},
+	return streamqueue({ objectMode: true },
 
 		// Select and order bower components.
 
@@ -27,8 +27,7 @@ gulp.task('build-scripts', ['eslint'], function() {
 				bowerrc: path.to.bower.config,
 				bowerJson: path.to.bower.manifest
 			}
-		}),
-		{
+		}), {
 			base: path.to.bower.source
 		})
 		.pipe(order([
@@ -45,7 +44,7 @@ gulp.task('build-scripts', ['eslint'], function() {
 		.pipe(ngAnnotate({
 			remove: true,
 			add: true,
-			single_quotes: true
+			single_quotes: true // eslint-disable-line camelcase
 		}))
 		.pipe(angularFilesort()))
 

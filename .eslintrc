@@ -10,6 +10,7 @@
         "no-multi-spaces": ['error', "exceptions": { "VariableDeclarator": true }],
         "padded-blocks": 0,
         "space-before-function-paren": ["error", "never"],
-        "object-curly-spacing": ["error", "always"]
+        "object-curly-spacing": ["error", "always"],
+        "max-params": ["error", 5]
     }
 }

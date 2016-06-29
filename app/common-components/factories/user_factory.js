@@ -6,21 +6,19 @@
 	var userFactory = angular.module('userFactory', []);
 
 	userFactory.factory('userFactory', function($http, $q, appConstants, storageFactory) {
-		var userFactoryApi = {};
+		var userFactoryApi = { };
 
 		userFactoryApi.updateUserInfo = function(userInfo) {
 			var deferred = $q.defer();
 			var promise = deferred.promise;
 
 			$http({
-
 				method: 'post',
 				url: appConstants.BACKEND_URL + '/api/user/info',
 				withCredentials: true,
 				data: {
 					userInfo: userInfo
 				}
-
 			})
 			.success(function(data) {
 				storageFactory.local.setObject('user', data);
@@ -36,7 +34,6 @@
 		};
 
 		// Return public API.
-
 		return userFactoryApi;
 	});
 })();

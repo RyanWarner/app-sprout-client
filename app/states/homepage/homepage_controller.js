@@ -6,7 +6,6 @@
 	var homepage = angular.module('homepage');
 
 	homepage.controller('HomepageController', function($rootScope, $scope, $state, sessionFactory) {
-		// This is a controller.
 
 		$scope.stateName = 'homepage';
 
@@ -14,7 +13,7 @@
 		$scope.password = '';
 
 		$scope.registerAndLogin = function() {
-			var user = {};
+			var user = { };
 
 			user.email = $scope.email;
 			user.password = $scope.password;

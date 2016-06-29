@@ -2,7 +2,7 @@
 
 var gulp             = require('gulp');
 var protractor       = require('gulp-protractor').protractor;
-var webdriver_update = require('gulp-protractor').webdriver_update;
+var webdriver_update = require('gulp-protractor').webdriver_update; // eslint-disable-line camelcase
 
 var path             = require('../../paths.js');
 var error            = require('../../error-handler.js');

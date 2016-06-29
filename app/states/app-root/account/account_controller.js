@@ -14,6 +14,18 @@
 			$scope.user = storageFactory.local.getObject('user');
 		});
 
+		var userInfoUpdated = function() {
+			$timeout(function() {
+				$scope.loading = false;
+				$scope.justSaved = true;
+				$scope.user.password = '';
+
+				$timeout(function() {
+					$scope.justSaved = false;
+				}, 2200);
+			}, 400);
+		};
+
 		$scope.updateUserInfo = function() {
 			if (!$scope.form.$valid) {
 				return;
@@ -21,7 +33,7 @@
 
 			$scope.loading = true;
 
-			var userInfo = {};
+			var userInfo = { };
 
 			userInfo.name = $scope.user.name;
 			userInfo.email = $scope.user.email;
@@ -29,15 +41,7 @@
 
 			userFactory.updateUserInfo(userInfo)
 			.then(function() {
-				$timeout(function() {
-					$scope.loading = false;
-					$scope.justSaved = true;
-					$scope.user.password = '';
-
-					$timeout(function() {
-						$scope.justSaved = false;
-					}, 2200);
-				}, 400);
+				userInfoUpdated();
 			});
 		};
 	});

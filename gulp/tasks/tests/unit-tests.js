@@ -10,13 +10,13 @@ var path            = require('../../paths.js');
 
 
 
-gulp.task('karma-inject', function(done) {
+gulp.task('karma-inject', function() {
 	var appJsSource    = gulp.src([path.to.destination + '/**/*.js', '!' + path.to.destination + '/bower/**/*.*']);
 	var sortedAppJs    = appJsSource.pipe(angularFilesort());
 
-	var bowerSource    = gulp.src([path.to.bower.scripts], {read: false});
+	var bowerSource    = gulp.src([path.to.bower.scripts], { read: false });
 
-	var unitTestsSrc   = gulp.src([path.to.tests.unit], {read: false});
+	var unitTestsSrc   = gulp.src([path.to.tests.unit], { read: false });
 
 	var allJs = es.merge(sortedAppJs, bowerSource, unitTestsSrc);
 

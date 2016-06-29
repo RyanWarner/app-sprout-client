@@ -5,7 +5,7 @@
 
 describe('Account', function() {
 	var scope;
-	var controller;
+	var controller; // eslint-disable-line no-unused-vars
 
 	beforeEach(function() {
 		module('appSproutClient');

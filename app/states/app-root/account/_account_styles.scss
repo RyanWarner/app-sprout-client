@@ -38,7 +38,7 @@
 	border: 1px solid #edede8;
 	border-radius: 6px;
 	background-color: #fcfcfa;
-	box-shadow: inset 0 2px 6px 0 rgba( 0, 0, 0, 0.04 );
+	box-shadow: inset 0 2px 6px 0 rgba(0, 0, 0, 0.04);
 
 	transition: all 0.2s ease-out;
 }
@@ -67,7 +67,7 @@
 	cursor: pointer;
 
 	.spinner {
-		@include spinner-dots( rgba( #fff, 1 ) );
+		@include spinner-dots(rgba(#fff, 1));
 	}
 }
 
@@ -91,7 +91,7 @@
 	&.ng-hide {
 		opacity: 0;
 
-		transform: rotate( 25deg );
+		transform: rotate(25deg);
 	}
 }
 
@@ -115,23 +115,23 @@
 	left: 0;
 
 	transition: all 0.4s ease-in;
-	transform: translate3d( 0, 0, 0 );
+	transform: translate3d(0, 0, 0);
 
 	&.ng-hide {
 		opacity: 0;
 
-		transform: translate3d( 0, -80px, 0 );
+		transform: translate3d(0, -80px, 0);
 	}
 }
 
 .save-notification {
 	padding: 20px 30px 20px 30px;
-	border-right: 1px solid rgba( 0, 0, 0, 0.1 );
-	border-bottom: 1px solid rgba( 0, 0, 0, 0.1 );
-	border-left: 1px solid rgba( 0, 0, 0, 0.1 );
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 0 0 6px 6px;
 	background-color: #fff;
-	box-shadow: 0 2px 9px rgba( 0, 0, 0, 0.06 );
+	box-shadow: 0 2px 9px rgba(0, 0, 0, 0.06);
 
 	color: $green;
 }
@@ -146,7 +146,7 @@
 	top: 0;
 	left: 0;
 
-	color: rgba( 0, 0, 0, 0.3 );
+	color: rgba(0, 0, 0, 0.3);
 	font-size: 14px;
 
 	transition: all 0.3s ease;

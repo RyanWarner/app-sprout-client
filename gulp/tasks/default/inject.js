@@ -28,10 +28,10 @@ gulp.task('inject', function() {
 	var appJsSource    = gulp.src([path.to.destination + '/**/*.js', '!' + path.to.destination + '/bower/**/*.*']);
 	var sortedAppJs    = appJsSource.pipe(angularFilesort());
 
-	var bowerSource    = gulp.src([path.to.bower.scripts], {read: false});
-	var bowerCssSource = gulp.src([path.to.bower.css], {read: false});
+	var bowerSource    = gulp.src([path.to.bower.scripts], { read: false });
+	var bowerCssSource = gulp.src([path.to.bower.css], { read: false });
 
-	var mainCssSource  = gulp.src([path.to.main.css.source], {read: false});
+	var mainCssSource  = gulp.src([path.to.main.css.source], { read: false });
 
 	return target
 		.pipe(inject(bowerCssSource, bowerInjectOptions))

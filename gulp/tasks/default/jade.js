@@ -13,7 +13,7 @@ var error   = require('../../error-handler.js');
 gulp.task('jade', function() {
 	return gulp.src(path.to.jade.source)
 		.pipe(cache('jade'))
-		.pipe(jade({pretty: true}))
+		.pipe(jade({ pretty: true }))
 		.on('error', error.handler)
 		.pipe(gulp.dest(path.to.jade.destination))
 		.pipe(connect.reload());

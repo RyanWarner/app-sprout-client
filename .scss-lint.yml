@@ -37,7 +37,7 @@ linters:
 
   HexLength:
     enabled: true
-    style: long # or 'short'
+    style: short # or 'short'
 
   HexNotation:
     enabled: true
@@ -115,7 +115,7 @@ linters:
 
   SpaceBetweenParens:
     enabled: true
-    spaces: 1
+    spaces: 0
 
   StringQuotes:
     enabled: true

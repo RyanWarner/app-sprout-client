@@ -6,7 +6,7 @@
 	var sessionFactory = angular.module('sessionFactory', []);
 
 	sessionFactory.factory('sessionFactory', function($http, $q, $state, appConstants, storageFactory) {
-		var sessionFactoryApi = {};
+		var sessionFactoryApi = { };
 
 		sessionFactoryApi.registerAndLogin = function(user) {
 			console.log('Registering user with backend at: ', appConstants.BACKEND_URL);
@@ -19,7 +19,6 @@
 				url: appConstants.BACKEND_URL + '/api/user/register',
 				withCredentials: true,
 				data: user
-
 			})
 			.success(function(data) {
 				storageFactory.local.setObject('user', data);
@@ -91,7 +90,6 @@
 
 
 		// Return public API.
-
 		return sessionFactoryApi;
 	});
 })();

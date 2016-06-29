@@ -13,7 +13,7 @@ gulp.task('build-images', ['favicon'], function() {
 	return gulp.src(path.to.images.source)
 		.pipe(imagemin({
 			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
+			svgoPlugins: [{ removeViewBox: false }],
 			use: [pngquant()]
 		}))
 		.pipe(gulp.dest(path.to.images.destination));

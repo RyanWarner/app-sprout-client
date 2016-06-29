@@ -92,7 +92,6 @@
 
 
 		// Return public API.
-
 		return listFactoryApi;
 	});
 })();

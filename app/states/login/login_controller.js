@@ -13,11 +13,11 @@
 		$scope.password = '';
 
 		$scope.loginUser = function() {
-			if(!$scope.form.$valid) {
+			if (!$scope.form.$valid) {
 				return;
 			}
 
-			var user = {};
+			var user = { };
 
 			user.email = $scope.email;
 			user.password = $scope.password;

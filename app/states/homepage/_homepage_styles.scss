@@ -25,7 +25,7 @@ section {
 	height: 200px;
 	margin-top: 32px;
 	margin-bottom: 22px;
-	background-image: url( 'images/sprout-logo.png' );
+	background-image: url('images/sprout-logo.png');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -44,7 +44,7 @@ section {
 
 	margin-bottom: 34px;
 
-	color: rgba( 123, 123, 123, 0.5 );
+	color: rgba(123, 123, 123, 0.5);
 	font-size: 18px;
 }
 
@@ -103,7 +103,7 @@ a.sketch {
 
 	&:hover {
 		color: $green;
-		text-shadow: 0 1px 3px rgba( 0, 0, 0, 0.1 );
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 }
 
@@ -118,7 +118,7 @@ a.sketch {
 	border: 1px solid #ebebe4;
 	border-radius: 6px;
 	background-color: #fcfcfa;
-	box-shadow: inset 0 1px 6px 0 rgba( 0, 0, 0, 0.07 );
+	box-shadow: inset 0 1px 6px 0 rgba(0, 0, 0, 0.07);
 }
 
 .login-form input {
@@ -165,7 +165,7 @@ a.sketch {
 	background-color: $green;
 	background-position: 0 -44px;
 	background-size: 257px 88px;
-	box-shadow: 0 2px 0 0 #58784e, 0 4px 5px 0 rgba( 0, 0, 0, 0.14 );
+	box-shadow: 0 2px 0 0 #58784e, 0 4px 5px 0 rgba(0, 0, 0, 0.14);
 
 	color: #fff;
 	font-size: 14px;
@@ -174,13 +174,13 @@ a.sketch {
 	transition: all 0.2s ease;
 
 	&:hover {
-		background-color: lighten( $green, 3% );
-		box-shadow: 0 2px 0 0 #58784e, 0 5px 9px 0 rgba( 0, 0, 0, 0.34 );
+		background-color: lighten($green, 3%);
+		box-shadow: 0 2px 0 0 #58784e, 0 5px 9px 0 rgba(0, 0, 0, 0.34);
 	}
 
 	&:active {
 		background-color: $green;
-		box-shadow: 0 2px 0 0 #58784e, 0 5px 6px 0 rgba( 0, 0, 0, 0.18 );
+		box-shadow: 0 2px 0 0 #58784e, 0 5px 6px 0 rgba(0, 0, 0, 0.18);
 
 		transition: all 0.1s ease;
 	}
@@ -204,12 +204,12 @@ a.sketch {
 	transition: all 0.2s ease-out;
 
 	&:hover {
-		background-color: rgba( #fff, 0.8 );
-		box-shadow: 0 1px 3px 0 rgba( #000, 0.07 );
+		background-color: rgba(#fff, 0.8);
+		box-shadow: 0 1px 3px 0 rgba(#000, 0.07);
 	}
 
 	&:active {
-		background-color: rgba( #7b7b7b, 0.1 );
+		background-color: rgba(#7b7b7b, 0.1);
 		box-shadow: 0;
 	}
 }
@@ -291,7 +291,7 @@ a.sketch {
 	margin-bottom: 25px;
 	border-radius: 36px;
 	background-color: #fcfcfa;
-	box-shadow: 0 2px 0 0 #ebebe4, 0 2px 4px 0 rgba( 0, 0, 0, 0.03 );
+	box-shadow: 0 2px 0 0 #ebebe4, 0 2px 4px 0 rgba(0, 0, 0, 0.03);
 }
 
 .tools-row {
@@ -306,7 +306,7 @@ a.sketch {
 .angular {
 	width: 62px;
 	height: 65px;
-	background-image: url( './images/tools/angular.png' );
+	background-image: url('./images/tools/angular.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -314,7 +314,7 @@ a.sketch {
 .sass-and-jade {
 	width: 89px;
 	height: 76px;
-	background-image: url( './images/tools/sass-and-jade.png' );
+	background-image: url('./images/tools/sass-and-jade.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -322,7 +322,7 @@ a.sketch {
 .eslint {
 	width: 57px;
 	height: 60px;
-	background-image: url( './images/tools/eslint.svg' );
+	background-image: url('./images/tools/eslint.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -330,7 +330,7 @@ a.sketch {
 .karma-and-protractor {
 	width: 104px;
 	height: 61px;
-	background-image: url( './images/tools/karma-and-protractor.png' );
+	background-image: url('./images/tools/karma-and-protractor.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -338,7 +338,7 @@ a.sketch {
 .express {
 	width: 65px;
 	height: 18px;
-	background-image: url( './images/tools/express.svg' );
+	background-image: url('./images/tools/express.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -346,7 +346,7 @@ a.sketch {
 .mongo {
 	width: 48px;
 	height: 79px;
-	background-image: url( './images/tools/mongo.png' );
+	background-image: url('./images/tools/mongo.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -354,7 +354,7 @@ a.sketch {
 .passport {
 	width: 58px;
 	height: 58px;
-	background-image: url( './images/tools/passport.png' );
+	background-image: url('./images/tools/passport.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -362,10 +362,11 @@ a.sketch {
 .mocha {
 	width: 81px;
 	height: 81px;
-	background-image: url( './images/tools/mocha.svg' );
+	background-image: url('./images/tools/mocha.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
 
 
 //------------+
@@ -384,7 +385,7 @@ a.sketch {
 	width: 50%;
 	height: 468px;
 	padding: 4% 5% 4% 5%;
-	background-image: linear-gradient( to bottom right, #333331, #292928 );
+	background-image: linear-gradient(to bottom right, #333331, #292928);
 }
 
 .feature-list {

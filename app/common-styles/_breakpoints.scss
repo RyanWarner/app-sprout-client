@@ -1,6 +1,6 @@
-@mixin breakpoint( $breakpoint-name ) {
+@mixin breakpoint($breakpoint-name) {
 	@if $breakpoint-name == 'iphone-portrait' {
-		@media ( max-width: 320px ) {
+		@media (max-width: 320px) {
 			@content;
 		}
 	}

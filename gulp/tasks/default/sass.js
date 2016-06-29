@@ -6,7 +6,6 @@ var cache    = require('gulp-cached');
 
 var sass     = require('gulp-sass');
 var prefix   = require('gulp-autoprefixer');
-
 var scsslint = require('gulp-scss-lint');
 var csscomb  = require('gulp-csscomb');
 
@@ -25,7 +24,7 @@ gulp.task('csscomb', function() {
 
 gulp.task('scss-lint', ['csscomb'], function() {
 	return gulp.src(path.to.sass.source)
-		.pipe(scsslint({config: 'scss-linting-config.yml'}))
+		.pipe(scsslint({ config: '.scss-lint.yml' }))
 		.on('error', error.handler);
 });
 
@@ -33,7 +32,7 @@ gulp.task('sass', ['scss-lint'], function() {
 	return gulp.src(path.to.sass.main)
 		.pipe(sass())
 		.on('error', error.handler)
-		.pipe(prefix('last 2 versions', {cascade: true}))
+		.pipe(prefix('last 2 versions', { cascade: true }))
 		.on('error', error.handler)
 		.pipe(gulp.dest(path.to.sass.destination))
 		.pipe(connect.reload());

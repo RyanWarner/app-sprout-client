@@ -1,10 +1,9 @@
 'use strict';
 
-var gulp     = require('gulp');
-var inject   = require('gulp-inject');
+var gulp    = require('gulp');
+var inject  = require('gulp-inject');
 
-var path     = require('../../paths.js');
-var error    = require('../../error-handler.js');
+var path    = require('../../paths.js');
 
 
 
@@ -18,7 +17,7 @@ gulp.task('build-inject', function() {
 	var target = gulp.src(path.to.destination + '/index.html');
 
 	return target
-		.pipe(inject(gulp.src(path.to.destination + '/' + path.to.main.script.file, {read: false}), injectOptions))
-		.pipe(inject(gulp.src(path.to.destination + '/' + path.to.main.css.file, {read: false}), injectOptions))
+		.pipe(inject(gulp.src(path.to.destination + '/' + path.to.main.script.file, { read: false }), injectOptions))
+		.pipe(inject(gulp.src(path.to.destination + '/' + path.to.main.css.file, { read: false }), injectOptions))
 		.pipe(gulp.dest(path.to.destination));
 });

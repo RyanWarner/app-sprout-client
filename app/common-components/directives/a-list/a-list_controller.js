@@ -17,6 +17,7 @@
 		var getList = function() {
 			listFactory.getList()
 			.then(function(list) {
+
 				if ((!list) || (list.length === 0)) {
 					listCopy = angular.copy($scope.list);
 					$scope.addNewListItem();
@@ -39,7 +40,7 @@
 		};
 
 		$scope.addNewListItem = function(itemValue) {
-			if((itemValue === '') || (itemValue === undefined)) {
+			if ((itemValue === '') || (itemValue === undefined)) {
 				return;
 			}
 
@@ -48,7 +49,7 @@
 			};
 
 			$scope.list.push(newItem);
-			$scope.saveList(newItem, 0, event);
+			$scope.saveList(newItem, 0);
 		};
 
 		var saveListItemAnimation = function(index) {
@@ -84,7 +85,7 @@
 
 			// If trying to save a newly created list item with no value,
 			// don't do anything.
-			if((item.name === undefined) && (item._id === undefined)) {
+			if ((item.name === undefined) && (item._id === undefined)) {
 				return;
 			}
 
@@ -95,13 +96,13 @@
 
 			// If the new value is the same as the factory value,
 			// dont do anything.
-			if((listCopy[realIndex]) && (item.name === listCopy[realIndex].name)) {
+			if ((listCopy[realIndex]) && (item.name === listCopy[realIndex].name)) {
 				return;
 			}
 
 			// If trying to save an existing list item with no value,
 			// delete it.
-			if((item.name === '') && (item._id !== undefined)) {
+			if ((item.name === '') && (item._id !== undefined)) {
 				$scope.deleteListItem(item, index);
 				return;
 			}
@@ -111,7 +112,7 @@
 			.then(function(response) {
 				// If the user is creating a new item,
 				// we need to give it an ID that we get back from the server.
-				if(response.newListItem) {
+				if (response.newListItem) {
 					$timeout(function() {
 						$scope.list[realIndex]._id = response.newListItem._id;
 						$scope.newItem = '';
