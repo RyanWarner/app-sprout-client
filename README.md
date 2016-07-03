@@ -177,7 +177,7 @@ Building does a number of things:
 
 ## Coding Style
 
-Slightly modified [XO](https://github.com/sindresorhus/eslint-config-xo) style. You can view the ESLint config [here](https://github.com/RyanWarner/app-sprout-client/blob/master/.eslintrc).
+Slightly modified [XO](https://github.com/sindresorhus/eslint-config-xo) style. You can view the ESLint config [here](https://github.com/RyanWarner/eslint-config-warner).
 
 ### File Naming Conventions
 
