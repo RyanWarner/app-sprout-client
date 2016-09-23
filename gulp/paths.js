@@ -18,8 +18,8 @@ module.exports = {
 				file: 'angular-sprout.js'
 			}
 		},
-		jade: {
-			source: root + '/app/**/*.jade',
+		pug: {
+			source: root + '/app/**/*.pug',
 			destination: destination
 		},
 		scripts: {

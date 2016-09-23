@@ -13,7 +13,7 @@ gulp.task('default', function() {
 		[
 			'sass',
 			'scripts',
-			'jade',
+			'pug',
 			'images',
 			'fonts'
 		],
@@ -32,7 +32,7 @@ gulp.task('build', function() {
 			'build-scripts',
 			'build-css'
 		],
-		'jade',
+		'pug',
 		'build-inject',
 		'build-html',
 		'connect'

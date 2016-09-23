@@ -16,7 +16,7 @@ However, I found a number of things I wanted to change, add, or remove. Enough t
 
 - I want to use [Gulp](http://gulp.com/).
 - I use my own [coding style](http://squint-style.guide), which uses different linters (eslint and scss-lint with csscomb).
-- I want [Jade](http://jade-lang.com/) and [Sass](http://sass-lang.com/) out of the box.
+- I want [Pug](http://jade-lang.com/) and [Sass](http://sass-lang.com/) out of the box.
 - I don't want any CSS frameworks or grids, just a custom, minimal [reset & starting point](https://github.com/RyanWarner/sass-seed).
 
 ### A work in progress.
@@ -33,7 +33,7 @@ What defining tools and libraries make up this project's architecture?
 - [Angular 1](https://angularjs.org/) with [AngularUI Router](https://github.com/angular-ui/ui-router)
 
 #### Preprocessors
-- [Jade](http://jade-lang.com/)
+- [Pug](http://jade-lang.com/)
 - [Sass](http://sass-lang.com/) with [autoprefixer](https://github.com/postcss/autoprefixer-core).
 
 #### Build System
@@ -74,7 +74,7 @@ app/
 				_dropdown_styles.scss
 				dropdown_controller.js
 				dropdown_directive.js
-				dropdown_template.jade
+				dropdown_template.pug
 		filters/
 			reverse_filter.js
 		services/
@@ -91,32 +91,32 @@ app/
 					_child-state-1_styles.scss
 					child-state-1_controler.js
 					child-state-1_module.js
-					child-state-1_template.jade
+					child-state-1_template.pug
 					child-state-1_test-e2e.js
 					child-state-1_test-unit.js
 				child-state-2/
 					_child-state-2_styles.scss
 					child-state-2_controler.js
 					child-state-2_module.js
-					child-state-2_template.jade
+					child-state-2_template.pug
 					child-state-2_test-e2e.js
 					child-state-2_test-unit.js
 				_parent-state-2_styles.scss
 				parent-state-2_controler.js
 				parent-state-2_module.js
-				parent-state-2_template.jade
+				parent-state-2_template.pug
 				parent-state-2_test-e2e.js
 				parent-state-2_test-unit.js
 			state-1/
 				_state-1_styles.scss
 				state-1_controller.js
 				state-1_module.js
-				state-1_template.jade
+				state-1_template.pug
 				state-1_test-e2e.js
 				state-1_test-unit.js
 	app_module.js
 	app_styles.scss
-	index.jade
+	index.pug
 bower_components/
 build/
 images/
@@ -187,7 +187,7 @@ Slightly modified [XO](https://github.com/sindresorhus/eslint-config-xo) style. 
 home-state_controller.js
 home-state_module.js
 home-state_styles.scss
-home-state_template.jade
+home-state_template.pug
 home-state_test-unit.js
 ```
 
