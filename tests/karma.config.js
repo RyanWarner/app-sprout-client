@@ -38,11 +38,11 @@ module.exports = function(config) {
 
 					"../app/states/login/login_test-unit.js",
 
-					"../build-destination/bower/angular-ui-router/release/angular-ui-router.js",
+					"../build-destination/bower/jquery/dist/jquery.js",
 
 					"../app/states/register/register_test-unit.js",
 
-					"../build-destination/bower/jquery/dist/jquery.js",
+					"../build-destination/bower/angular-ui-router/release/angular-ui-router.js",
 
 					"../app/states/app-root/account/account_test-unit.js",
 
@@ -58,11 +58,11 @@ module.exports = function(config) {
 
 					"../build-destination/common-components/directives/spinner/spinner_module.js",
 
+					"../build-destination/common-components/directives/ng-enter/ng-enter_module.js",
+
 					"../build-destination/common-components/directives/a-list/a-list_module.js",
 
 					"../build-destination/common-components/directives/a-list/a-list_controller.js",
-
-					"../build-destination/common-components/directives/example-directive/example-directive_module.js",
 
 					"../build-destination/states/register/register_module.js",
 
@@ -72,15 +72,13 @@ module.exports = function(config) {
 
 					"../build-destination/states/login/login_controller.js",
 
-					"../build-destination/states/homepage/homepage_module.js",
-
-					"../build-destination/states/homepage/homepage_controller.js",
-
 					"../build-destination/states/app-root/app-root_module.js",
 
 					"../build-destination/states/app-root/app-root_controller.js",
 
-					"../build-destination/common-components/filters/reverse_module.js",
+					"../build-destination/states/homepage/homepage_module.js",
+
+					"../build-destination/states/homepage/homepage_controller.js",
 
 					"../build-destination/common-components/factories/user_factory.js",
 
@@ -90,11 +88,13 @@ module.exports = function(config) {
 
 					"../build-destination/common-components/factories/list_factory.js",
 
+					"../build-destination/common-components/filters/reverse_module.js",
+
 					"../build-destination/app_module.js",
 
 					"../build-destination/app_constants.js"
 
-		],
+					],
 
 
 		// list of files to exclude
