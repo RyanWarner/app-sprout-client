@@ -67,7 +67,7 @@
     "protractor-http-mock": "^0.9.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
-    "selenium-standalone-jar": "^2.45.0",
+    "selenium-standalone-jar": "^3.0.1",
     "sinon": "^1.17.1",
     "sinon-chai": "^2.8.0",
     "streamqueue": "^1.1.1"
